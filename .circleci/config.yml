@@ -26,6 +26,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
       - run: yarn test
+
+      - sonarcloud/scan
   
   test:
     docker:
@@ -48,15 +50,15 @@ jobs:
           key: v1-dependencies-{{ checksum "package-lock.json" }}
       - run: yarn test
 
-      - sonarcloud/scan
+      
 
 workflows:
   version: 2.1
   build_and_test:
       jobs:
-        - build
-        - test:
+        - build:
             context: SonarCloud
+        - test:
             requires:
               - build
       
