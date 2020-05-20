@@ -1,0 +1,19 @@
+{
+  "name": "web-portal",
+  "version": "1.0.0",
+  "description": "customer portal",
+  "main": "test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://peter-chege@bitbucket.org/apanirvana/web-portal.git"
+  },
+  "author": "peter chege",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/apanirvana/web-portal#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}
