@@ -1,6 +1,7 @@
 # Web Portal
 
-> Customer portal : clone the repo
+> Customer portal : clone the repo 
+[![CircleCI](https://circleci.com/gh/peterchege/armu.svg?style=svg)](https://circleci.com/gh/peterchege/armu)
 
 ## Build Setup
 
@@ -15,4 +16,3 @@ npm test or yarn test
 # build for production with minification
 npm run build
 ```
-[![CircleCI](https://circleci.com/gh/peterchege/armu.svg?style=svg)](https://circleci.com/gh/peterchege/armu)
