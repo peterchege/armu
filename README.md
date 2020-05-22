@@ -1,18 +1,56 @@
 # Web Portal
 
-> Customer portal : clone the repo 
-[![CircleCI](https://circleci.com/gh/peterchege/armu.svg?style=svg)](https://circleci.com/gh/peterchege/armu)
+> Customer portal : clone the repo
 
 ## Build Setup
+
+### Tools that we will used for our installation
+
+> Guide on how to install yarn globally for different OS: 
+
+for Windows:
+```bash
+yarn global install
+```
+for Linux:
+```bash
+sudo yarn global install
+```
+for Macos
+```bash
+brew install yarn
+```
+## Vue Project
+
+> Guide on how to install Vue cli 
+
+install vue cli
+```bash
+yarn global add @vue/cli
+
+```
+install Jest (unit test package) 
+```bash
+yarn add jest
+
+```
+
+## Project packages Setup
+
+> This are the packages that are going to be used on the application
 
 ``` bash
 
 # install dependencies
-npm install or yarn install
+yarn install
 
-# to run test cases
-npm test or yarn test
+# Run your tests
+yarn run test
 
-# build for production with minification
-npm run build
+# Compiles and hot-reloads for development
+yarn run serve
+
+# Compile for production with minification
+yarn run build
+
 ```
