@@ -52,23 +52,23 @@ $ yarn run build
 
 Build your docker image (windows)
 ```bash
-$ docker build . -t web-portal
+$ docker build . -t armu
 
 ```
 Build your docker image (linux)
 ```bash
-$ sudo docker build . -t web-portal
+$ sudo docker build . -t armu
 
 ```
 Run your docker image (windows)
 
 ```bash
-$ docker run -d -p 8080:80 web-portal
+$ docker run -d -p 8080:80 armu
 
 ```
 Run your docker image (Linux)
 
 ```bash
-$ sudo docker run -d -p 8080:80 web-portal
+$ sudo docker run -d -p 8080:80 armu
 
 ```
