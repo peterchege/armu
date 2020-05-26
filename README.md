@@ -1,6 +1,3 @@
-# Web Portal
-
-> Customer portal : clone the repo
 
 ## Build Setup
 
