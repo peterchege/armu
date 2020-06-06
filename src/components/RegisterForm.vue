@@ -5,7 +5,7 @@
           <h2>REGISTER</h2>
       </v-title>
     <form class="ma-7">
-        <ValidationProvider v-slot="{ errors,  }" rules="required" name="farmerCheckbox">
+        <ValidationProvider v-slot="{ errors,  }" rules="required" name="checkbox">
         <v-row>
         <span> I am :</span>
         <spacer></spacer>
@@ -46,7 +46,7 @@
         ></v-text-field>
       </ValidationProvider>
 
-      <ValidationProvider v-slot="{ errors }" name="phone" rules="required|number">
+      <ValidationProvider v-slot="{ errors }" name="phone" rules="required|phone">
         <v-text-field
           v-model="phone"
           :error-messages="errors"
@@ -56,6 +56,26 @@
         ></v-text-field>
       </ValidationProvider>
      
+     <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
+        <v-text-field
+          v-model="password"
+          :error-messages="errors"
+          label="Password"
+          type="password"
+          required
+        ></v-text-field>
+      </ValidationProvider>
+      
+      <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
+        <v-text-field
+          v-model="password"
+          :error-messages="errors"
+          label="Password"
+          type="password"
+          required
+        ></v-text-field>
+      </ValidationProvider>
+
       <ValidationProvider v-slot="{ errors,  }" rules="required" name="checkbox">
         <v-checkbox
           v-model="checkbox"
@@ -75,7 +95,7 @@
 </template>
 
 <script>
-  import { required, email, max, } from 'vee-validate/dist/rules'
+  import { required, email, max } from 'vee-validate/dist/rules'
   import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
 
   setInteractionMode('eager')
@@ -97,7 +117,12 @@
 
   extend('phone', {
     ...required,
-    message: 'phone must be valid',
+    message: '{_field_} can not be empty',
+  })
+
+  extend('password', {
+    ...required,
+    message: '{_field_} can not be empty',
   })
 
   export default {
@@ -110,7 +135,7 @@
       lastname: '',
       email: '',
       phone: '',
-      select: null,
+      password: '',
       checkbox: null,
       terms: "I have read all the terms and conditions",
       farmer: "Farmer / Seller",
@@ -123,7 +148,7 @@
       },
       clear () {
         this.firstname = ''
-        this.lastname
+        this.lastname = ''
         this.email = ''
         this.phone = ''
         this.select = null
