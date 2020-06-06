@@ -4,13 +4,13 @@
 
             <app-logo/>
         
-            <v-content class="mx-auto elevation-0"  >   
+            <v-content class="mx-auto">   
                 <v-row align="center" justify="center" class="text-center">
                     
                     <v-col  cols="12" sm="12" md="5" >
                        <app-register/>
                     </v-col>
-                    <v-col class="login-background pa-10 " cols="12" sm="12" md="4">
+                    <v-col class="login-background pa-10 " cols="12" sm="12" md="4" >
                         <span class="title ma-auto white--text py-5"> 
                             Already have an account
                         </span>
@@ -30,13 +30,13 @@
                     </v-col>
                 </v-row>
             </v-content>           
-        <v-row align="center" justify="center" >
+        <v-row align="center" justify="end" >
                 <v-col  sm="12" md="4" align="right" >
                     <v-img
                     src="../assets/avatars/famer-woman.png"
-                    max-width="150"
-                    max-height="150"
-                    class="my-0">
+                    max-width="250"
+                    max-height="250"
+                    class="">
                     </v-img>
                 </v-col>
                

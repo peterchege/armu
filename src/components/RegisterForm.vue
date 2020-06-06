@@ -8,7 +8,7 @@
         <ValidationProvider v-slot="{ errors,  }" rules="required" name="checkbox">
         <v-row>
         <span> I am :</span>
-        <spacer></spacer>
+       <v-spacer></v-spacer>
         <v-checkbox
           v-model="farmerCheckbox"
           :error-messages="errors"
@@ -86,8 +86,15 @@
           required
         ></v-checkbox>
       </ValidationProvider>
+      
+    <v-btn block large 
+        color="primary" 
+        class="my-4"
+        @click="submit">
+        Register
+    </v-btn>
+    <v-spacer></v-spacer>
 
-      <v-btn class="mr-4" @click="submit">submit</v-btn>
       <v-btn @click="clear">clear</v-btn>
     </form>
   </ValidationObserver>
