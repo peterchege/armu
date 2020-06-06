@@ -2,23 +2,13 @@
     <v-app id="inspire" class="image">
         <v-container class="fill-height" fluid>
 
+            <app-logo/>
         
-        <v-row align="center" justify="center" class="text-center">
-                <v-col  sm="12" md="4" align="center" >
-                    <v-img
-                    src="../assets/logo.png"
-                    max-width="150"
-                    max-height="150"
-                    class="my-5">
-                    </v-img>
-                </v-col>
-                
-            </v-row>
             <v-card class="mx-auto elevation-0" width="900" >   
                 <v-row align="center" justify="center" class="text-center">
                     
                     <v-col  cols="12" sm="12" md="6" >
-                       
+                       <app-register/>
                     </v-col>
                     <v-col class="login-background pa-10 " cols="12" sm="12" md="6">
                          <v-card-title>
@@ -55,8 +45,13 @@
     </v-app>
 </template>
 <script>
+import registerForm from '../components/RegisterForm'
+import HeaderLogo from '../components/Header'
 export default {
-    
+    components:{
+        appRegister: registerForm,
+        appLogo: HeaderLogo
+    }
 }
 </script>
 
