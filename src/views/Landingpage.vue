@@ -31,7 +31,8 @@
                             color="primary" 
                             class="my-3"
                             @click="onSubmit"
-                            :loading="loading">
+                            :loading="loading"
+                            to="/register">
                             Register
                             </v-btn>
                       </v-card-actions>
@@ -49,7 +50,8 @@
                             <v-btn block large 
                             color="secondary" 
                             @click="onLogin"
-                            :loading="loading">
+                            :loading="loading"
+                            to='/register'>
                             Login
                             </v-btn>
                          </v-card-actions>
