@@ -1,21 +1,21 @@
 <template>
   <ValidationObserver ref="observer" v-slot="{  }">
     <form class="ma-7">
-      <ValidationProvider v-slot="{ errors }" name="first name" rules="required|max:10">
+      <ValidationProvider v-slot="{ errors }" name="firstname" rules="required|max:10">
         <v-text-field
           v-model="firstname"
           :counter="10"
           :error-messages="errors"
-          label="First name"
+          label="First Name"
           required
         ></v-text-field>
       </ValidationProvider>
-      <ValidationProvider v-slot="{ errors }" name="last name" rules="required|max:10">
+      <ValidationProvider v-slot="{ errors }" name="lastname" rules="required|max:10">
         <v-text-field
           v-model="lastname"
           :counter="10"
           :error-messages="errors"
-          label="Last name"
+          label="Last Name"
           required
         ></v-text-field>
       </ValidationProvider>
@@ -107,7 +107,8 @@
         this.$refs.observer.validate()
       },
       clear () {
-        this.name = ''
+        this.firstname = ''
+        this.lastname
         this.email = ''
         this.phone = ''
         this.select = null
