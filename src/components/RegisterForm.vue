@@ -65,12 +65,12 @@
           required
         ></v-text-field>
       </ValidationProvider>
-      
-      <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
+
+      <ValidationProvider v-slot="{ errors }" name="confirmPassword" rules="required|confirmPassword">
         <v-text-field
-          v-model="password"
+          v-model="confirmPassword"
           :error-messages="errors"
-          label="Password"
+          label="Confirm Password"
           type="password"
           required
         ></v-text-field>
@@ -136,6 +136,7 @@
       email: '',
       phone: '',
       password: '',
+      confirmPassword: '',
       checkbox: null,
       terms: "I have read all the terms and conditions",
       farmer: "Farmer / Seller",
@@ -151,6 +152,8 @@
         this.lastname = ''
         this.email = ''
         this.phone = ''
+        this.password = ''
+        this.confirmPassword = ''
         this.select = null
         this.checkbox = null
         this.$refs.observer.reset()
