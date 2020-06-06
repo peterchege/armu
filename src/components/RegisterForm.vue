@@ -1,6 +1,24 @@
 <template>
+<v-card class="pa-4">
   <ValidationObserver ref="observer" v-slot="{  }">
+      <v-title>
+          <h2>REGISTER</h2>
+      </v-title>
     <form class="ma-7">
+        <ValidationProvider v-slot="{ errors,  }" rules="required" name="farmerCheckbox">
+        <v-row>
+        <span> I am :</span>
+        <spacer></spacer>
+        <v-checkbox
+          v-model="farmerCheckbox"
+          :error-messages="errors"
+          value="1"
+          :label="farmer"
+          type="checkbox"
+          required
+        ></v-checkbox>
+        </v-row>
+      </ValidationProvider>
       <ValidationProvider v-slot="{ errors }" name="firstname" rules="required|max:10">
         <v-text-field
           v-model="firstname"
@@ -53,6 +71,7 @@
       <v-btn @click="clear">clear</v-btn>
     </form>
   </ValidationObserver>
+</v-card>
 </template>
 
 <script>
@@ -92,14 +111,10 @@
       email: '',
       phone: '',
       select: null,
-      items: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
-      ],
       checkbox: null,
-      terms: "I have read all the terms and conditions"
+      terms: "I have read all the terms and conditions",
+      farmer: "Farmer / Seller",
+      Buyer: "Buyer"
     }),
 
     methods: {
