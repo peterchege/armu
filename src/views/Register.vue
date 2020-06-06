@@ -1,23 +1,24 @@
 <template>
     <v-app id="inspire" class="image">
-        <v-container class="fill-height" fluid>
+        <v-container class="fill-height" max-width="600">
 
             <app-logo/>
         
-            <v-card class="mx-auto elevation-0" width="900" >   
+            <v-content class="mx-auto elevation-0"  >   
                 <v-row align="center" justify="center" class="text-center">
                     
-                    <v-col  cols="12" sm="12" md="6" >
+                    <v-col  cols="12" sm="12" md="5" >
                        <app-register/>
                     </v-col>
-                    <v-col class="login-background pa-10 " cols="12" sm="12" md="6">
-                         <v-card-title>
-                            <span class="title ma-auto white--text py-5"> Already have an account</span>
-                        </v-card-title>
-                        <v-card-text class="caption white--text">
+                    <v-col class="login-background pa-10 " cols="12" sm="12" md="4">
+                        <span class="title ma-auto white--text py-5"> 
+                            Already have an account
+                        </span>
+                         <v-spacer></v-spacer>
+                        <span class="caption white--text">
                             Login to your dashboard to start <br>your transactions
-                        </v-card-text>
-                        <v-card-actions class="ma-7">
+                        </span>
+                        <v-content class="ma-7">
                         <v-spacer></v-spacer>
                             <v-btn block large 
                             color="secondary" 
@@ -25,10 +26,10 @@
                             :loading="loading">
                             Login
                             </v-btn>
-                         </v-card-actions>
+                         </v-content>
                     </v-col>
                 </v-row>
-            </v-card>           
+            </v-content>           
         <v-row align="center" justify="center" >
                 <v-col  sm="12" md="4" align="right" >
                     <v-img
@@ -45,8 +46,8 @@
     </v-app>
 </template>
 <script>
-import registerForm from '../components/RegisterForm'
-import HeaderLogo from '../components/Header'
+import registerForm from '@/components/RegisterForm'
+import HeaderLogo from '@/components/Header'
 export default {
     components:{
         appRegister: registerForm,
