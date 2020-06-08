@@ -51,7 +51,7 @@ import HeaderLogo from '@/components/Header'
 export default {
     components:{
         appRegister: registerForm,
-        appLogo: HeaderLogo
+        appLogo: HeaderLogo,
     }
 }
 </script>
