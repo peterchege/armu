@@ -33,7 +33,7 @@
         <v-row align="center" justify="end" >
                 <v-col  sm="12" md="4" align="right" >
                     <v-img
-                    src="../assets/avatars/famer-woman.png"
+                    src="@/assets/avatars/famer-woman.png"
                     max-width="250"
                     max-height="250"
                     class="">
@@ -58,13 +58,13 @@ export default {
 
 <style scoped>
     .image {
-        background-image: url('../assets/background.jpg');
+        background-image: url('../../assets/background.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
     }
     .login-background {
-        background-image: url('../assets/login-background.png');
+        background-image: url('../../assets/login-background.png');
         background-size: cover;
         background-repeat: no-repeat;
     }

@@ -1,5 +1,5 @@
 <template>
-    <v-app id="inspire" class="image">
+    <v-app id="inspire" :class="image">
         
     </v-app>
 </template>

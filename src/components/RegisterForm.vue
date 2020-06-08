@@ -9,14 +9,6 @@
         <v-row>
         <span> I am :</span>
        <v-spacer></v-spacer>
-        <!-- <v-checkbox
-          v-model="farmerCheckbox"
-          :error-messages="errors"
-          value="1"
-          :label="farmer"
-          type="checkbox"
-          required
-        ></v-checkbox> -->
         <app-option/>
         </v-row>
       </ValidationProvider>
