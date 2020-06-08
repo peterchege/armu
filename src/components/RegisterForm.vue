@@ -1,11 +1,11 @@
 <template>
 <v-card class="pa-4">
-  <ValidationObserver ref="observer" v-slot="{  }">
+  <ValidationObserver ref="observer" >
       <v-title>
           <h2>REGISTER</h2>
       </v-title>
     <form class="ma-7">
-        <ValidationProvider v-slot="{  }" rules="required" name="checkbox">
+        <ValidationProvider rules="required" name="checkbox">
         <v-row>
         <span> I am :</span>
        <v-spacer></v-spacer>

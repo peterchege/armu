@@ -1,11 +1,11 @@
 <template>
 <v-card class="pa-4">
-  <ValidationObserver ref="observer" v-slot="{  }">
+  <ValidationObserver ref="observer" >
       <v-title>
           <h2>LOGIN</h2>
       </v-title>
     <form class="ma-7">
-        <ValidationProvider v-slot="{  }" rules="required" name="radioButton">
+        <ValidationProvider rules="required" name="radioButton">
         <v-row>
         <span> I am :</span>
        <v-spacer></v-spacer>
@@ -48,36 +48,17 @@
 
 <script>
   import RadioButton from '@/components/RadioButton'
-  import { required, email, max } from 'vee-validate/dist/rules'
+  import { email } from 'vee-validate/dist/rules'
   import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
 
   setInteractionMode('eager')
-
-  extend('required', {
-    ...required,
-    message: '{_field_} can not be empty',
-  })
-
-  extend('max', {
-    ...max,
-    message: '{_field_} may not be greater than {length} characters',
-  })
-
+  
   extend('email', {
     ...email,
     message: 'Email must be valid',
   })
 
-  extend('phone', {
-    ...required,
-    message: '{_field_} can not be empty',
-  })
-
-  extend('password', {
-    ...required,
-    message: '{_field_} can not be empty',
-  })
-
+ 
   export default {
     components: {
       ValidationProvider,
