@@ -65,9 +65,10 @@ export default {
         background-position: center;
     }
     .login-background {
-        background-image: url('../../assets/login-background.png');
+        background-image: url('../../assets/register-background.png');
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: bottom;
     }
   
 </style>
