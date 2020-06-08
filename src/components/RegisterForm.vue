@@ -1,22 +1,14 @@
 <template>
 <v-card class="pa-4">
-  <ValidationObserver ref="observer" v-slot="{  }">
+  <ValidationObserver ref="observer" >
       <v-title>
           <h2>REGISTER</h2>
       </v-title>
     <form class="ma-7">
-        <ValidationProvider v-slot="{ errors,  }" rules="required" name="checkbox">
+        <ValidationProvider rules="required" name="checkbox">
         <v-row>
-        <span> I am :</span>
        <v-spacer></v-spacer>
-        <v-checkbox
-          v-model="farmerCheckbox"
-          :error-messages="errors"
-          value="1"
-          :label="farmer"
-          type="checkbox"
-          required
-        ></v-checkbox>
+        <app-option/>
         </v-row>
       </ValidationProvider>
       <ValidationProvider v-slot="{ errors }" name="firstname" rules="required|max:10">
@@ -102,6 +94,7 @@
 </template>
 
 <script>
+  import RadioButton from '@/components/RadioButton'
   import { required, email, max } from 'vee-validate/dist/rules'
   import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
 
@@ -136,6 +129,8 @@
     components: {
       ValidationProvider,
       ValidationObserver,
+      appOption : RadioButton
+
     },
     data: () => ({
       firstname: '',
@@ -146,8 +141,7 @@
       confirmPassword: '',
       checkbox: null,
       terms: "I have read all the terms and conditions",
-      farmer: "Farmer / Seller",
-      Buyer: "Buyer"
+      
     }),
 
     methods: {
