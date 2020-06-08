@@ -7,7 +7,6 @@
     <form class="ma-7">
         <ValidationProvider rules="required" name="radioButton">
         <v-row>
-        <span> I am :</span>
        <v-spacer></v-spacer>
         <app-option/>
         </v-row>
@@ -69,8 +68,6 @@
     data: () => ({
       email: '',
       password: '',
-      farmer: "Farmer / Seller",
-      Buyer: "Buyer"
     }),
 
     methods: {

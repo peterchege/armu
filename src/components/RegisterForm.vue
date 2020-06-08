@@ -7,7 +7,6 @@
     <form class="ma-7">
         <ValidationProvider rules="required" name="checkbox">
         <v-row>
-        <span> I am :</span>
        <v-spacer></v-spacer>
         <app-option/>
         </v-row>
@@ -142,8 +141,7 @@
       confirmPassword: '',
       checkbox: null,
       terms: "I have read all the terms and conditions",
-      farmer: "Farmer / Seller",
-      Buyer: "Buyer"
+      
     }),
 
     methods: {
