@@ -2,16 +2,46 @@
     <v-app id="inspire" class="image">
         <v-container class="fill-height" max-width="600">
             <app-logo/>
-            
+
+            <v-content class="mx-auto">
+                <v-row align="center" justify="center" class="text-center">
+                    <v-col class="login-background pa-10 " cols="12" sm="12" md="4" >
+                        <span class="title ma-auto white--text py-10"> 
+                            Dont have an account ?
+                        </span>
+                         <v-spacer></v-spacer>
+                        <span class="caption white--text">
+                            Register here today to start trading
+                        </span>
+                        <v-content class="ma-7">
+                        <v-spacer></v-spacer>
+                            <v-btn block large 
+                            color="secondary" 
+                            @click="onLogin"
+                            to="/register"
+                            :loading="loading">
+                            Register
+                            </v-btn>
+                         </v-content>
+                    </v-col>
+                    <v-col  cols="12" sm="12" md="5" >
+                       <app-login-form/>
+                    </v-col>
+                    
+                </v-row>
+            </v-content>
+
         </v-container>
     </v-app>
 </template>
 
 <script>
 import HeaderLogo from '@/components/Header'
+import Loginform from '@/components/LoginForm'
 export default {
     components:{
         appLogo: HeaderLogo,
+        appLoginForm :Loginform
     }
 }
 </script>
