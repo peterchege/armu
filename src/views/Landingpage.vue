@@ -51,7 +51,7 @@
                             color="secondary" 
                             @click="onLogin"
                             :loading="loading"
-                            to='/register'>
+                            to='/login'>
                             Login
                             </v-btn>
                          </v-card-actions>
