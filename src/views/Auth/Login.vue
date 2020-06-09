@@ -5,7 +5,7 @@
 
             <v-content class="mx-auto pb-4">
                 <v-row align="center" justify="center" class="text-center">
-                    <v-col class="login-background pa-10 " cols="12" sm="12" md="4" >
+                    <v-col class="login-background pa-10 ma-5" cols="11" sm="11" md="4" >
                         <span class="title ma-auto white--text py-12"> 
                             Dont have an account ?
                         </span>

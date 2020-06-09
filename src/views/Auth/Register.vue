@@ -10,7 +10,7 @@
                     <v-col  cols="12" sm="12" md="5" >
                        <app-register/>
                     </v-col>
-                    <v-col class="login-background pa-10 " cols="12" sm="12" md="4" >
+                    <v-col class="login-background pa-10 ma-5 " cols="11" sm="10" md="4" >
                         <span class="title ma-auto white--text py-5"> 
                             Already have an account
                         </span>
