@@ -81,13 +81,12 @@
       
     <v-btn block large 
         color="primary" 
-        class="my-4"
+        class="my-7"
         @click="submit">
         Register
     </v-btn>
     <v-spacer></v-spacer>
 
-      <v-btn @click="clear">clear</v-btn>
     </form>
   </ValidationObserver>
 </v-card>
