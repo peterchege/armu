@@ -17,6 +17,7 @@
           :counter="10"
           :error-messages="errors"
           label="First Name"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -26,6 +27,7 @@
           :counter="10"
           :error-messages="errors"
           label="Last Name"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -34,6 +36,7 @@
           v-model="email"
           :error-messages="errors"
           label="Email Address"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -44,6 +47,7 @@
           :error-messages="errors"
           label="Mobile No."
           type="number"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -54,6 +58,7 @@
           :error-messages="errors"
           label="Password"
           type="password"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -64,6 +69,7 @@
           :error-messages="errors"
           label="Confirm Password"
           type="password"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
