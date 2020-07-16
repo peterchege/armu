@@ -93,7 +93,7 @@
 </template>
 
 <script>
-  import RadioButton from '@/components/RadioButton'
+  import RadioButton from '@/components/forms/RadioButton'
   import { required, email, max } from 'vee-validate/dist/rules'
   import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
 

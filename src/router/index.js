@@ -1,25 +1,25 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Landingpage from '../views/Landingpage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [{
         path: '/',
         name: 'Landingpage',
-        component: Landingpage
+        component: () =>
+            import ('@/views/Landingpage')
     },
     {
         path: '/register',
         name: 'Register',
         component: () =>
-            import ('@/views/Auth/Register.vue')
+            import ('@/Auth/Register.vue')
     },
     {
         path: '/login',
         name: 'Login',
         component: () =>
-            import ('@/views/Auth/Login.vue')
+            import ('@/Auth/Login.vue')
     }
 ]
 
