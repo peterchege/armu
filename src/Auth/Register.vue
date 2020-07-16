@@ -47,7 +47,7 @@
     </v-app>
 </template>
 <script>
-import registerForm from '@/components/RegisterForm'
+import registerForm from '@/components/forms/RegisterForm'
 import HeaderLogo from '@/components/Header'
 export default {
     components:{
@@ -59,13 +59,13 @@ export default {
 
 <style scoped>
     .image {
-        background-image: url('../../assets/background.jpg');
+        background-image: url('../assets/background.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
     }
     .login-background {
-        background-image: url('../../assets/register-background.png');
+        background-image: url('../assets/register-background.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom;

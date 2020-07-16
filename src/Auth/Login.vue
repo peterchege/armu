@@ -49,7 +49,7 @@
 
 <script>
 import HeaderLogo from '@/components/Header'
-import Loginform from '@/components/LoginForm'
+import Loginform from '@/components/forms/LoginForm'
 export default {
     components:{
         appLogo: HeaderLogo,
@@ -60,13 +60,13 @@ export default {
 
 <style scoped>
     .image {
-        background-image: url('../../assets/background.jpg');
+        background-image: url('../assets/background.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
     }
     .login-background {
-        background-image: url('../../assets/login-background.png');
+        background-image: url('../assets/login-background.png');
         background-size: cover;
         background-repeat: no-repeat;
     }

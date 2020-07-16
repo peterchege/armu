@@ -12,6 +12,7 @@
           v-model="email"
           :error-messages="errors"
           label="Email Address"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -23,6 +24,7 @@
           :error-messages="errors"
           label="Password"
           type="password"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
