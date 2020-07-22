@@ -193,29 +193,6 @@ export default new Vuex.Store({
                 })
                 .catch(err => console.log(err))
         },
-        fetchVendors({ commit, state }) {
-            if (!state.idToken) {
-                return
-            }
-            axios.get('/admin/vendors-vehicles')
-                .then(res => {
-                    const vendordata = res.data.vendors
-                    const vendors = []
-                    for (let key in vendordata) {
-                        const vendor = vendordata[key]
-                        vendor.id = key
-                        vendors.push(vendor)
-                    }
-                    console.log(vendors)
-
-                    commit('STORE_VENDORS', {
-                        vendors,
-                        loadingTable: false
-                    })
-
-                })
-                .catch(err => console.log(err))
-        },
 
 
     },
