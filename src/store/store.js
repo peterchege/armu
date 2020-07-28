@@ -17,7 +17,6 @@ export default new Vuex.Store({
         itemId: '',
         loadingTable: false,
         users: [],
-        vendors: []
 
 
     },
@@ -64,7 +63,7 @@ export default new Vuex.Store({
     actions: {
 
         inviteUser({ commit }, inviteData) {
-            axios.post('/admin/invite ', inviteData)
+            axios.post('/api/auth/signup ', inviteData)
                 .then(res => {
                     console.log(res)
                     commit('INVITE_RES', {

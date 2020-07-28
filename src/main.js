@@ -4,9 +4,9 @@ import vuetify from './plugins/vuetify';
 import router from './router'
 import axios from 'axios'
 
-import AxiosPlugin from 'vue-axios-cors';
+// import AxiosPlugin from 'vue-axios-cors';
 
-Vue.use(AxiosPlugin);
+// Vue.use(AxiosPlugin);
 
 
 Vue.config.productionTip = false

@@ -8,7 +8,31 @@
         <ValidationProvider rules="required" name="checkbox">
         <v-row>
        <v-spacer></v-spacer>
-        <app-option/>
+
+
+
+
+      <v-container fluid>
+        <v-row>
+          <span> I am :</span>
+        </v-row>
+
+        <v-radio-group v-model="row" row >
+          <v-radio 
+              label="Farmer / seller" 
+              value="farmer" 
+              v-model="selected"
+              class="pa-5">
+          </v-radio>
+          <v-radio 
+                label="Buyer" 
+                value="buyer"
+                v-model="selected" 
+                class="pa-5 ">
+          </v-radio>
+        </v-radio-group>
+      </v-container>
+
         </v-row>
       </ValidationProvider>
       <ValidationProvider v-slot="{ errors }" name="firstname" rules="required|max:10">
@@ -99,7 +123,6 @@
 </template>
 
 <script>
-  import RadioButton from '@/components/forms/RadioButton'
   import { required, email, max } from 'vee-validate/dist/rules'
   import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
 
@@ -134,7 +157,6 @@
     components: {
       ValidationProvider,
       ValidationObserver,
-      appOption : RadioButton
 
     },
     data: () => ({
@@ -143,15 +165,28 @@
       email: '',
       phone: '',
       password: '',
+      selected: [],
       confirmPassword: '',
-      checkbox: null,
+      checkbox: [],
       terms: "I have read all the terms and conditions",
       
     }),
 
     methods: {
-      submit () {
+      Register () {
         this.$refs.observer.validate()
+
+        const formData = {
+            first_name: this.firstname,
+            last_name: this.lastname,
+            mobile: this.phone,
+            email: this.email,
+            roles: this.selected,
+            password: this.password
+        }
+
+        console.log(formData)
+        this.$store.dispatch('Register', formData)
       },
       clear () {
         this.firstname = ''
