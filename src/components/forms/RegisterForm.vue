@@ -144,14 +144,26 @@
       phone: '',
       password: '',
       confirmPassword: '',
-      checkbox: null,
+      checkbox: [],
       terms: "I have read all the terms and conditions",
       
     }),
 
     methods: {
-      submit () {
+      Register () {
         this.$refs.observer.validate()
+
+        const formData = {
+            first_name: this.firstname,
+            last_name: this.lastname,
+            mobile: this.phone,
+            email: this.email,
+            roles: this.checkbox,
+            password: this.password
+        }
+
+        console.log(formData)
+        this.$store.dispatch('Register', formData)
       },
       clear () {
         this.firstname = ''
