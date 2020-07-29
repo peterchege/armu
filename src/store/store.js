@@ -62,21 +62,21 @@ export default new Vuex.Store({
     },
     actions: {
 
-        inviteUser({ commit }, inviteData) {
-            axios.post('/api/auth/signup ', inviteData)
+        Register({ commit }, formData) {
+            axios.post('/api/auth/signup ', formData)
                 .then(res => {
                     console.log(res)
                     commit('INVITE_RES', {
                         snackbar: {
                             showing: true,
-                            text: `You have successfully added , ${inviteData.fname} as ${inviteData.service}`,
+                            text: `You have successfully added , ${formData.fname} as ${formData.service}`,
                             color: "success"
                         }
                     })
                 })
                 .catch(err => {
                     console.log(err)
-                    commit('INVITE_RES_FAILED', {
+                    commit('INVITE_RES', {
                         snackbar: {
                             showing: true,
                             text: `${ err.response.data.message }`,
