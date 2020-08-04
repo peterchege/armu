@@ -42,6 +42,7 @@
                                     v-model="bankname"
                                     label="Bank Name"
                                     required
+                                    filled
                                 ></v-text-field>
                                 </v-col>
 
@@ -53,6 +54,7 @@
                                     v-model="bankaccount"
                                     label="Bank Account"
                                     required
+                                    filled
                                 ></v-text-field>
                                 </v-col>
 
@@ -62,8 +64,9 @@
                                 >
                                 <v-text-field
                                     v-model="bankbranch"
-                                    label="bankbranch"
+                                    label="Bank Branch"
                                     required
+                                    filled
                                 ></v-text-field>
                                 </v-col>
 
@@ -76,10 +79,42 @@
                                     :rules="emailRules"
                                     label="KRA Pin"
                                     required
+                                    filled
                                 ></v-text-field>
                                 </v-col>
+
+                               
                             </v-row>
                         </v-container>
+                        <v-row>
+                            
+                            <v-col
+                                cols="12"
+                                md="4"
+                                 class="ma-auto"
+                                >
+                                <v-btn block large 
+                                    color="primary" 
+                                    @click="onSubmit"
+                                    :loading="loading"
+                                    to="/dashboard">
+                                    Submit
+                                </v-btn>
+                            </v-col>
+                                
+                            <v-col
+                                cols="12"
+                                md="4"
+                                >
+                                <v-btn text
+                                    color="primary" 
+                                    @click="onSubmit"
+                                    :loading="loading"
+                                    to="/dashboard">
+                                    Skip for now
+                                </v-btn>
+                            </v-col>
+                        </v-row>    
                     </v-form>
                    
                 </v-row>
