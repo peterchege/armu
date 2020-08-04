@@ -14,86 +14,98 @@
                 </v-col>
                 
             </v-row>
-            <v-card class="mx-auto elevation-1" width="900">   
-                <v-row align="center" justify="center" class="text-center">
-                    
-                    <v-col  cols="12" sm="12" md="6" >
-                        <v-card-title >
-                            <h2 class="title ma-auto"> Dont have an account</h2>
-                        </v-card-title>
-                        <v-card-text class="caption">
-                            Register with us today inorder to<br> start publishing your products 
-                        </v-card-text>
-                        
-                         <v-card-actions class="ma-7">
-                        <v-spacer></v-spacer>
-                            <v-btn block large 
-                            color="primary" 
-                            class="my-3"
-                            @click="onSubmit"
-                            :loading="loading"
-                            to="/register">
-                            Register
-                            </v-btn>
-                      </v-card-actions>
+            <v-card class="mx-auto elevation-1" max-width="1000">   
+                <v-row align="center" justify="center" class="text-center ma-auto">
+                    <v-card-title
+                    class="pt-5" 
+                    color="primary"> 
+                    Farmer Addition Details
+                    </v-card-title>
 
-                    </v-col>
-                    <v-col cols="12" sm="12" md="6">
-                         <v-card-title>
-                            <span class="title ma-auto"> Already have an account</span>
-                        </v-card-title>
-                        <v-card-text class="caption">
-                            Login to your dashboard to start <br>your transactions
-                        </v-card-text>
-                        <v-card-actions class="ma-7">
-                        <v-spacer></v-spacer>
-                            <v-btn block large 
-                            color="secondary" 
-                            @click="onLogin"
-                            :loading="loading"
-                            to='/login'>
-                            Login
-                            </v-btn>
-                         </v-card-actions>
-                    </v-col>
+                    <v-card-text class="text-start px-10 py-5">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Sunt tempora explicabo ducimus deleniti necessitatibus tempore 
+                        maiores at maxime repellendus ullam cumque eos, sit quaerat. 
+                        Rem deleniti reiciendis hic aliquid quidem.
+                    </v-card-text>
+
+                     <v-form
+                     class="mb-10 mx-7" 
+                     v-model="valid">
+                        <v-container>
+                            <v-row>
+                                <v-col
+                                cols="12"
+                                md="6"
+                                >
+                                <v-text-field
+                                    v-model="bankname"
+                                    label="Bank Name"
+                                    required
+                                ></v-text-field>
+                                </v-col>
+
+                                <v-col
+                                cols="12"
+                                md="6"
+                                >
+                                <v-text-field
+                                    v-model="bankaccount"
+                                    label="Bank Account"
+                                    required
+                                ></v-text-field>
+                                </v-col>
+
+                                <v-col
+                                cols="12"
+                                md="6"
+                                >
+                                <v-text-field
+                                    v-model="bankbranch"
+                                    label="bankbranch"
+                                    required
+                                ></v-text-field>
+                                </v-col>
+
+                                <v-col
+                                cols="12"
+                                md="6"
+                                >
+                                <v-text-field
+                                    v-model="kra"
+                                    :rules="emailRules"
+                                    label="KRA Pin"
+                                    required
+                                ></v-text-field>
+                                </v-col>
+                            </v-row>
+                        </v-container>
+                    </v-form>
+                   
                 </v-row>
             </v-card>           
-        <v-row align="center" justify="center" class="text-center">
-                <v-col  sm="12" md="4" align="center" >
-                    <v-img
-                    src="../assets/avatars/famer-woman.png"
-                    max-width="150"
-                    max-height="150"
-                    class="my-0">
-                    </v-img>
-                </v-col>
-                <v-col  sm="12" md="4" align="center" >
-                    <v-img
-                    src="../assets/avatars/buyer-man.png"
-                    max-width="200"
-                    max-height="200"
-                    class="my-0">
-                    </v-img>
-                </v-col>
-                <v-col  sm="12" md="4" align="center" >
-                    <v-img
-                    src="../assets/avatars/buyers.png"
-                    max-width="150"
-                    max-height="150"
-                    class="my-0">
-                    </v-img>
-                </v-col>
-            </v-row>
-    
+       
         </v-container>
     </v-app>
 </template>
 <script>
-export default {
-    
-}
+  export default {
+    data: () => ({
+      valid: false,
+      firstname: '',
+      lastname: '',
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => v.length <= 10 || 'Name must be less than 10 characters',
+      ],
+      email: '',
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+/.test(v) || 'E-mail must be valid',
+      ],
+    }),
+  }
 </script>
-
 <style scoped>
     .image {
         background-image: url('../assets/background.jpg');
