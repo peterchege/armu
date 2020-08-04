@@ -33,7 +33,7 @@ export default new Vuex.Store({
             state.snackbar = userData.snackbar;
             state.loading = userData.loading;
         },
-        INVITE_RES(state, payload) {
+        REGISTER_RES(state, payload) {
             state.snackbar = payload.snackbar;
         },
         RESET_PASS_RES(state, payload) {
@@ -66,7 +66,7 @@ export default new Vuex.Store({
             axios.post('/api/auth/signup ', formData)
                 .then(res => {
                     console.log(res)
-                    commit('INVITE_RES', {
+                    commit('REGISTER_RES', {
                         snackbar: {
                             showing: true,
                             text: `You have successfully added , ${formData.fname} as ${formData.service}`,
@@ -76,7 +76,7 @@ export default new Vuex.Store({
                 })
                 .catch(err => {
                     console.log(err)
-                    commit('INVITE_RES', {
+                    commit('REGISTER_RES', {
                         snackbar: {
                             showing: true,
                             text: `${ err.response.data.message }`,

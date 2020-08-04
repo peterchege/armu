@@ -15,10 +15,6 @@ axios.defaults.baseURL = 'http://api.armulogistics.com:8080/'
 
 const accessToken = localStorage.getItem('token')
 
-// const accessToken = store.state.idToken
-
-
-
 axios.defaults.headers.common['x-access-token'] = accessToken;
 
 
