@@ -20,6 +20,12 @@ const routes = [{
         name: 'Login',
         component: () =>
             import ('@/Auth/Login.vue')
+    },
+    {
+        path: '/farmer-details',
+        name: 'Farmer Details',
+        component: () =>
+            import ('@/views/FarmerAdditionalDetails')
     }
 ]
 
