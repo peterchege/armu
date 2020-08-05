@@ -3,17 +3,8 @@
         <v-container class="fill-height" fluid>
 
         
-        <v-row align="center" justify="center" class="text-center">
-                <v-col  sm="12" md="4" align="center" >
-                    <v-img
-                    src="../assets/logo.png"
-                    max-width="150"
-                    max-height="150"
-                    class="my-5">
-                    </v-img>
-                </v-col>
-                
-            </v-row>
+        <app-header/>
+
             <v-card class="mx-auto elevation-1" width="900">   
                 <v-row align="center" justify="center" class="text-center">
                     
@@ -89,8 +80,12 @@
     </v-app>
 </template>
 <script>
+
 export default {
-    
+    components:{
+        appHeader:() => import ('@/components/Header'),
+
+    },
 }
 </script>
 
