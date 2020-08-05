@@ -48,12 +48,10 @@
 </template>
 
 <script>
-import HeaderLogo from '@/components/Header'
-import Loginform from '@/components/forms/LoginForm'
 export default {
     components:{
-        appLogo: HeaderLogo,
-        appLoginForm :Loginform
+        appLogo: () => import('@/components/Header'),
+        appLoginForm :() => import('@/components/forms/LoginForm')
     }
 }
 </script>

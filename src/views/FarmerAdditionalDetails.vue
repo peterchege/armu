@@ -3,17 +3,8 @@
         <v-container class="fill-height" fluid>
 
         
-        <v-row align="center" justify="center" class="text-center">
-                <v-col  sm="12" md="4" align="center" >
-                    <v-img
-                    src="../assets/logo.png"
-                    max-width="150"
-                    max-height="150"
-                    class="my-5">
-                    </v-img>
-                </v-col>
-                
-            </v-row>
+      <app-header/>
+      
             <v-card class="mx-auto elevation-1" max-width="1000">   
                 <v-row align="center" justify="center" class="text-center ma-auto">
                     <v-card-title
@@ -83,6 +74,32 @@
                                 ></v-text-field>
                                 </v-col>
 
+                                <v-col
+                                cols="12"
+                                md="6"
+                                >
+                                <v-text-field
+                                    v-model="farm"
+                                    :rules="emailRules"
+                                    label="Farm Name"
+                                    required
+                                    filled
+                                ></v-text-field>
+                                </v-col>
+
+                                <v-col
+                                cols="12"
+                                md="6"
+                                >
+                                <v-text-field
+                                    v-model="farmLocation"
+                                    :rules="emailRules"
+                                    label="Farm Location"
+                                    required
+                                    filled
+                                ></v-text-field>
+                                </v-col>
+
                                
                             </v-row>
                         </v-container>
@@ -125,6 +142,9 @@
 </template>
 <script>
   export default {
+    components:{
+        appHeader: () => import("@/components/Header")
+      },
     data: () => ({
       valid: false,
       firstname: '',

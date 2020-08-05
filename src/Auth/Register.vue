@@ -47,12 +47,10 @@
     </v-app>
 </template>
 <script>
-import registerForm from '@/components/forms/RegisterForm'
-import HeaderLogo from '@/components/Header'
 export default {
     components:{
-        appRegister: registerForm,
-        appLogo: HeaderLogo,
+        appRegister: () => import ('@/components/forms/RegisterForm'),
+        appLogo: () => import("@/components/Header")
     }
 }
 </script>
