@@ -83,6 +83,32 @@
                                 ></v-text-field>
                                 </v-col>
 
+                                <v-col
+                                cols="12"
+                                md="6"
+                                >
+                                <v-text-field
+                                    v-model="farm"
+                                    :rules="emailRules"
+                                    label="Farm Name"
+                                    required
+                                    filled
+                                ></v-text-field>
+                                </v-col>
+
+                                <v-col
+                                cols="12"
+                                md="6"
+                                >
+                                <v-text-field
+                                    v-model="farmLocation"
+                                    :rules="emailRules"
+                                    label="Farm Location"
+                                    required
+                                    filled
+                                ></v-text-field>
+                                </v-col>
+
                                
                             </v-row>
                         </v-container>
