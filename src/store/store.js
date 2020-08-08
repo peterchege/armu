@@ -177,22 +177,6 @@ export default new Vuex.Store({
                 })
         },
 
-        fetchUser({ commit, state }) {
-            if (!state.idToken) {
-                return
-            }
-            axios.get('/admin/users')
-                .then(res => {
-                    const users = res.data.users
-                    console.log(users)
-                    commit('STORE_USERS', {
-                        users,
-                        loadingTable: false
-                    })
-
-                })
-                .catch(err => console.log(err))
-        },
 
 
     },
