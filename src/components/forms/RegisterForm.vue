@@ -14,20 +14,18 @@
 
       <v-container fluid>
         <v-row>
-          <span> I am :</span>
+          <span> I am : </span>
         </v-row>
 
-        <v-radio-group v-model="row" row >
+        <v-radio-group v-model="selected" row >
           <v-radio 
               label="Farmer / seller" 
               value="farmer" 
-              v-model="selected"
               class="pa-5">
           </v-radio>
           <v-radio 
                 label="Buyer" 
                 value="buyer"
-                v-model="selected" 
                 class="pa-5 ">
           </v-radio>
         </v-radio-group>
@@ -112,7 +110,7 @@
     <v-btn block large 
         color="primary" 
         class="my-7"
-        @click="submit">
+        @click="Register">
         Register
     </v-btn>
     <v-spacer></v-spacer>
@@ -165,7 +163,7 @@
       email: '',
       phone: '',
       password: '',
-      selected: [],
+      selected: '',
       confirmPassword: '',
       checkbox: [],
       terms: "I have read all the terms and conditions",

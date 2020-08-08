@@ -73,6 +73,7 @@ export default new Vuex.Store({
                             color: "success"
                         }
                     })
+                    router.replace('/farmer-details')
                 })
                 .catch(err => {
                     console.log(err)
@@ -83,8 +84,6 @@ export default new Vuex.Store({
                             color: "error"
                         }
                     })
-                    router.replace('/farmer-details')
-
                 })
         },
 
