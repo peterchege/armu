@@ -8,7 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 
     state: {
-        idToken: localStorage.getItem('token') || null,
+        idToken: localStorage.getItem('token'),
         username: localStorage.getItem('username') || '',
         email: localStorage.getItem('email') || '',
         roles: localStorage.getItem('role') || '',
@@ -69,10 +69,11 @@ export default new Vuex.Store({
                     commit('REGISTER_RES', {
                         snackbar: {
                             showing: true,
-                            text: `You have successfully added , ${formData.fname} as ${formData.service}`,
+                            text: `${ res.data.message }`,
                             color: "success"
                         }
                     })
+                    router.replace('/farmer-details')
                 })
                 .catch(err => {
                     console.log(err)
@@ -83,7 +84,6 @@ export default new Vuex.Store({
                             color: "error"
                         }
                     })
-
                 })
         },
 
@@ -176,22 +176,6 @@ export default new Vuex.Store({
                 })
         },
 
-        fetchUser({ commit, state }) {
-            if (!state.idToken) {
-                return
-            }
-            axios.get('/admin/users')
-                .then(res => {
-                    const users = res.data.users
-                    console.log(users)
-                    commit('STORE_USERS', {
-                        users,
-                        loadingTable: false
-                    })
-
-                })
-                .catch(err => console.log(err))
-        },
 
 
     },
