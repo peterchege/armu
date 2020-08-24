@@ -85,7 +85,7 @@
         ></v-text-field>
       </ValidationProvider>
 
-      <ValidationProvider v-slot="{ errors }" name="confirmPassword" rules="required|confirmPassword">
+      <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
         <v-text-field
           v-model="confirmPassword"
           :error-messages="errors"
@@ -110,7 +110,7 @@
     <v-btn block large 
         color="primary" 
         class="my-7"
-        @click="Register">
+        @click="onSubmit">
         Register
     </v-btn>
     <v-spacer></v-spacer>
@@ -171,7 +171,7 @@
     }),
 
     methods: {
-      Register () {
+      onSubmit () {
         this.$refs.observer.validate()
 
         const formData = {
