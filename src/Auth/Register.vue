@@ -47,25 +47,23 @@
     </v-app>
 </template>
 <script>
-import registerForm from '@/components/RegisterForm'
-import HeaderLogo from '@/components/Header'
 export default {
     components:{
-        appRegister: registerForm,
-        appLogo: HeaderLogo,
+        appRegister: () => import ('@/components/forms/RegisterForm'),
+        appLogo: () => import("@/components/Header")
     }
 }
 </script>
 
 <style scoped>
     .image {
-        background-image: url('../../assets/background.jpg');
+        background-image: url('../assets/background.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
     }
     .login-background {
-        background-image: url('../../assets/register-background.png');
+        background-image: url('../assets/register-background.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom;

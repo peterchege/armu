@@ -8,7 +8,29 @@
         <ValidationProvider rules="required" name="checkbox">
         <v-row>
        <v-spacer></v-spacer>
-        <app-option/>
+
+
+
+
+      <v-container fluid>
+        <v-row>
+          <span> I am : </span>
+        </v-row>
+
+        <v-radio-group v-model="selected" row >
+          <v-radio 
+              label="Farmer / seller" 
+              value="farmer" 
+              class="pa-5">
+          </v-radio>
+          <v-radio 
+                label="Buyer" 
+                value="buyer"
+                class="pa-5 ">
+          </v-radio>
+        </v-radio-group>
+      </v-container>
+
         </v-row>
       </ValidationProvider>
       <ValidationProvider v-slot="{ errors }" name="firstname" rules="required|max:10">
@@ -17,6 +39,7 @@
           :counter="10"
           :error-messages="errors"
           label="First Name"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -26,6 +49,7 @@
           :counter="10"
           :error-messages="errors"
           label="Last Name"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -34,6 +58,7 @@
           v-model="email"
           :error-messages="errors"
           label="Email Address"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -44,6 +69,7 @@
           :error-messages="errors"
           label="Mobile No."
           type="number"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -54,16 +80,18 @@
           :error-messages="errors"
           label="Password"
           type="password"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
 
-      <ValidationProvider v-slot="{ errors }" name="confirmPassword" rules="required|confirmPassword">
+      <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
         <v-text-field
           v-model="confirmPassword"
           :error-messages="errors"
           label="Confirm Password"
           type="password"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -81,20 +109,18 @@
       
     <v-btn block large 
         color="primary" 
-        class="my-4"
-        @click="submit">
+        class="my-7"
+        @click="onSubmit">
         Register
     </v-btn>
     <v-spacer></v-spacer>
 
-      <v-btn @click="clear">clear</v-btn>
     </form>
   </ValidationObserver>
 </v-card>
 </template>
 
 <script>
-  import RadioButton from '@/components/RadioButton'
   import { required, email, max } from 'vee-validate/dist/rules'
   import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
 
@@ -129,7 +155,6 @@
     components: {
       ValidationProvider,
       ValidationObserver,
-      appOption : RadioButton
 
     },
     data: () => ({
@@ -138,15 +163,28 @@
       email: '',
       phone: '',
       password: '',
+      selected: '',
       confirmPassword: '',
-      checkbox: null,
+      checkbox: [],
       terms: "I have read all the terms and conditions",
       
     }),
 
     methods: {
-      submit () {
+      onSubmit () {
         this.$refs.observer.validate()
+
+        const formData = {
+            first_name: this.firstname,
+            last_name: this.lastname,
+            mobile: this.phone,
+            email: this.email,
+            roles: this.selected,
+            password: this.password
+        }
+
+        console.log(formData)
+        this.$store.dispatch('Register', formData)
       },
       clear () {
         this.firstname = ''

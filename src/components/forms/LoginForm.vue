@@ -4,49 +4,45 @@
       <v-title>
           <h2>LOGIN</h2>
       </v-title>
-    <form class="ma-7">
-        <ValidationProvider rules="required" name="radioButton">
-        <v-row>
-       <v-spacer></v-spacer>
-        <app-option/>
-        </v-row>
-      </ValidationProvider>
+    <form class="ma-10">
       
       <ValidationProvider v-slot="{ errors }" name="email" rules="required|email">
         <v-text-field
+          class="pa-5"
           v-model="email"
           :error-messages="errors"
           label="Email Address"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
      
      <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
         <v-text-field
+          class="pa-5"
           v-model="password"
           :error-messages="errors"
           label="Password"
           type="password"
+          filled
           required
         ></v-text-field>
       </ValidationProvider>
       
     <v-btn block large 
         color="primary" 
-        class="my-4"
+        class="my-4 "
         @click="submit">
         Login
     </v-btn>
     <v-spacer></v-spacer>
 
-      <v-btn @click="clear">clear</v-btn>
     </form>
   </ValidationObserver>
 </v-card>
 </template>
 
 <script>
-  import RadioButton from '@/components/RadioButton'
   import { email } from 'vee-validate/dist/rules'
   import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
 
@@ -62,7 +58,6 @@
     components: {
       ValidationProvider,
       ValidationObserver,
-      appOption : RadioButton
 
     },
     data: () => ({
