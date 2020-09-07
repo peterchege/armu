@@ -3,29 +3,56 @@
         <v-container class="fill-height" max-width="600">
             <app-logo/>
 
-            <v-content class="mx-auto pb-4">
+            <v-content>
                 <v-row align="center" justify="center" class="text-center">
-                    <v-col class="login-background pa-10 ma-5" cols="11" sm="11" md="4" >
-                        <span class="title ma-auto white--text py-12"> 
-                            Dont have an account ?
-                        </span>
-                         <v-spacer></v-spacer>
-                        <span class="caption white--text ">
-                            Register here today to start trading
-                        </span>
-                        <v-content class="ma-7">
-                        <v-spacer></v-spacer>
-                            <v-btn block large 
-                            color="secondary" 
-                            @click="onLogin"
-                            to="/register"
-                            :loading="loading">
-                            Register
-                            </v-btn>
-                         </v-content>
-                    </v-col>
-                    <v-col  cols="12" sm="12" md="5" >
-                       <app-login-form/>
+
+                    <v-col
+                        cols="12"
+                        sm="8"
+                        lg="5"
+                        md="6">
+                 
+                        <v-card class="py-5 px-10" >
+                            <v-card-title>
+                                <v-sheet
+                                    class="v-sheet--offset"
+                                    elevation="2"
+                                    max-width="80"
+                                    >
+                                        <v-toolbar  color="primary" class="round-coners" dark>
+                                            <v-icon large>mdi-account</v-icon>
+                                        </v-toolbar>
+                                </v-sheet> 
+                            </v-card-title>
+                            <form >
+                                <v-text-field
+                                    v-model="name"
+                                    label="Email Address"
+                                    prepend-icon="mdi-account"
+                                    required
+                                    >
+                                </v-text-field>
+
+                                <v-text-field
+                                    v-model="password"
+                                    label="Password"
+                                    :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                                    :type="show ? 'text' : 'password'"
+                                    prepend-icon="mdi-lock"
+                                    required
+                                    >
+                                </v-text-field>
+
+                                <router-link class="text-right" to="/forgotpassword" >
+                                    <span class=" grey--text caption"  > Forgot password </span>
+                                </router-link>
+
+                            </form>
+                                 <v-btn class="my-5 primary">Login</v-btn>
+                                <p to="/register">Create Account</p>
+                             
+                        </v-card>
+
                     </v-col>
                     
                 </v-row>
@@ -51,8 +78,15 @@
 export default {
     components:{
         appLogo: () => import('@/components/Header'),
-        appLoginForm :() => import('@/components/forms/LoginForm')
-    }
+        // appLoginForm :() => import('@/components/forms/LoginForm')
+    },
+    data(){
+      return{
+        email: '',
+        password: '',
+        show: false,
+      }
+    },
 }
 </script>
 
