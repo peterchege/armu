@@ -3,7 +3,22 @@
         <v-container class="fill-height" max-width="600">
             <app-logo/>
 
-            
+            <v-content justify="center" class="text-center">
+                <h1>WELCOME TO ARMU</h1>
+                   <p class="caption pt-5">Please select whether you are a Farmer or Buyer</p> 
+                <v-row justify="center" class="mt-5">
+                    <v-col class="mx-10" cols="auto">
+                        <v-img src="@/assets/avatars/farmer.svg">
+                        </v-img>
+                        <p class="pt-10">Farmer</p>
+                    </v-col>
+                     <v-col class="mx-10" cols="auto">
+                        <v-img src="@/assets/avatars/buyer.svg">
+                        </v-img>
+                        <p class="pt-10">Farmer</p>
+                    </v-col>  
+                </v-row>                 
+            </v-content>
 
          
 
