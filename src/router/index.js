@@ -22,6 +22,12 @@ const routes = [{
             import ('@/Auth/Login.vue')
     },
     {
+        path: '/user',
+        name: 'USer',
+        component: () =>
+            import ('@/Auth/user.vue')
+    },
+    {
         path: '/farmer-details',
         name: 'Farmer Details',
         component: () =>
