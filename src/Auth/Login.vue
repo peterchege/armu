@@ -43,12 +43,17 @@
                                     >
                                 </v-text-field>
 
-                                <router-link class="text-right" to="/forgotpassword" >
-                                    <span class=" grey--text caption"  > Forgot password </span>
+                                <router-link to="/forgotpassword" >
+                                    <span class="grey--text caption " justify="end" > Forgot password </span>
                                 </router-link>
 
                             </form>
-                                 <v-btn class="my-5 primary">Login</v-btn>
+                                 <v-btn
+                                  block
+                                  large
+                                  class="my-7 px-5 primary"
+                                  >Login
+                                  </v-btn>
                                 <p to="/register">Create Account</p>
                              
                         </v-card>
@@ -78,7 +83,6 @@
 export default {
     components:{
         appLogo: () => import('@/components/Header'),
-        // appLoginForm :() => import('@/components/forms/LoginForm')
     },
     data(){
       return{
