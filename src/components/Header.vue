@@ -5,7 +5,7 @@
                     src="../assets/logo.png"
                     max-width="150"
                     max-height="150"
-                    class="my-5">
+                    class="mt-5">
                     </v-img>
                 </v-col>
                 

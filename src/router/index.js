@@ -10,10 +10,10 @@ const routes = [{
             import ('@/views/Landingpage')
     },
     {
-        path: '/register',
+        path: '/register/farmer',
         name: 'Register',
         component: () =>
-            import ('@/Auth/Register.vue')
+            import ('@/Auth/FarmerRegistration.vue')
     },
     {
         path: '/login',
