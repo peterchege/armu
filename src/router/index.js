@@ -23,7 +23,7 @@ const routes = [{
     },
     {
         path: '/user',
-        name: 'USer',
+        name: 'User',
         component: () =>
             import ('@/Auth/user.vue')
     },
