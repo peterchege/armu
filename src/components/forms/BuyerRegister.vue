@@ -6,41 +6,40 @@
       </v-title>
     <form class="ma-7">
        
-      <ValidationProvider v-slot="{ errors }" name="fullname" rules="required|max:50">
+      <ValidationProvider v-slot="{ errors }" name="business name" rules="required|max:50">
         <v-text-field
-          v-model="fullname"
+          v-model="businessName"
           :error-messages="errors"
-          label="Full Name"
+          label="Business Name"
           required
         ></v-text-field>
       </ValidationProvider>
-      <ValidationProvider v-slot="{ errors }" name="email" rules="required|email">
+      <ValidationProvider v-slot="{ errors }" name="mobile number" rules="required|phone">
+        <v-text-field
+          v-model="mobileNo"
+          :error-messages="errors"
+          label="Mobile Number"
+          required
+        ></v-text-field>
+      </ValidationProvider>
+      <ValidationProvider v-slot="{ errors }" name="email address" rules="required|email">
         <v-text-field
           v-model="email"
           :error-messages="errors"
           label="Email Address"
+          type="email"
           required
         ></v-text-field>
       </ValidationProvider>
-      <ValidationProvider v-slot="{ errors }" name="phone" rules="required|phone">
+      <ValidationProvider v-slot="{ errors }" name="business registration number" rules="required">
         <v-text-field
-          v-model="phone"
+          v-model="businessRegNo"
           :error-messages="errors"
-          label="Mobile No."
-          type="number"
+          label="Business Registration Number"
           required
         ></v-text-field>
       </ValidationProvider>
-      <ValidationProvider v-slot="{ errors }" name="nationalId" rules="required|max:10">
-        <v-text-field
-          v-model="nationalId"
-          :error-messages="errors"
-          label="National ID"
-          
-          required
-        ></v-text-field>
-      </ValidationProvider>
-      <ValidationProvider v-slot="{ errors }" name="kraPin" rules="required|kraPin">
+      <ValidationProvider v-slot="{ errors }" name="kra Pin" rules="required">
         <v-text-field
           v-model="kraPin"
           :error-messages="errors"
@@ -49,25 +48,16 @@
         ></v-text-field>
       </ValidationProvider>
       
-      <ValidationProvider v-slot="{ errors }" name="farmName" rules="required|max:50">
+      <ValidationProvider v-slot="{ errors }" name="Primary Contact" rules="required|max:50">
         <v-text-field
-          v-model="farmName"
+          v-model="primaryContact"
           :error-messages="errors"
-          label="Farm name"
+          label="Primary Contact Name"
           type="text"
           required
         ></v-text-field>
       </ValidationProvider>
 
-      <ValidationProvider v-slot="{ errors }" name="farmLocation" rules="required">
-        <v-text-field
-          v-model="farmLocation"
-          :error-messages="errors"
-          label="Location of Farm (County)"
-          type="text"
-          required
-        ></v-text-field>
-      </ValidationProvider>
      
      <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
         <v-text-field
@@ -151,10 +141,12 @@
 
     },
     data: () => ({
-      fullname: '',
-      nationalId: '',
+      BusinessName: '',
+      mobileNo: 254,
       email: '',
-      phone: 254,
+      businessRegNo: '',
+      kraPin: '',
+      primaryContact: '',
       password: '',
       confirmPassword: '',
       checkbox: [],
