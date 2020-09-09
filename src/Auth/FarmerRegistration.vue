@@ -31,17 +31,7 @@
                     </v-col>
                 </v-row>
             </v-content>           
-        <v-row align="center" justify="end" >
-                <v-col  sm="12" md="4" align="right" >
-                    <v-img
-                    src="@/assets/avatars/famer-woman.png"
-                    max-width="250"
-                    max-height="250"
-                    class="">
-                    </v-img>
-                </v-col>
-               
-            </v-row>
+      
     
         </v-container>
     </v-app>
