@@ -1,10 +1,10 @@
 <template>
     <v-app id="inspire" class="image">
-        <v-container class="fill-height" max-width="600">
+        <v-container  max-width="600">
             <app-logo/>
 
-            <v-content>
-                <v-row align="center" justify="center" class="text-center">
+            <v-content class="mt-5">
+                <v-row  justify="center" class="text-center">
 
                     <v-col
                         cols="12"
@@ -12,7 +12,7 @@
                         lg="5"
                         md="6">
                  
-                        <v-card class="py-5 px-10" >
+                        <v-card class="py-2 px-10" >
                             <v-card-title>
                                 <v-sheet
                                     class="v-sheet--offset"
@@ -43,13 +43,20 @@
                                     >
                                 </v-text-field>
 
-                                <router-link class="text-right" to="/forgotpassword" >
-                                    <span class=" grey--text caption"  > Forgot password </span>
+                                <router-link to="/forgotpassword" >
+                                    <span class="grey--text caption " > Forgot password </span>
                                 </router-link>
 
                             </form>
-                                 <v-btn class="my-5 primary">Login</v-btn>
-                                <p to="/register">Create Account</p>
+                                 <v-btn
+                                  block
+                                  large
+                                  class="my-7 px-5 primary"
+                                  >Login
+                                  </v-btn>
+                                <router-link to="/user" tag="v-btn">
+                                    <v-btn text class="pb-2 grey--black"  > Create Account </v-btn>
+                                </router-link>
                              
                         </v-card>
 
@@ -58,17 +65,15 @@
                 </v-row>
             </v-content>
 
-            <v-row align="center" justify="end" >
-                <v-col  sm="12" md="4" align="right" >
+            <div class="seller">
                     <v-img
                     src="@/assets/avatars/buyers.png"
                     max-width="250"
                     max-height="250"
                     class="">
                     </v-img>
-                </v-col>
                
-            </v-row>
+            </div>
 
         </v-container>
     </v-app>
@@ -78,7 +83,6 @@
 export default {
     components:{
         appLogo: () => import('@/components/Header'),
-        // appLoginForm :() => import('@/components/forms/LoginForm')
     },
     data(){
       return{
@@ -102,5 +106,9 @@ export default {
         background-size: cover;
         background-repeat: no-repeat;
     }
-  
+    .seller{
+        position: absolute;
+        right: 10%;
+        bottom: 10%;
+    }
 </style>

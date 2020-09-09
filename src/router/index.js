@@ -10,16 +10,22 @@ const routes = [{
             import ('@/views/Landingpage')
     },
     {
-        path: '/register',
+        path: '/register/farmer',
         name: 'Register',
         component: () =>
-            import ('@/Auth/Register.vue')
+            import ('@/Auth/FarmerRegistration.vue')
     },
     {
         path: '/login',
         name: 'Login',
         component: () =>
             import ('@/Auth/Login.vue')
+    },
+    {
+        path: '/user',
+        name: 'USer',
+        component: () =>
+            import ('@/Auth/user.vue')
     },
     {
         path: '/farmer-details',
