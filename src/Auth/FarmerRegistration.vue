@@ -39,7 +39,7 @@
 <script>
 export default {
     components:{
-        appRegister: () => import ('@/components/forms/RegisterForm'),
+        appRegister: () => import ('@/components/forms/FarmerRegister'),
         appLogo: () => import("@/components/Header")
     }
 }

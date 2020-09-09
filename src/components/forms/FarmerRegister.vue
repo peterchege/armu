@@ -5,51 +5,13 @@
           <h2>REGISTER</h2>
       </v-title>
     <form class="ma-7">
-        <ValidationProvider rules="required" name="checkbox">
-        <v-row>
-       <v-spacer></v-spacer>
-
-
-
-
-      <v-container fluid>
-        <v-row>
-          <span> I am : </span>
-        </v-row>
-
-        <v-radio-group v-model="selected" row >
-          <v-radio 
-              label="Farmer / seller" 
-              value="farmer" 
-              class="pa-5">
-          </v-radio>
-          <v-radio 
-                label="Buyer" 
-                value="buyer"
-                class="pa-5 ">
-          </v-radio>
-        </v-radio-group>
-      </v-container>
-
-        </v-row>
-      </ValidationProvider>
-      <ValidationProvider v-slot="{ errors }" name="firstname" rules="required|max:10">
+       
+      <ValidationProvider v-slot="{ errors }" name="fullname" rules="required|max:50">
         <v-text-field
-          v-model="firstname"
-          :counter="10"
+          v-model="fullname"
           :error-messages="errors"
-          label="First Name"
-          filled
-          required
-        ></v-text-field>
-      </ValidationProvider>
-      <ValidationProvider v-slot="{ errors }" name="lastname" rules="required|max:10">
-        <v-text-field
-          v-model="lastname"
-          :counter="10"
-          :error-messages="errors"
-          label="Last Name"
-          filled
+          label="Full Name"
+          
           required
         ></v-text-field>
       </ValidationProvider>
@@ -58,18 +20,52 @@
           v-model="email"
           :error-messages="errors"
           label="Email Address"
-          filled
           required
         ></v-text-field>
       </ValidationProvider>
-
       <ValidationProvider v-slot="{ errors }" name="phone" rules="required|phone">
         <v-text-field
           v-model="phone"
           :error-messages="errors"
           label="Mobile No."
           type="number"
-          filled
+          required
+        ></v-text-field>
+      </ValidationProvider>
+      <ValidationProvider v-slot="{ errors }" name="nationalId" rules="required|max:10">
+        <v-text-field
+          v-model="nationalId"
+          :error-messages="errors"
+          label="National ID"
+          
+          required
+        ></v-text-field>
+      </ValidationProvider>
+      <ValidationProvider v-slot="{ errors }" name="kraPin" rules="required|kraPin">
+        <v-text-field
+          v-model="kraPin"
+          :error-messages="errors"
+          label="KRA PIN"
+          required
+        ></v-text-field>
+      </ValidationProvider>
+      
+      <ValidationProvider v-slot="{ errors }" name="farmName" rules="required|max:50">
+        <v-text-field
+          v-model="farmName"
+          :error-messages="errors"
+          label="Farm name"
+          type="text"
+          required
+        ></v-text-field>
+      </ValidationProvider>
+
+      <ValidationProvider v-slot="{ errors }" name="farmLocation" rules="required">
+        <v-text-field
+          v-model="farmLocation"
+          :error-messages="errors"
+          label="Location of Farm (County)"
+          type="text"
           required
         ></v-text-field>
       </ValidationProvider>
@@ -80,7 +76,6 @@
           :error-messages="errors"
           label="Password"
           type="password"
-          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -91,7 +86,6 @@
           :error-messages="errors"
           label="Confirm Password"
           type="password"
-          filled
           required
         ></v-text-field>
       </ValidationProvider>
@@ -158,12 +152,11 @@
 
     },
     data: () => ({
-      firstname: '',
-      lastname: '',
+      fullname: '',
+      nationalId: '',
       email: '',
-      phone: '',
+      phone: 254,
       password: '',
-      selected: '',
       confirmPassword: '',
       checkbox: [],
       terms: "I have read all the terms and conditions",
