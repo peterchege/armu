@@ -88,7 +88,7 @@ export default new Vuex.Store({
         },
 
         login({ commit }, formData) {
-            axios.post('/signin', formData)
+            axios.post('/auth/signin', formData)
                 .then(res => {
                     console.log(res)
                     localStorage.setItem('token', res.data.accessToken)
@@ -115,7 +115,7 @@ export default new Vuex.Store({
                         loading: false,
                         snackbar: {
                             showing: true,
-                            text: `${ err.response.data.error }`,
+                            text: `${ err.response.data.message }`,
                             color: "error"
                         }
 

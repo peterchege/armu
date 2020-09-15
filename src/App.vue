@@ -2,7 +2,7 @@
   <v-app>
 
   <router-view/> 
-    <v-snackbar v-model="snackbar.showing"  :color="snackbar.color"  bottom>
+    <v-snackbar v-model="snackbar.showing"  :color="snackbar.color"   bottom>
       <span> {{snackbar.text}}</span>
       <v-btn depressed color="white" @click=" snackbar.showing= false">close</v-btn>
     </v-snackbar>
@@ -10,9 +10,13 @@
 </template>
 
 <script>
-
+import  { mapState } from 'vuex'
 export default {
   name: 'App',
+
+  computed:{
+   ...mapState(['snackbar'])
+  },
 
   components: {
   },
