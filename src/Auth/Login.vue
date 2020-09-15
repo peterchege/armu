@@ -26,7 +26,7 @@
                             </v-card-title>
                             <form >
                                 <v-text-field
-                                    v-model="name"
+                                    v-model="email"
                                     label="Email Address"
                                     prepend-icon="mdi-account"
                                     required
@@ -48,12 +48,15 @@
                                 </router-link>
 
                             </form>
+
                                  <v-btn
                                   block
                                   large
+                                  @click="onLogin"
                                   class="my-7 px-5 primary"
                                   >Login
                                   </v-btn>
+
                                 <router-link to="/user" tag="v-btn">
                                     <v-btn text class="pb-2 grey--black"  > Create Account </v-btn>
                                 </router-link>
@@ -91,6 +94,17 @@ export default {
         show: false,
       }
     },
+
+    methods:{
+        onLogin(){
+            const formData ={
+                email : this.email,
+                password: this.password
+            }
+            console.log(formData)
+            this.$store.dispatch('login', formData)
+        }
+    }
 }
 </script>
 

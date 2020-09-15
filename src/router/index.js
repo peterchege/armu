@@ -10,10 +10,16 @@ const routes = [{
             import ('@/views/Landingpage')
     },
     {
-        path: '/register',
-        name: 'Register',
+        path: '/register/farmer',
+        name: 'Farmer',
         component: () =>
-            import ('@/Auth/Register.vue')
+            import ('@/Auth/FarmerRegistration.vue')
+    },
+    {
+        path: '/register/buyer',
+        name: 'Buyer',
+        component: () =>
+            import ('@/Auth/BuyerRegistration.vue')
     },
     {
         path: '/login',
@@ -23,16 +29,11 @@ const routes = [{
     },
     {
         path: '/user',
-        name: 'USer',
+        name: 'User',
         component: () =>
             import ('@/Auth/user.vue')
     },
-    {
-        path: '/farmer-details',
-        name: 'Farmer Details',
-        component: () =>
-            import ('@/views/FarmerAdditionalDetails')
-    },
+
     {
         path: '/dashboard',
         name: 'Dashboard',
