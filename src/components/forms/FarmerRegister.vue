@@ -155,6 +155,9 @@
       nationalId: '',
       email: '',
       phone: 254,
+      kraPin:'',
+      farmName:'',
+      farmLocation:'',
       password: '',
       confirmPassword: '',
       checkbox: [],
@@ -167,12 +170,15 @@
         this.$refs.observer.validate()
 
         const formData = {
-            first_name: this.firstname,
-            last_name: this.lastname,
+            name: this.fullname,
             mobile: this.phone,
             email: this.email,
-            roles: this.selected,
-            password: this.password
+            roles: ["farmer"],
+            password: this.password,
+            kra_pin: this.kraPin,
+            national_id: this.nationalId,
+            farms:[ this.farmName, this.farmLocation] 
+
         }
 
         console.log(formData)
