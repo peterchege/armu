@@ -13,7 +13,7 @@ Vue.use(AxiosPlugin);
 
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = 'http://api.armulogistics.com:8080/'
+axios.defaults.baseURL = 'http://api.armulogistics.com:8080/api/'
 
 const accessToken = localStorage.getItem('token')
 

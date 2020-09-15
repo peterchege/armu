@@ -88,7 +88,7 @@ export default new Vuex.Store({
         },
 
         login({ commit }, formData) {
-            axios.post('/auth/signin', formData)
+            axios.post('/signin', formData)
                 .then(res => {
                     console.log(res)
                     localStorage.setItem('token', res.data.accessToken)
