@@ -115,7 +115,7 @@ export default new Vuex.Store({
                         loading: false,
                         snackbar: {
                             showing: true,
-                            text: `${ err.response.data.error }`,
+                            text: `${ err.response.data.message }`,
                             color: "error"
                         }
 
