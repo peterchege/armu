@@ -151,7 +151,7 @@
 
     },
     data: () => ({
-      BusinessName: '',
+      businessName: '',
       mobileNo: 254,
       email: '',
       role: ["buyer"],
@@ -171,10 +171,10 @@
         this.$refs.observer.validate()
 
         const formData = {
-            name: this.BusinessName,
+            name: this.businessName,
             mobile: this.mobileNo,
             email: this.email,
-            role: this.role,
+            roles: this.role,
             password: this.password,
             kra_pin: this.kraPin,
             businessRegistrationNumber: this.businessRegNo,
