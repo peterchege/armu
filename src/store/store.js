@@ -62,7 +62,7 @@ export default new Vuex.Store({
     },
     actions: {
 
-        Register({ commit }, formData) {
+        registerFarmer({ commit }, formData) {
             axios.post('/auth/signup', formData)
                 .then(res => {
                     console.log(res)

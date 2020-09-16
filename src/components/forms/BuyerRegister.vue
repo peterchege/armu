@@ -58,6 +58,16 @@
         ></v-text-field>
       </ValidationProvider>
 
+      <ValidationProvider v-slot="{ errors }" name="city" rules="required">
+        <v-text-field
+          v-model="city"
+          :error-messages="errors"
+          label="city"
+          type="text"
+          required
+        ></v-text-field>
+      </ValidationProvider>
+
      
      <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
         <v-text-field
@@ -144,12 +154,14 @@
       BusinessName: '',
       mobileNo: 254,
       email: '',
+      role: ["buyer"],
       businessRegNo: '',
       kraPin: '',
       primaryContact: '',
       password: '',
       confirmPassword: '',
       checkbox: [],
+      city:'',
       terms: "I have read all the terms and conditions",
       
     }),
@@ -159,28 +171,21 @@
         this.$refs.observer.validate()
 
         const formData = {
-            first_name: this.firstname,
-            last_name: this.lastname,
-            mobile: this.phone,
+            name: this.BusinessName,
+            mobile: this.mobileNo,
             email: this.email,
-            roles: this.selected,
-            password: this.password
+            role: this.role,
+            password: this.password,
+            kra_pin: this.kraPin,
+            businessRegistrationNumber: this.businessRegNo,
+            city: this.city,
+            primaryContactName: this.primaryContact
         }
 
         console.log(formData)
-        this.$store.dispatch('Register', formData)
+        this.$store.dispatch('registerBuyer', formData)
       },
-      clear () {
-        this.firstname = ''
-        this.lastname = ''
-        this.email = ''
-        this.phone = ''
-        this.password = ''
-        this.confirmPassword = ''
-        this.select = null
-        this.checkbox = null
-        this.$refs.observer.reset()
-      },
+
     },
   }
 </script>
