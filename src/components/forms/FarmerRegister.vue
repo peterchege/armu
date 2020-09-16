@@ -68,6 +68,16 @@
           required
         ></v-text-field>
       </ValidationProvider>
+
+      <ValidationProvider v-slot="{ errors }" name="farmSize" rules="required">
+        <v-text-field
+          v-model="farmSize"
+          :error-messages="errors"
+          label="Farm Size (acres)"
+          type="number"
+          required
+        ></v-text-field>
+      </ValidationProvider>
      
      <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
         <v-text-field
@@ -158,6 +168,7 @@
       kraPin:'',
       farmName:'',
       farmLocation:'',
+      farmSize:'',
       password: '',
       confirmPassword: '',
       checkbox: [],
@@ -177,7 +188,7 @@
             password: this.password,
             kra_pin: this.kraPin,
             national_id: this.nationalId,
-            farms:[ this.farmName, this.farmLocation] 
+            farms:[ { name: this.farmName, location: this.farmLocation, size: this.farmSize }] 
 
         }
 
