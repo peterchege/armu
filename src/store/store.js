@@ -62,7 +62,32 @@ export default new Vuex.Store({
     },
     actions: {
 
-        Register({ commit }, formData) {
+        registerFarmer({ commit }, formData) {
+            axios.post('/auth/signup', formData)
+                .then(res => {
+                    console.log(res)
+                    commit('REGISTER_RES', {
+                        snackbar: {
+                            showing: true,
+                            text: `${ res.data.message }`,
+                            color: "success"
+                        }
+                    })
+                    router.replace('/farmer-details')
+                })
+                .catch(err => {
+                    console.log(err)
+                    commit('REGISTER_RES', {
+                        snackbar: {
+                            showing: true,
+                            text: `${ err.response.data.message }`,
+                            color: "error"
+                        }
+                    })
+                })
+        },
+
+        registerBuyer({ commit }, formData) {
             axios.post('/auth/signup', formData)
                 .then(res => {
                     console.log(res)

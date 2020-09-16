@@ -193,7 +193,7 @@
         }
 
         console.log(formData)
-        this.$store.dispatch('Register', formData)
+        this.$store.dispatch('registerFarmer', formData)
       },
       clear () {
         this.firstname = ''
