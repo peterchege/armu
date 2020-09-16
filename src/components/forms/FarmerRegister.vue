@@ -68,6 +68,16 @@
           required
         ></v-text-field>
       </ValidationProvider>
+
+      <ValidationProvider v-slot="{ errors }" name="farmSize" rules="required">
+        <v-text-field
+          v-model="farmSize"
+          :error-messages="errors"
+          label="Farm Size (acres)"
+          type="number"
+          required
+        ></v-text-field>
+      </ValidationProvider>
      
      <ValidationProvider v-slot="{ errors }" name="password" rules="required|password">
         <v-text-field
@@ -155,6 +165,10 @@
       nationalId: '',
       email: '',
       phone: 254,
+      kraPin:'',
+      farmName:'',
+      farmLocation:'',
+      farmSize:'',
       password: '',
       confirmPassword: '',
       checkbox: [],
@@ -167,12 +181,15 @@
         this.$refs.observer.validate()
 
         const formData = {
-            first_name: this.firstname,
-            last_name: this.lastname,
+            name: this.fullname,
             mobile: this.phone,
             email: this.email,
-            roles: this.selected,
-            password: this.password
+            roles: ["farmer"],
+            password: this.password,
+            kra_pin: this.kraPin,
+            national_id: this.nationalId,
+            farms:[ { name: this.farmName, location: this.farmLocation, size: this.farmSize }] 
+
         }
 
         console.log(formData)

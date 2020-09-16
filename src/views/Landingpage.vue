@@ -23,7 +23,7 @@
                             class="my-3"
                             @click="onSubmit"
                             :loading="loading"
-                            to="/register">
+                            to="/user">
                             Register
                             </v-btn>
                       </v-card-actions>
@@ -40,7 +40,7 @@
                         <v-spacer></v-spacer>
                             <v-btn block large 
                             color="secondary" 
-                            @click="onLogin"
+                            @click="login"
                             :loading="loading"
                             to='/login'>
                             Login
