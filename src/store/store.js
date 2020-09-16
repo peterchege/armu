@@ -63,7 +63,7 @@ export default new Vuex.Store({
     actions: {
 
         Register({ commit }, formData) {
-            axios.post('/api/auth/signup ', formData)
+            axios.post('/auth/signup', formData)
                 .then(res => {
                     console.log(res)
                     commit('REGISTER_RES', {
