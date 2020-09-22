@@ -28,6 +28,12 @@ const routes = [{
             import ('@/Auth/Login.vue')
     },
     {
+        path: '/verification',
+        name: 'Verification',
+        component: () =>
+            import ('@/Auth/Verification.vue')
+    },
+    {
         path: '/user',
         name: 'User',
         component: () =>

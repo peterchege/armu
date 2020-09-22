@@ -73,7 +73,7 @@ export default new Vuex.Store({
                             color: "success"
                         }
                     })
-                    router.replace('/farmer-details')
+                    router.replace('/verification')
                 })
                 .catch(err => {
                     console.log(err)
@@ -98,7 +98,7 @@ export default new Vuex.Store({
                             color: "success"
                         }
                     })
-                    router.replace('/farmer-details')
+                    router.replace('/verification')
                 })
                 .catch(err => {
                     console.log(err)
@@ -136,6 +136,9 @@ export default new Vuex.Store({
                     router.replace('/dashboard')
                 })
                 .catch(err => {
+                    if (err.response.data.message === "Please verify account.") {
+                        router.replace('/verification');
+                    }
                     commit('AUTH_FAILED', {
                         loading: false,
                         snackbar: {
@@ -147,6 +150,8 @@ export default new Vuex.Store({
 
                     })
                     console.log(err)
+
+
                 })
         },
         tryAutoLogin({ commit }) {
