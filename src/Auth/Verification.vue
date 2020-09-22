@@ -16,7 +16,7 @@
                 class="mx-auto my-3">
 
                 </v-img>
-                
+
             </v-row>
 
             <v-row class="py-5 px-10 mb-10">
@@ -25,14 +25,16 @@
                 </v-card-title>
                 <v-card-text>
                     Please click on the link that has just been sent to your
-                    email account to verify your email to finish the registration process. Didn’t recieve
-                    a verification email? 
-                </v-card-text>
-                <v-card-action>
+                    email account to verify your email to finish the registration process.
+                    <br> <br>
+                    <v-card-action>
+                    <span> Didn’t recieve a verification email? </span> 
                     <v-btn text color="primary">
                         Resend
                     </v-btn>
                 </v-card-action>
+                </v-card-text>
+                
             </v-row>
             
         </v-card>
