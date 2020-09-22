@@ -16,6 +16,7 @@
                 class="mx-auto my-3">
 
                 </v-img>
+                
             </v-row>
 
             <v-row class="py-5 px-10 mb-10">
