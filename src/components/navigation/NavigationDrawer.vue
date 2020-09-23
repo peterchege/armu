@@ -3,7 +3,7 @@
           v-model="navDialog"
           app
           dark
-          class="primary darken-2">
+          class="dashContent darken-2">
     
       <v-list shaped >
       <v-img src="@/assets/logo.png" class="my-5 mx-auto" max-width="150" >
