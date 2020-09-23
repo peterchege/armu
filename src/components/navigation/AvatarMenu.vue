@@ -12,7 +12,7 @@
               class="ma-2"
               >
           <v-img
-            src="@/assets/img/profile.png"
+            src="@/assets/avatars/profile.png"
             alt="user"
           ></v-img></v-avatar>
         </v-btn>

@@ -1,11 +1,10 @@
 <template>
   <v-app id="inspire">
     <app-side-bar/>
-    <!-- <app-header-menu/> -->
+    <app-header-menu/>
 
     <v-content class="accent">
       <v-container class="mx-3" align="center" justify="center" fill-height>
-              
               
         
       </v-container>
@@ -20,7 +19,7 @@
   export default {
     components:{
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
-    //  appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
+     appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
 
     },
     props: {

@@ -6,7 +6,9 @@
           class="primary darken-2">
     
       <v-list shaped >
-      <v-subheader class="header py-10 text-center">APA INSURANCE</v-subheader>
+      <v-img src="@/assets/logo.png" class="my-5 mx-auto" max-width="150" >
+
+      </v-img>
       <v-divider/>
       <v-list-item-group color="secondary" class="my-5">
         <v-list-item
