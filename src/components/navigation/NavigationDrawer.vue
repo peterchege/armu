@@ -38,12 +38,12 @@ export default {
       dialog: false,
       drawer: null,
       items: [
-        { icon: 'mdi-view-dashboard', text: 'Dashboard', link:'/dashboard' },
-        { icon: 'mdi-car', text: 'Fleet', link:'/fleet' },
-        { icon: 'mdi-menu', text: 'Request', link:'/car-rental' },
-        { icon: 'mdi-car-arrow-left', text: 'Delivered cars', link:'/delivered' },
-        { icon: 'mdi-receipt', text: 'Invoices', link:'/invoice' },
-        { icon: 'mdi-history', text: 'Trip History', link:'/trip' }
+        { icon: 'mdi-view-dashboard', text: 'Market Overview', link:'/dashboard' },
+        { icon: 'mdi-cart', text: 'My orders', link:'/fleet' },
+        { icon: 'mdi-menu', text: 'Sell a Product', link:'/car-rental' },
+        { icon: 'mdi-store', text: 'Inventory Management', link:'/delivered' },
+        { icon: 'mdi-mail', text: 'Inbox', link:'/invoice' },
+        { icon: 'mdi-history', text: 'Invoice', link:'/trip' }
         
       ],
     }),
