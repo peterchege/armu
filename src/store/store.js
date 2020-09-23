@@ -14,6 +14,7 @@ export default new Vuex.Store({
         roles: localStorage.getItem('role') || '',
         snackbar: {},
         loading: false,
+        navDialog: true,
         itemId: '',
         loadingTable: false,
         users: [],
