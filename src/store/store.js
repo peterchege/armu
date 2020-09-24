@@ -59,6 +59,9 @@ export default new Vuex.Store({
         AUTO_LOGIN(state, payload) {
             state.idToken = payload.token;
         },
+        RESET_OTP(state, payload) {
+            state.snackbar = payload.snackbar;
+        }
 
     },
     actions: {
@@ -137,6 +140,7 @@ export default new Vuex.Store({
                     router.replace('/dashboard')
                 })
                 .catch(err => {
+                    localStorage.setItem('email', formData.email)
                     if (err.response.data.message === "Please verify account.") {
                         router.replace('/verification');
                     }
@@ -206,6 +210,24 @@ export default new Vuex.Store({
                     console.log(err)
                 })
         },
+
+        newOTP({ commit }, formData) {
+            axios.post('/auth/resend-otp', formData)
+                .then(res => {
+                    console.log(res)
+                    commit('RESET_OTP', {
+                        snackbar: {
+                            showing: true,
+                            text: res.data.message,
+                            color: "success"
+                        }
+                    })
+                })
+                .catch(err => {
+                    this.state.alertError = true
+                    console.log(err)
+                })
+        }
 
 
 
