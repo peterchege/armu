@@ -137,6 +137,7 @@ export default new Vuex.Store({
                     router.replace('/dashboard')
                 })
                 .catch(err => {
+                    localStorage.setItem('email', formData.email)
                     if (err.response.data.message === "Please verify account.") {
                         router.replace('/verification');
                     }

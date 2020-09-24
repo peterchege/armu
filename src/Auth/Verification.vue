@@ -49,7 +49,8 @@
 export default {
     methods:{
         resetOTP(){
-            this.$store.dispatch('newOTP')
+            const formData = localStorage.setItem('email');
+            this.$store.dispatch('newOTP', formData)
         }
     },
 }
