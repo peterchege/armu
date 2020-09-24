@@ -29,7 +29,9 @@
                     <br> <br>
                     <v-card-action>
                     <span> Didn’t recieve a verification email? </span> 
-                    <v-btn text color="primary">
+                    <v-btn text 
+                    color="primary"
+                    @click="resetOTP">
                         Resend
                     </v-btn>
                 </v-card-action>
@@ -42,6 +44,21 @@
         </v-container>
     </v-app>
 </template>
+
+<script>
+export default {
+    
+    methods:{
+        resetOTP(){
+            const formData = {
+                email: localStorage.getItem('email')
+                };
+            console.log(formData)
+            this.$store.dispatch('newOTP', formData)
+        }
+    },
+}
+</script>
 
 <style scoped>
      .background-color {
