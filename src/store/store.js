@@ -59,6 +59,9 @@ export default new Vuex.Store({
         AUTO_LOGIN(state, payload) {
             state.idToken = payload.token;
         },
+        RESET_OTP(state, payload) {
+            state.snackbar = payload.snackbar;
+        }
 
     },
     actions: {
@@ -215,10 +218,14 @@ export default new Vuex.Store({
                     commit('RESET_OTP', {
                         snackbar: {
                             showing: true,
-                            text: "OTP was sent successfully",
+                            text: res.data.message,
                             color: "success"
                         }
                     })
+                })
+                .catch(err => {
+                    this.state.alertError = true
+                    console.log(err)
                 })
         }
 

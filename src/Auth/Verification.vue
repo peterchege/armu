@@ -47,9 +47,13 @@
 
 <script>
 export default {
+    
     methods:{
         resetOTP(){
-            const formData = localStorage.setItem('email');
+            const formData = {
+                email: localStorage.getItem('email')
+                };
+            console.log(formData)
             this.$store.dispatch('newOTP', formData)
         }
     },
