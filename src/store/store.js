@@ -208,6 +208,20 @@ export default new Vuex.Store({
                 })
         },
 
+        newOTP({ commit }, formData) {
+            axios.post('/auth/resend-otp', formData)
+                .then(res => {
+                    console.log(res)
+                    commit('RESET_OTP', {
+                        snackbar: {
+                            showing: true,
+                            text: "OTP was sent successfully",
+                            color: "success"
+                        }
+                    })
+                })
+        }
+
 
 
     },
