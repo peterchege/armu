@@ -17,8 +17,8 @@
                          <v-card-actions class="ma-7">
                         <v-spacer></v-spacer>
                             <v-btn block large 
-                            color="primary" 
-                            class="my-3"
+                            color="secondary" 
+                            class="my-3 mb-7"
                             @click="onSubmit"
                             :loading="loading"
                             to="/user">
@@ -70,16 +70,14 @@
                                   block
                                   large
                                   @click="onLogin"
-                                  class="my-7 px-5 secondary"
+                                  class="my-7 px-5 primary"
                                   >Login
                                   </v-btn>
-
                                
                         </v-card>
             </v-col>
         </v-row>
             
-
 
         <v-row align="center" justify="center" class="text-center">
                 <v-col  sm="12" md="4" align="center" >
@@ -116,8 +114,25 @@
 export default {
     components:{
         appHeader:() => import ('@/components/Header'),
-
     },
+    
+    data(){
+      return{
+        email: '',
+        password: '',
+        show: false,
+      }
+    },
+    methods:{
+        onLogin(){
+            const formData ={
+                email : this.email,
+                password: this.password
+            }
+            console.log(formData)
+            this.$store.dispatch('login', formData)
+        }
+    }
 }
 </script>
 
