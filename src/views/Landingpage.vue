@@ -4,11 +4,9 @@
 
         
         <app-header/>
-
-            <v-card class="mx-auto elevation-1" width="900">   
-                <v-row align="center" justify="center" class="text-center">
-                    
-                    <v-col  cols="12" sm="12" md="6" >
+        <v-row align="center" justify="center" class="text-center">
+            <v-col cols="12" md="6">
+                <v-card class="mx-auto  elevation-1" width="400" >   
                         <v-card-title >
                             <h2 class="title ma-auto"> Dont have an account</h2>
                         </v-card-title>
@@ -19,36 +17,68 @@
                          <v-card-actions class="ma-7">
                         <v-spacer></v-spacer>
                             <v-btn block large 
-                            color="primary" 
-                            class="my-3"
+                            color="secondary" 
+                            class="my-3 mb-7"
                             @click="onSubmit"
                             :loading="loading"
                             to="/user">
                             Register
                             </v-btn>
                       </v-card-actions>
+                </v-card>  
+            </v-col>
 
-                    </v-col>
-                    <v-col cols="12" sm="12" md="6">
-                         <v-card-title>
-                            <span class="title ma-auto"> Already have an account</span>
-                        </v-card-title>
-                        <v-card-text class="caption">
-                            Login to your dashboard to start <br>your transactions
-                        </v-card-text>
-                        <v-card-actions class="ma-7">
-                        <v-spacer></v-spacer>
-                            <v-btn block large 
-                            color="secondary" 
-                            @click="login"
-                            :loading="loading"
-                            to='/login'>
-                            Login
-                            </v-btn>
-                         </v-card-actions>
-                    </v-col>
-                </v-row>
-            </v-card>           
+            <v-col cols="12" md="6">
+                 <v-card class="py-2 px-10 mx-auto"  width="500">
+                            <v-card-title>
+                                <v-sheet
+                                    class="v-sheet--offset"
+                                    elevation="2"
+                                    max-width="80"
+                                    >
+                                        <v-toolbar  color="primary" class="round-coners" dark>
+                                            <v-icon large>mdi-account</v-icon>
+                                        </v-toolbar>
+                                </v-sheet> 
+                            </v-card-title>
+                            <form >
+                                <v-text-field
+                                    v-model="email"
+                                    label="Email Address"
+                                    prepend-icon="mdi-account"
+                                    required
+                                    >
+                                </v-text-field>
+
+                                <v-text-field
+                                    v-model="password"
+                                    label="Password"
+                                    :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                                    :type="show ? 'text' : 'password'"
+                                    prepend-icon="mdi-lock"
+                                    required
+                                    >
+                                </v-text-field>
+
+                                <router-link to="/forgotpassword" >
+                                    <span class="grey--text caption " > Forgot password </span>
+                                </router-link>
+
+                            </form>
+
+                                 <v-btn
+                                  block
+                                  large
+                                  @click="onLogin"
+                                  class="my-7 px-5 primary"
+                                  >Login
+                                  </v-btn>
+                               
+                        </v-card>
+            </v-col>
+        </v-row>
+            
+
         <v-row align="center" justify="center" class="text-center">
                 <v-col  sm="12" md="4" align="center" >
                     <v-img
@@ -84,8 +114,25 @@
 export default {
     components:{
         appHeader:() => import ('@/components/Header'),
-
     },
+    
+    data(){
+      return{
+        email: '',
+        password: '',
+        show: false,
+      }
+    },
+    methods:{
+        onLogin(){
+            const formData ={
+                email : this.email,
+                password: this.password
+            }
+            console.log(formData)
+            this.$store.dispatch('login', formData)
+        }
+    }
 }
 </script>
 
