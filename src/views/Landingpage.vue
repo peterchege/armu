@@ -1,12 +1,12 @@
 <template>
-    <v-app id="inspire" class="image">
+    <v-app id="inspire" class="image" >
         <v-container class="fill-height" fluid>
 
         
         <app-header/>
-        <v-row align="center" justify="center" class="text-center">
-            <v-col cols="12" md="6">
-                <v-card class="mx-auto  elevation-1" width="400" >   
+        <v-row align="center" justify="end" class="text-center">
+            <v-col cols="12" md="4" >
+                <v-card class="mx-auto  elevation-1 " width="400" >   
                         <v-card-title >
                             <h2 class="title ma-auto"> Dont have an account</h2>
                         </v-card-title>
@@ -14,16 +14,16 @@
                             Register with us today inorder to<br> start publishing your products 
                         </v-card-text>
                         
-                         <v-card-actions class="ma-7">
-                        <v-spacer></v-spacer>
-                            <v-btn block large 
-                            color="secondary" 
-                            class="my-3 mb-7"
-                            @click="onSubmit"
-                            :loading="loading"
-                            to="/user">
-                            Register
-                            </v-btn>
+                         <v-card-actions class="ma-7 " >
+                                <v-btn block large 
+                                    color="secondary" 
+                                    class="my-3 mb-7"                                  
+                                    @click="onSubmit"
+                                    :loading="loading"
+                                    to="/user">
+                                    Register
+                                </v-btn>
+                            
                       </v-card-actions>
                 </v-card>  
             </v-col>
@@ -60,9 +60,12 @@
                                     >
                                 </v-text-field>
 
-                                <router-link to="/forgotpassword" >
+                                <v-col cols="12" align="end">
+                                    <router-link to="/forgotpassword" >
                                     <span class="grey--text caption " > Forgot password </span>
                                 </router-link>
+                                </v-col>
+                                
 
                             </form>
 
