@@ -1,5 +1,5 @@
 <template>
-    <v-app id="inspire" class="image" >
+    <v-app id="inspire" class="accent" >
         <v-container class="fill-height" fluid>
 
         
@@ -139,12 +139,3 @@ export default {
 }
 </script>
 
-<style scoped>
-    .image {
-        background-image: url('../assets/background.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-  
-</style>
