@@ -36,9 +36,9 @@
                                     <v-icon large>mdi-offer</v-icon>
                                 </v-toolbar>
                         </v-sheet> 
-                        Order to Sell
+                        Orders to Buy
                     </v-card-title>
-                    <app-bid></app-bid>                                       
+                    <app-offer></app-offer>                                       
                 </v-card>      
           </v-col>  
           </v-row>
@@ -55,7 +55,8 @@
     components:{
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
-     appBid:()=> import('@/components/card/Bid')
+     appBid:()=> import('@/components/card/Bid'),
+     appOffer:()=> import('@/components/card/Offer')
 
     },
     props: {
