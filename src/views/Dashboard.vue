@@ -4,9 +4,44 @@
     <app-header-menu/>
 
     <v-content class="accent">
-      <v-container class="mx-3" align="center" justify="center" fill-height>
-              
-        
+      <v-container align="center" justify="center" fill-height>
+        <v-row class="mx-5 ">
+          <v-col cols="12" md="6">
+              <v-card class=" mx-auto"  >
+                    <v-card-title>
+                        <v-sheet
+                            class="v-sheet--offset"
+                            elevation="2"
+                            max-width="80"
+                            >
+                                <v-toolbar  color="primary" class="round-coners" dark>
+                                    <v-icon large>mdi-offer</v-icon>
+                                </v-toolbar>
+                        </v-sheet> 
+                        Order to Sell
+                    </v-card-title>
+                    <app-bid></app-bid>                                       
+                </v-card>      
+          </v-col>  
+
+          <v-col cols="12" md="6">
+              <v-card class=" mx-auto"  >
+                    <v-card-title>
+                        <v-sheet
+                            class="v-sheet--offset"
+                            elevation="2"
+                            max-width="80"
+                            >
+                                <v-toolbar  color="primary" class="round-coners" dark>
+                                    <v-icon large>mdi-offer</v-icon>
+                                </v-toolbar>
+                        </v-sheet> 
+                        Orders to Buy
+                    </v-card-title>
+                    <app-offer></app-offer>                                       
+                </v-card>      
+          </v-col>  
+          </v-row>
       </v-container>
     </v-content>
     
@@ -20,6 +55,8 @@
     components:{
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
+     appBid:()=> import('@/components/card/Bid'),
+     appOffer:()=> import('@/components/card/Offer')
 
     },
     props: {

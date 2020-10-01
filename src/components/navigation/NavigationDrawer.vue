@@ -40,10 +40,10 @@ export default {
       items: [
         { icon: 'mdi-view-dashboard', text: 'Market Overview', link:'/dashboard' },
         { icon: 'mdi-cart', text: 'My orders', link:'/fleet' },
-        { icon: 'mdi-menu', text: 'Sell a Product', link:'/car-rental' },
-        { icon: 'mdi-store', text: 'Inventory Management', link:'/delivered' },
+        { icon: 'mdi-tag', text: 'Sell a Product', link:'/car-rental' },
+        { icon: 'mdi-store', text: 'My Inventory', link:'/delivered' },
         { icon: 'mdi-mail', text: 'Inbox', link:'/invoice' },
-        { icon: 'mdi-history', text: 'Invoice', link:'/trip' }
+        { icon: 'mdi-receipt', text: 'Invoice', link:'/trip' }
         
       ],
     }),
