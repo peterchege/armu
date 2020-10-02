@@ -33,9 +33,56 @@
         :key="i"
         :value="'tab-' + i"
       >
-        <v-card flat>
-            <v-card-title class="pl-5 ">Product Specification</v-card-title>
-          <v-card-text>{{ text }}</v-card-text>
+        <v-card flat class="mx-auto px-7">
+            <v-card-title class=" ">Product Specification</v-card-title>
+            <v-card-text>{{ text }}</v-card-text>
+
+            <v-row class="mx-5">
+                <v-col cols="12" md="6">
+                    <v-text-field
+                        v-model="product"
+                        class="my-3"
+                        :rules="nameRules"
+                        label="Product"
+                        required
+                    ></v-text-field>
+
+                    <v-text-field
+                        v-model="grade"
+                         class="my-3"
+                        :rules="nameRules"
+                        label="Grade"
+                        required
+                    ></v-text-field>
+
+                    <v-text-field
+                        v-model="noOfBags"
+                         class="my-3"
+                        :rules="nameRules"
+                        label="No Of Bags"
+                        required
+                    ></v-text-field>
+
+                    <v-text-field
+                        v-model="pricePerBag"
+                         class="my-3"
+                        :rules="nameRules"
+                        label="Price Per Bag"
+                        required
+                    ></v-text-field>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <v-textarea
+                        class="mt-10 ml-5"
+                        name="input1"
+                        filled
+                        label="Description / characteristic"
+                        auto-grow
+                        value=""
+                        ></v-textarea>
+                </v-col>
+            </v-row>
+
         </v-card>
       </v-tab-item>
     </v-tabs-items>
