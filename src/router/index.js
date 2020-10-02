@@ -21,12 +21,7 @@ const routes = [{
         component: () =>
             import ('@/Auth/BuyerRegistration.vue')
     },
-    {
-        path: '/login',
-        name: 'Login',
-        component: () =>
-            import ('@/Auth/Login.vue')
-    },
+
     {
         path: '/verification',
         name: 'Verification',
@@ -45,6 +40,12 @@ const routes = [{
         name: 'Dashboard',
         component: () =>
             import ('@/views/Dashboard')
+    },
+    {
+        path: '/create/product',
+        name: 'Dashboard',
+        component: () =>
+            import ('@/views/SellProduct')
     }
 ]
 

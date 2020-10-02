@@ -23,7 +23,7 @@
                             <v-btn block large 
                             color="secondary" 
                             @click="onLogin"
-                            to="/login"
+                            to="/"
                             :loading="loading">
                             Login
                             </v-btn>
