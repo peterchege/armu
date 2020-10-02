@@ -17,7 +17,6 @@
             <v-divider></v-divider>
 
             <v-stepper-step
-              complete
               step="2"
             >
               Pickup Location
@@ -27,7 +26,7 @@
 
             <v-stepper-step
               step="3"
-              editable
+              
             >
               Personal Information
             </v-stepper-step>
@@ -35,12 +34,17 @@
 
             <v-stepper-step
               step="4"
-              editable
+              
             >
               Summary
             </v-stepper-step>
           </v-stepper-header>
         </v-stepper>
+
+        <v-row class="mx-5 mt-10">
+           <app-tab/>
+        </v-row>
+       
       </v-container>
         
    </v-content>
@@ -57,7 +61,8 @@
   export default {
     components:{
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
-     appHeaderMenu:() => import ('@/components/navigation/HeaderMenu')
+     appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
+     appTab:()=> import('@/components/sellProduct/product')
      
 
     },
