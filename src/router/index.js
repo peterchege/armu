@@ -40,6 +40,12 @@ const routes = [{
         name: 'Dashboard',
         component: () =>
             import ('@/views/Dashboard')
+    },
+    {
+        path: '/create/product',
+        name: 'Dashboard',
+        component: () =>
+            import ('@/views/SellProduct')
     }
 ]
 
