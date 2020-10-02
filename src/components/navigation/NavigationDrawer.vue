@@ -39,11 +39,11 @@ export default {
       drawer: null,
       items: [
         { icon: 'mdi-view-dashboard', text: 'Market Overview', link:'/dashboard' },
-        { icon: 'mdi-cart', text: 'My orders', link:'/fleet' },
-        { icon: 'mdi-tag', text: 'Sell a Product', link:'/car-rental' },
-        { icon: 'mdi-store', text: 'My Inventory', link:'/delivered' },
-        { icon: 'mdi-mail', text: 'Inbox', link:'/invoice' },
-        { icon: 'mdi-receipt', text: 'Invoice', link:'/trip' }
+        { icon: 'mdi-cart', text: 'My orders', link:'' },
+        { icon: 'mdi-tag', text: 'Sell a Product', link:'' },
+        { icon: 'mdi-store', text: 'My Inventory', link:'' },
+        { icon: 'mdi-mail', text: 'Inbox', link:'' },
+        { icon: 'mdi-receipt', text: 'Invoice', link:'' }
         
       ],
     }),
