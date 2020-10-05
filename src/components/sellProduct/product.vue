@@ -71,15 +71,34 @@
 
                   <v-col cols="12" md="6">
                     <v-text-field
-                        v-model="pricePerBag"
+                        v-model="farmLocation"
                          class="mt-3"
                         :rules="nameRules"
-                        label="Price Per Bag"
+                        label="Farm Location"
+                        required
+                    ></v-text-field>
+                  </v-col>
+
+                   <v-col cols="12" md="12">
+                    <v-text-field
+                        v-model="farmLocation"
+                         class="mt-3"
+                        :rules="nameRules"
+                        label="Pick Up Location"
                         required
                     ></v-text-field>
                   </v-col>
                 
-                
+                <v-col cols="12" md="12">
+                    <v-textarea
+                        class="mt-10 ml-5"
+                        name="input1"
+                        filled
+                        label="Description / characteristic"
+                        auto-grow
+                        value=""
+                        ></v-textarea>
+                </v-col>
             </v-row>
 
         </v-card>
