@@ -37,50 +37,77 @@
             <v-card-title class=" ">Product Specification</v-card-title>
             <v-card-text>{{ text }}</v-card-text>
 
-            <v-row class="mx-5">
+            <v-row class="mx-10">
+              <form action="">
+                
+              </form>
                 <v-col cols="12" md="6">
-                    <v-text-field
-                        v-model="product"
-                        class="my-3"
-                        :rules="nameRules"
-                        label="Product"
-                        required
-                    ></v-text-field>
+                    <v-select
+                      :items="items"
+                      label="Grade"
+                      v-model="grade"
+                    ></v-select>
+                </v-col>
 
+                 <v-col cols="12" md="6">
                     <v-text-field
-                        v-model="grade"
-                         class="my-3"
-                        :rules="nameRules"
-                        label="Grade"
-                        required
-                    ></v-text-field>
-
-                    <v-text-field
+                        type="number"
                         v-model="noOfBags"
-                         class="my-3"
                         :rules="nameRules"
                         label="No Of Bags"
                         required
                     ></v-text-field>
+                  </v-col>
 
+                  <v-col cols="12" md="6">
                     <v-text-field
+                        type="number"
                         v-model="pricePerBag"
-                         class="my-3"
                         :rules="nameRules"
-                        label="Price Per Bag"
+                        label="Price Per Bag (Kshs)"
                         required
                     ></v-text-field>
-                </v-col>
-                <v-col cols="12" md="6">
+                  </v-col>
+
+                  <v-col cols="12" md="6">
+                    <v-text-field
+                        v-model="farmLocation"
+                        :rules="nameRules"
+                        label="Farm Location"
+                        required
+                        
+                    ></v-text-field>
+                  </v-col>
+
+                   <v-col cols="12" md="12">
+                    <v-text-field
+                        v-model="farmLocation"
+                        :rules="nameRules"
+                        label="Pick Up Location"
+                        required
+                        
+                    ></v-text-field>
+                  </v-col>
+                
+                <v-col cols="12" md="12">
                     <v-textarea
-                        class="mt-10 ml-5"
-                        name="input1"
                         filled
+                        v-model="description"
                         label="Description / characteristic"
                         auto-grow
-                        value=""
                         ></v-textarea>
                 </v-col>
+
+                <v-col cols="12" md="12">
+                  <h2 class="pb-4" color="primary">Total Amount: Kshs {{ totalAmount }}</h2>
+                </v-col>
+
+                 <v-btn 
+                    large
+                    block
+                    class="mt-2 mb-7 secondary">
+                  ADD PRODUCT
+                </v-btn>
             </v-row>
 
         </v-card>
@@ -94,8 +121,19 @@
     data () {
       return {
         tab: null,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        grade:'',
+        noOfBags:'',
+        pricePerBag:'',
+        farmLocation:'',
+        description:'',
+        items: ['A', 'B'],
       }
     },
+
+    computed:{
+       totalAmount (){ 
+         return this.noOfBags * this.pricePerBag
+         }
+    }
   }
 </script>
