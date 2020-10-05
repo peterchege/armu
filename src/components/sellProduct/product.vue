@@ -37,50 +37,49 @@
             <v-card-title class=" ">Product Specification</v-card-title>
             <v-card-text>{{ text }}</v-card-text>
 
-            <v-row class="mx-5">
+            <v-row class="mx-10">
+              <form action="">
+                
+              </form>
                 <v-col cols="12" md="6">
-                    <v-text-field
-                        v-model="product"
-                        class="my-3"
-                        :rules="nameRules"
-                        label="Product"
-                        required
-                    ></v-text-field>
+                    <v-select
+                      :items="items"
+                      class="mt-3"
+                      label="Grade"
+                    ></v-select>
+                </v-col>
 
-                    <v-text-field
-                        v-model="grade"
-                         class="my-3"
-                        :rules="nameRules"
-                        label="Grade"
-                        required
-                    ></v-text-field>
-
+                 <v-col cols="12" md="6">
                     <v-text-field
                         v-model="noOfBags"
-                         class="my-3"
+                         class="mt-3"
                         :rules="nameRules"
                         label="No Of Bags"
                         required
                     ></v-text-field>
+                  </v-col>
 
+                  <v-col cols="12" md="6">
                     <v-text-field
                         v-model="pricePerBag"
-                         class="my-3"
+                         class="mt-3"
                         :rules="nameRules"
                         label="Price Per Bag"
                         required
                     ></v-text-field>
-                </v-col>
-                <v-col cols="12" md="6">
-                    <v-textarea
-                        class="mt-10 ml-5"
-                        name="input1"
-                        filled
-                        label="Description / characteristic"
-                        auto-grow
-                        value=""
-                        ></v-textarea>
-                </v-col>
+                  </v-col>
+
+                  <v-col cols="12" md="6">
+                    <v-text-field
+                        v-model="pricePerBag"
+                         class="mt-3"
+                        :rules="nameRules"
+                        label="Price Per Bag"
+                        required
+                    ></v-text-field>
+                  </v-col>
+                
+                
             </v-row>
 
         </v-card>
@@ -94,6 +93,7 @@
     data () {
       return {
         tab: null,
+        items: ['A', 'B'],
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       }
     },
