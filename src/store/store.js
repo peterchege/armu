@@ -18,6 +18,8 @@ export default new Vuex.Store({
         itemId: '',
         loadingTable: false,
         users: [],
+        myFarm: '',
+        grade: ''
 
 
     },
@@ -61,6 +63,16 @@ export default new Vuex.Store({
         },
         RESET_OTP(state, payload) {
             state.snackbar = payload.snackbar;
+        },
+        GET_FARMS(state, payload) {
+            state.myFarm = payload.myFarm;
+            state.snackbar = payload.snackbar;
+            state.loading = payload.loading;
+        },
+        GET_MAIZE_GRADE(state, payload) {
+            state.grade = payload.grade;
+            state.snackbar = payload.snackbar;
+            state.loading = payload.loading;
         }
 
     },
@@ -224,7 +236,57 @@ export default new Vuex.Store({
                     })
                 })
                 .catch(err => {
-                    this.state.alertError = true
+                    commit('RESET_OTP', {
+                        loading: false,
+                        snackbar: {
+                            showing: true,
+                            text: `${ err.response.data.message }`,
+                            color: "error"
+                        }
+
+                    })
+                    console.log(err)
+                })
+        },
+
+        getFarm({ commit }) {
+            axios.get('/farmer/profile/farms/get')
+                .then(res => {
+                    console.log(res)
+                    const myFarm = res.data
+                    commit('GET_FARMS', myFarm)
+                })
+                .catch(err => {
+                    commit('GET_FARMS', {
+                        loading: false,
+                        snackbar: {
+                            showing: true,
+                            text: `${ err.response.data.message }`,
+                            color: "error"
+                        }
+
+                    })
+                    console.log(err)
+                })
+        },
+
+        getGrade({ commit }) {
+            axios.get('/farmer/profile/farms/get')
+                .then(res => {
+                    console.log(res)
+                    const grade = res.data
+                    commit('GET_MAIZE_GRADE', grade)
+                })
+                .catch(err => {
+                    commit('GET_MAIZE_GRADE', {
+                        loading: false,
+                        snackbar: {
+                            showing: true,
+                            text: `${ err.response.data.message }`,
+                            color: "error"
+                        }
+
+                    })
                     console.log(err)
                 })
         }
