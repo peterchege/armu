@@ -133,7 +133,9 @@
          }
     },
     mounted(){
-      this.$store.dispatch('getFarm')
+      this.$store.dispatch('getFarm');
+      this.$store.dispatch('getGrade');
+
 
     },
 
