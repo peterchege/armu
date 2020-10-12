@@ -18,6 +18,7 @@ export default new Vuex.Store({
         itemId: '',
         loadingTable: false,
         users: [],
+        myFarm: ''
 
 
     },
@@ -61,6 +62,11 @@ export default new Vuex.Store({
         },
         RESET_OTP(state, payload) {
             state.snackbar = payload.snackbar;
+        },
+        GET_FARMS(state, payload) {
+            state.myFarm = payload.myFarm;
+            state.snackbar = payload.snackbar;
+            state.loading = payload.loading;
         }
 
     },
@@ -238,7 +244,7 @@ export default new Vuex.Store({
         },
 
         getFarm({ commit }) {
-            axios.get('/farmer/get-product-grades')
+            axios.get('/farmer/profile/farms/get')
                 .then(res => {
                     console.log(res)
                     const myFarm = res.data
