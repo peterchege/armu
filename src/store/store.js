@@ -224,10 +224,39 @@ export default new Vuex.Store({
                     })
                 })
                 .catch(err => {
-                    this.state.alertError = true
+                    commit('RESET_OTP', {
+                        loading: false,
+                        snackbar: {
+                            showing: true,
+                            text: `${ err.response.data.message }`,
+                            color: "error"
+                        }
+
+                    })
                     console.log(err)
                 })
-        }
+        },
+
+        getFarm({ commit }) {
+            axios.get('/farmer/get-product-grades')
+                .then(res => {
+                    console.log(res)
+                    const myFarm = res.data
+                    commit('GET_FARMS', myFarm)
+                })
+                .catch(err => {
+                    commit('GET_FARMS', {
+                        loading: false,
+                        snackbar: {
+                            showing: true,
+                            text: `${ err.response.data.message }`,
+                            color: "error"
+                        }
+
+                    })
+                    console.log(err)
+                })
+        },
 
 
 

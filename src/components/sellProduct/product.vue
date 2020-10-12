@@ -35,8 +35,6 @@
       >
         <v-card flat class="mx-auto px-7">
             <v-card-title class=" ">Product Specification</v-card-title>
-            <v-card-text>{{ text }}</v-card-text>
-
             <v-row class="mx-10">
               <form action="">
                 
@@ -129,11 +127,15 @@
         items: ['A', 'B'],
       }
     },
-
     computed:{
        totalAmount (){ 
          return this.noOfBags * this.pricePerBag
          }
-    }
+    },
+    mounted(){
+      this.$store.dispatch('getFarm')
+
+    },
+
   }
 </script>
