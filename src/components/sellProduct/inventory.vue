@@ -41,12 +41,6 @@
       
     </template>
 
-    <!-- <template v-slot:item.status="{ value }">
-      <v-chip  
-          :color="getColor(value)" dark>
-          {{ value }}
-          </v-chip>
-    </template> -->
     
   </v-data-table>
 </template>
@@ -65,26 +59,31 @@ import  { mapState, mapGetters } from 'vuex'
           value: 'id',
         },
         {
-          text: 'Customer Name',
+          text: 'Product',
           align: 'start',
           sortable: true,
           value: '',
         },
         {
-          text: 'make',
+          text: 'Grade',
           align: 'start',
           sortable: true,
           value: '',
         },
         {
-          text: 'Model',
+          text: 'No. of Bags',
           align: 'start',
           sortable: true,
           value: '',
         },
-        { text: 'Reg No.', value: '' },
-        { text: 'Date', value: '' },
-        { text: 'Phone No.', value: '' },
+        {
+          text: 'Price offer',
+          align: 'start',
+          sortable: true,
+          value: '',
+        },
+        { text: 'Created', value: '' },
+        { text: 'Location', value: '' },
         { text: 'Status', value: '' },
       ],
  
