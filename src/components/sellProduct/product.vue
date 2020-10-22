@@ -100,12 +100,12 @@
                   <h2 class="pb-4" color="primary">Total Amount: Kshs {{ totalAmount }}</h2>
                 </v-col>
 
-                 <v-btn 
+                 <!-- <v-btn 
                     large
                     block
                     class="mt-2 mb-7 secondary">
                   ADD PRODUCT
-                </v-btn>
+                </v-btn> -->
             </v-row>
 
         </v-card>
