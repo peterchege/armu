@@ -46,13 +46,8 @@ const routes = [{
         name: 'Inventory',
         component: () =>
             import ('@/views/InventoryManagment')
-    },
-    {
-        path: '/create/product',
-        name: 'product',
-        component: () =>
-            import ('@/views/SellProduct')
     }
+
 ]
 
 const router = new VueRouter({

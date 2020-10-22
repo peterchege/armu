@@ -20,10 +20,10 @@
         <v-form ref="form" v-model="valid">
         <v-card-title 
           class="primary darken-2 white--text justify-center">
-          ADD DAMAGE VEHICLE
+          ADD A NEW PRODUCT
         </v-card-title>
          
-        <v-container>
+        <!-- <v-container>
           
           <v-row class="mx-2">
             
@@ -139,11 +139,15 @@
             repairs should be done.
           </p>
 
-        </v-container>
+        </v-container> -->
+
+          <v-container>
+            <app-product/>
+          </v-container>
         <v-card-actions>
           
            <div class="ma-auto pb-5">
-              <v-btn rounded
+              <v-btn 
               class="ma-5 pa-4" 
               color="secondary"
                @click="inviteUser" 
@@ -151,13 +155,13 @@
               :loading="loading"
               :disabled="!valid"
               >
-              Add Vehicle
+              Add Product
                 <v-icon dark right>
                   mdi-checkbox-marked-circle
                   </v-icon>
               </v-btn>
 
-              <v-btn rounded
+              <v-btn 
                 class="ma-5 pa-4" 
                 color=""
                  @click="clear" 
@@ -168,7 +172,7 @@
                     </v-icon>
               </v-btn>
 
-              <v-btn rounded
+              <v-btn 
                 class="ma-5 pa-4" 
                 color="red"
                  @click="userCancel" 
@@ -192,6 +196,11 @@
 import  { mapState } from 'vuex'
 import validation from '@/utils/Validations'
 export default {
+   components:{
+     appProduct:()=> import('@/components/sellProduct/product')
+     
+
+    },
     data: () => ({
       valid :false,
       full_names: '',
