@@ -42,8 +42,14 @@ const routes = [{
             import ('@/views/Dashboard')
     },
     {
+        path: '/inventory',
+        name: 'Inventory',
+        component: () =>
+            import ('@/views/InventoryManagment')
+    },
+    {
         path: '/create/product',
-        name: 'Dashboard',
+        name: 'product',
         component: () =>
             import ('@/views/SellProduct')
     }
