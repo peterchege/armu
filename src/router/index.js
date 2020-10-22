@@ -42,11 +42,12 @@ const routes = [{
             import ('@/views/Dashboard')
     },
     {
-        path: '/create/product',
-        name: 'Dashboard',
+        path: '/inventory',
+        name: 'Inventory',
         component: () =>
-            import ('@/views/SellProduct')
+            import ('@/views/InventoryManagment')
     }
+
 ]
 
 const router = new VueRouter({
