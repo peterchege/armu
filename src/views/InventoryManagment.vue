@@ -21,7 +21,7 @@
                   <app-inventory/>
             </v-col>
 
-              <app-add-vehicle/>
+              <app-add-product/>
           </v-row>
 
           
@@ -41,7 +41,8 @@
     components:{
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
-     appInventory:()=> import('@/components/sellProduct/inventory')
+     appInventory:()=> import('@/components/sellProduct/inventory'),
+     appAddProduct:()=> import('@/components/dialog/addCrop')
      
 
     },
