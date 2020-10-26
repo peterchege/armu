@@ -110,7 +110,7 @@ import  { mapState, mapGetters } from 'vuex'
           {
               id: 3,
               product: 'maize',
-              grade: 'A',
+              grade: 'B',
               bags: 19,
               price: 30000,
               date: '06/08/2020',
@@ -151,7 +151,7 @@ import  { mapState, mapGetters } from 'vuex'
     },
     created () {
       this.initialize(),
-      this.$store.state.loadingTable = true;
+    //   this.$store.state.loadingTable = true;
       this.$store.state.loadingText = "Loading... Please wait";
       
     },
