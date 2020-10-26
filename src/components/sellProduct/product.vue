@@ -7,21 +7,21 @@
     >
       <v-tabs-slider></v-tabs-slider>
 
-      <v-tab href="#tab-1">
+      <v-tab href="#tab">
         maize
         <v-icon>mdi-maize</v-icon>
       </v-tab>
 
-      <v-tab href="#tab-2">
+      <v-tab href="#tab-1">
         Sorghum
         <v-icon>mdi-</v-icon>
       </v-tab>
 
-      <v-tab href="#tab-3">
+      <v-tab href="#tab-2">
         Beans
         <v-icon>mdi-</v-icon>
       </v-tab>
-      <v-tab href="#tab-4">
+      <v-tab href="#tab-3">
         Beans
         <v-icon>mdi-</v-icon>
       </v-tab>
@@ -29,9 +29,8 @@
 
     <v-tabs-items class="mt-5" v-model="tab">
       <v-tab-item
-        v-for="i in 4"
-        :key="i"
-        :value="'tab-' + i"
+        
+        value="tab"
       >
         <v-card flat class="mx-auto px-7">
             <v-card-title class=" ">Product Specification</v-card-title>
@@ -108,6 +107,22 @@
                 </v-btn> -->
             </v-row>
 
+        </v-card>
+      </v-tab-item>
+
+      <v-tab-item
+        v-for="i in 3"
+        :key="i"
+        :value="'tab-' + i"
+      >
+        <v-card flat class="mx-auto px-7">
+            <v-img
+            lazy-src="https://websites.sportstg.com/pics/00/36/07/81/36078109_1_M.jpg"
+            max-height="350"
+            max-width="350"
+            src="https://websites.sportstg.com/pics/00/36/07/81/36078109_1_M.jpg"
+            class="my-10 mx-auto">
+            </v-img>
         </v-card>
       </v-tab-item>
     </v-tabs-items>

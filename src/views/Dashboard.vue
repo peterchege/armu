@@ -4,8 +4,8 @@
     <app-header-menu/>
 
     <v-content class="accent">
-      <v-container align="center" justify="center" fill-height>
-        <v-row class="mx-5 ">
+      <v-container class="mt-10" align="center" justify="center" fill-height>
+        <v-row class="mx-5 my-5">
           <v-col cols="12" md="6">
               <v-card class=" mx-auto"  >
                     <v-card-title>
@@ -42,6 +42,13 @@
                 </v-card>      
           </v-col>  
           </v-row>
+
+          <v-row class="mx-5 mt-10">
+            <v-col cols="12" md="12">
+                <app-product-history></app-product-history>
+            </v-col>
+            
+          </v-row>
       </v-container>
     </v-content>
     
@@ -56,7 +63,8 @@
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
      appBid:()=> import('@/components/card/Bid'),
-     appOffer:()=> import('@/components/card/Offer')
+     appOffer:()=> import('@/components/card/Offer'),
+     appProductHistory:()=> import('@/components/table/productHistory')
 
     },
     props: {
