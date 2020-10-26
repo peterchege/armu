@@ -18,14 +18,14 @@
         elevation="5"
         >
             <v-toolbar  color="primary" class="round-coners" dark>
-                <v-icon large>mdi-seed</v-icon>
+                <v-icon large>mdi-history</v-icon>
             </v-toolbar>
             
         </v-sheet>
         </v-col>
         <v-col >
             <v-card-title color="primary" >
-               <h3 class=" font-weight-light"> My Crop</h3>
+               <h3 class=" font-weight-light"> My Product Hisory</h3>
                <v-col class="d-flex align-end flex-column" >
                 <v-text-field
                   v-model="search"
@@ -62,30 +62,72 @@ import  { mapState, mapGetters } from 'vuex'
           text: 'Product',
           align: 'start',
           sortable: true,
-          value: '',
+          value: 'product',
         },
         {
           text: 'Grade',
           align: 'start',
           sortable: true,
-          value: '',
+          value: 'grade',
         },
         {
           text: 'No. of Bags',
           align: 'start',
           sortable: true,
-          value: '',
+          value: 'bags',
         },
         {
           text: 'Price offer',
           align: 'start',
           sortable: true,
-          value: '',
+          value: 'price',
         },
-        { text: 'Created', value: '' },
-        { text: 'Location', value: '' },
-        { text: 'Status', value: '' },
+        { text: 'Created', value: 'date' },
+        { text: 'Location', value: 'location' },
+        { text: 'Status', value: 'status' },
       ],
+      crop:[
+          {
+              id: 1,
+              product: 'maize',
+              grade: 'A',
+              bags: 34,
+              price: 50000,
+              date: '12/08/2020',
+              location: 'Kitale',
+              status:'sold'
+          },
+          {
+              id: 2,
+              product: 'sorgum',
+              grade: 'A',
+              bags: 50,
+              price: 150000,
+              date: '17/10/2020',
+              location: 'Eldoret',
+              status:'Available'
+          },
+          {
+              id: 3,
+              product: 'maize',
+              grade: 'A',
+              bags: 19,
+              price: 30000,
+              date: '06/08/2020',
+              location: 'Kitale',
+              status:'sold'
+          },
+          {
+              id: 4,
+              product: 'millet',
+              grade: 'B',
+              bags: 74,
+              price: 250000,
+              date: '28/08/2020',
+              location: 'Kitale',
+              status:'sold'
+          },
+        ]
  
     }),
 

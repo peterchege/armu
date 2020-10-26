@@ -42,6 +42,13 @@
                 </v-card>      
           </v-col>  
           </v-row>
+
+          <v-row class="mx-5 ">
+            <v-col cols="12" md="12">
+                <app-product-history></app-product-history>
+            </v-col>
+            
+          </v-row>
       </v-container>
     </v-content>
     
@@ -56,7 +63,8 @@
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
      appBid:()=> import('@/components/card/Bid'),
-     appOffer:()=> import('@/components/card/Offer')
+     appOffer:()=> import('@/components/card/Offer'),
+     appProductHistory:()=> import('@/components/table/productHistory')
 
     },
     props: {
