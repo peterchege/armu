@@ -32,7 +32,7 @@
       >
         mdi-clock
       </v-icon>
-      <span class="caption grey--text font-weight-light">last registration 26 minutes ago</span>
+      <span class="caption grey--text font-weight-light">last update 26 minutes ago</span>
     </v-card-text>
   </v-card>
 </template>
