@@ -4,10 +4,16 @@
       <thead>
         <tr>
           <th class="text-left">
-            Name
+            Crops
           </th>
           <th class="text-left">
-            Calories
+            Grade
+          </th>
+          <th class="text-left">
+            Bags (90kg)
+          </th>
+          <th class="text-left">
+            Region
           </th>
         </tr>
       </thead>
@@ -16,8 +22,10 @@
           v-for="item in desserts"
           :key="item.name"
         >
-          <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+          <td>{{ item.product }}</td>
+          <td>{{ item.grade }}</td>
+          <td>{{ item.orders }}</td>
+          <td>{{ item.region }}</td>
         </tr>
       </tbody>
     </template>
@@ -30,25 +38,36 @@
       return {
         desserts: [
           {
-            name: 'Frozen Yogurt',
-            calories: 159,
+            product: 'Maize',
+            grade: 'A',
+            orders: 200,
+            region: 'Kitale'
           },
           {
-            name: 'Ice cream sandwich',
-            calories: 237,
+            product: 'Maize',
+            grade: 'A',
+            orders: 340,
+            region: 'Eldoret'
           },
           {
-            name: 'Eclair',
-            calories: 262,
+            product: 'Millet',
+            grade: 'B',
+            orders: 159,
+            region: 'kajiado'
           },
           {
-            name: 'Cupcake',
-            calories: 305,
+            product: 'Sorgum',
+            grade: 'B',
+            orders: 60,
+            region:'Narok'
           },
           {
-            name: 'Gingerbread',
-            calories: 356,
+            product: 'Maize',
+            grade: 'A',
+            orders: 500,
+            region:'Nakuru',
           },
+          
        
         ],
       }
