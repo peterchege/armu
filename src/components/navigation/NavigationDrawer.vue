@@ -6,7 +6,7 @@
           class="dashContent darken-2">
     
       <v-list shaped >
-      <v-img src="@/assets/logo.png" class="my-5 mx-auto" max-width="150" >
+      <v-img src="@/assets/logo2.png" class="my-5 mx-auto" max-width="150" >
 
       </v-img>
       <v-divider/>
@@ -41,7 +41,7 @@ export default {
         { icon: 'mdi-view-dashboard', text: 'Market Overview', link:'/dashboard' },
         { icon: 'mdi-cart', text: 'My orders', link:'' },
         { icon: 'mdi-store', text: 'My Inventory', link:'/inventory' },
-        { icon: 'mdi-mail', text: 'Inbox', link:'' },
+        { icon: 'mdi-mail', text: 'Message', link:'' },
         { icon: 'mdi-receipt', text: 'Invoice', link:'' }
         
       ],

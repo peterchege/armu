@@ -7,7 +7,7 @@
       <v-container  align="center" justify="center" fill-height>
           
           
-          <v-row class="mx-auto px-5 ">           
+          <v-row class="mx-auto px-5 pt-5">           
             
             <h1 class=" grey--text display-1 pr-5"> Inventory Managment </h1>
             <v-divider
