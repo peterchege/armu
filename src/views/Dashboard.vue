@@ -25,21 +25,7 @@
           </v-col>  
 
           <v-col cols="12" md="6">
-              <v-card class=" mx-auto"  >
-                    <v-card-title>
-                        <v-sheet
-                            class="v-sheet--offset"
-                            elevation="2"
-                            max-width="80"
-                            >
-                                <v-toolbar  color="primary" class="round-coners" dark>
-                                    <v-icon large>mdi-offer</v-icon>
-                                </v-toolbar>
-                        </v-sheet> 
-                        Orders to Buy
-                    </v-card-title>
-                    <app-offer></app-offer>                                       
-                </v-card>      
+              <app-demand></app-demand>
           </v-col>  
           </v-row>
 
@@ -63,7 +49,8 @@
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
      appBid:()=> import('@/components/card/Bid'),
-     appOffer:()=> import('@/components/card/Offer'),
+    //  appOffer:()=> import('@/components/card/Offer'),
+     appDemand:()=>import('@/components/card/Demand'),
      appProductHistory:()=> import('@/components/table/productHistory')
 
     },
