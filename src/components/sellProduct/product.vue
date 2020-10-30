@@ -99,12 +99,32 @@
                   <h2 class="pb-4" color="primary">Total Amount: Kshs {{ totalAmount }}</h2>
                 </v-col>
 
-                 <!-- <v-btn 
+                <v-col cols="12" md="6">
+                    <v-btn 
                     large
                     block
-                    class="mt-2 mb-7 secondary">
-                  ADD PRODUCT
-                </v-btn> -->
+                    class=" mb-3 pa-4 secondary">
+                      ADD PRODUCT
+                      <v-icon dark right>
+                          mdi-checkbox-marked-circle
+                        </v-icon>
+                    </v-btn>
+                </v-col>
+
+                <v-col cols="12" md="6">
+                    <v-btn
+                      large
+                      block 
+                      class=" mb-3 pa-4" 
+                      color="red"
+                      dark>
+                      Cancel
+                        <v-icon dark right>
+                          mdi-close
+                        </v-icon>
+                    </v-btn>
+                </v-col>
+                 
             </v-row>
 
         </v-card>

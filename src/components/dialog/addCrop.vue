@@ -146,44 +146,7 @@
           </v-container>
         <v-card-actions>
           
-           <div class="ma-auto pb-5">
-              <v-btn 
-              class="ma-5 pa-4" 
-              color="secondary"
-               @click="inviteUser" 
-              :dialogInvite="dialogInvite"
-              :loading="loading"
-              :disabled="!valid"
-              >
-              Add Product
-                <v-icon dark right>
-                  mdi-checkbox-marked-circle
-                  </v-icon>
-              </v-btn>
-
-              <v-btn 
-                class="ma-5 pa-4" 
-                color=""
-                 @click="clear" 
-                dark>
-                Clear
-                  <v-icon dark right class="ml-2">
-                    mdi-format-clear
-                    </v-icon>
-              </v-btn>
-
-              <v-btn 
-                class="ma-5 pa-4" 
-                color="red"
-                 @click="userCancel" 
-                dark>
-                Cancel
-                  <v-icon dark right>
-                    mdi-close
-                    </v-icon>
-              </v-btn>
-
-            </div>
+       
         </v-card-actions>
         </v-form>
       </v-card>
