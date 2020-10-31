@@ -19,6 +19,7 @@ export default new Vuex.Store({
         loadingTable: false,
         users: [],
         myFarm: '',
+        MyFarmLocation: '',
         grade: ''
 
 
@@ -65,7 +66,8 @@ export default new Vuex.Store({
             state.snackbar = payload.snackbar;
         },
         GET_FARMS(state, payload) {
-            state.myFarm = payload.myFarm;
+            state.myFarm = payload.farmerId;
+            state.MyFarmLocation = payload.location;
             state.snackbar = payload.snackbar;
             state.loading = payload.loading;
         },
@@ -73,7 +75,11 @@ export default new Vuex.Store({
             state.grade = payload.grade;
             state.snackbar = payload.snackbar;
             state.loading = payload.loading;
-        }
+        },
+        NEW_PROUCT(state, payload) {
+            state.snackbar = payload.snackbar;
+            state.loading = payload.loading;
+        },
 
     },
     actions: {
@@ -279,6 +285,33 @@ export default new Vuex.Store({
                 })
                 .catch(err => {
                     commit('GET_MAIZE_GRADE', {
+                        loading: false,
+                        snackbar: {
+                            showing: true,
+                            text: `${ err.response.data.message }`,
+                            color: "error"
+                        }
+
+                    })
+                    console.log(err)
+                })
+        },
+
+        newProduct({ commit }, farmData) {
+            axios.post('farmer/product/add', farmData)
+                .then(res => {
+                    console.log(res)
+                    commit('NEW_PROUCT', {
+                        loading: false,
+                        snackbar: {
+                            showing: true,
+                            text: `You have successfully added a new Product`,
+                            color: "success"
+                        }
+                    })
+                })
+                .catch(err => {
+                    commit('NEW_PROUCT', {
                         loading: false,
                         snackbar: {
                             showing: true,

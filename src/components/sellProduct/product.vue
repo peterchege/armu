@@ -34,10 +34,9 @@
       >
         <v-card flat class="mx-auto px-7">
             <v-card-title class=" ">Product Specification</v-card-title>
+            <v-form ref="form" v-model="valid">
             <v-row class="mx-10">
-              <form action="">
-                
-              </form>
+              
                 <v-col cols="12" md="6">
                     <v-select
                       :items="items"
@@ -78,7 +77,7 @@
 
                    <v-col cols="12" md="12">
                     <v-text-field
-                        v-model="farmLocation"
+                        v-model="pickUpLocation"
                         :rules="nameRules"
                         label="Pick Up Location"
                         required
@@ -103,6 +102,8 @@
                     <v-btn 
                     large
                     block
+                    :loading="loading"
+                    @click="addProduct"
                     class=" mb-3 pa-4 secondary">
                       ADD PRODUCT
                       <v-icon dark right>
@@ -125,9 +126,9 @@
                         </v-icon>
                     </v-btn>
                 </v-col>
-                 
+              
             </v-row>
-
+            </v-form>
         </v-card>
       </v-tab-item>
 
@@ -151,14 +152,17 @@
 </template>
 
 <script>
+import  { mapState } from 'vuex'
   export default {
     data () {
       return {
         tab: null,
         grade:'',
+        valid :false,
         noOfBags:'',
         pricePerBag:'',
         farmLocation:'',
+        pickUpLocation:'',
         dialog: false,
         description:'',
         items: ['A', 'B'],
@@ -167,7 +171,8 @@
     computed:{
        totalAmount (){ 
          return this.noOfBags * this.pricePerBag
-         }
+         },
+         ...mapState(['loading']),
     },
     mounted(){
       this.$store.dispatch('getFarm');
@@ -180,6 +185,23 @@
         this.dialog = false;
         this.$refs.form.reset()
       },
+
+      addProduct(){
+        this.$store.state.loading= true;
+        const farmData ={
+          productDescription: this.description,
+          pricePerBag: this.totalAmount,
+          numberOfBags: this.noOfBags,
+          pickUpLocation:this.pickUpLocation,
+          farmId: '145e8c9b-c539-4c91-93fd-492bf7535b23',
+          productGradeId: '635c14cc-9f2d-4d41-8cf6-cfa518783dd8'
+
+        }
+
+        console.log(farmData)
+        this.$store.dispatch('newProduct', farmData)
+
+      }
     }
 
   }
