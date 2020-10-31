@@ -18,8 +18,6 @@
                                 <v-btn block large 
                                     color="secondary" 
                                     class="my-3 mb-7"                                  
-                                    @click="onSubmit"
-                                    :loading="loading"
                                     to="/user">
                                     Register
                                 </v-btn>
@@ -41,7 +39,7 @@
                                         </v-toolbar>
                                 </v-sheet> 
                             </v-card-title>
-                            <form >
+                            <v-form v-model="valid">
                                 <v-text-field
                                     v-model="email"
                                     label="Email Address"
@@ -55,6 +53,7 @@
                                     label="Password"
                                     :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
                                     :type="show ? 'text' : 'password'"
+                                    @click:append="show = !show"
                                     prepend-icon="mdi-lock"
                                     required
                                     >
@@ -67,12 +66,14 @@
                                 </v-col>
                                 
 
-                            </form>
+                            </v-form>
 
                                  <v-btn
                                   block
                                   large
                                   @click="onLogin"
+                                  :loading="loading"
+                                  :disabled="!valid"
                                   class="my-7 px-5 primary"
                                   >Login
                                   </v-btn>
@@ -112,8 +113,9 @@
         </v-container>
     </v-app>
 </template>
-<script>
 
+<script>
+import  { mapState } from 'vuex'
 export default {
     components:{
         appHeader:() => import ('@/components/Header'),
@@ -122,12 +124,18 @@ export default {
     data(){
       return{
         email: '',
+        valid :false,
         password: '',
         show: false,
       }
     },
+    computed:{
+   
+       ...mapState(['loading']),
+    },
     methods:{
         onLogin(){
+            this.$store.state.loading = true;
             const formData ={
                 email : this.email,
                 password: this.password
