@@ -18,8 +18,6 @@
                                 <v-btn block large 
                                     color="secondary" 
                                     class="my-3 mb-7"                                  
-                                    @click="onSubmit"
-                                    :loading="loading"
                                     to="/user">
                                     Register
                                 </v-btn>
@@ -115,8 +113,9 @@
         </v-container>
     </v-app>
 </template>
-<script>
 
+<script>
+import  { mapState } from 'vuex'
 export default {
     components:{
         appHeader:() => import ('@/components/Header'),
@@ -130,8 +129,13 @@ export default {
         show: false,
       }
     },
+    computed:{
+   
+       ...mapState(['loading']),
+    },
     methods:{
         onLogin(){
+            this.$store.state.loading = true;
             const formData ={
                 email : this.email,
                 password: this.password
