@@ -41,7 +41,7 @@
                                         </v-toolbar>
                                 </v-sheet> 
                             </v-card-title>
-                            <form >
+                            <v-form v-model="valid">
                                 <v-text-field
                                     v-model="email"
                                     label="Email Address"
@@ -55,6 +55,7 @@
                                     label="Password"
                                     :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
                                     :type="show ? 'text' : 'password'"
+                                    @click:append="show = !show"
                                     prepend-icon="mdi-lock"
                                     required
                                     >
@@ -67,12 +68,14 @@
                                 </v-col>
                                 
 
-                            </form>
+                            </v-form>
 
                                  <v-btn
                                   block
                                   large
                                   @click="onLogin"
+                                  :loading="loading"
+                                  :disabled="!valid"
                                   class="my-7 px-5 primary"
                                   >Login
                                   </v-btn>
@@ -122,6 +125,7 @@ export default {
     data(){
       return{
         email: '',
+        valid :false,
         password: '',
         show: false,
       }
