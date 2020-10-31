@@ -133,12 +133,12 @@ export default new Vuex.Store({
                 .then(res => {
                     console.log(res)
                     localStorage.setItem('token', res.data.accessToken)
-                    localStorage.setItem('username', res.data.name)
+                    localStorage.setItem('username', res.data.username)
                     localStorage.setItem('role', res.data.roles[0])
                     localStorage.setItem('email', formData.email)
                     commit('AUTH_USER', {
                         token: res.data.accessToken,
-                        username: res.data.name,
+                        username: res.data.username,
                         email: formData.email,
                         loading: false,
                         snackbar: {
