@@ -117,6 +117,7 @@
                       block 
                       class=" mb-3 pa-4" 
                       color="red"
+                      @click="userCancel" 
                       dark>
                       Cancel
                         <v-icon dark right>
@@ -158,6 +159,7 @@
         noOfBags:'',
         pricePerBag:'',
         farmLocation:'',
+        dialog: false,
         description:'',
         items: ['A', 'B'],
       }
@@ -171,8 +173,14 @@
       this.$store.dispatch('getFarm');
       this.$store.dispatch('getGrade');
 
-
     },
+
+    methods:{
+      userCancel(){
+        this.dialog = false;
+        this.$refs.form.reset()
+      },
+    }
 
   }
 </script>
