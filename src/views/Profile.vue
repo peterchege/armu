@@ -47,9 +47,10 @@
                             fixed-tabs
                             background-color="primary"
                             dark
+                            v-model="tab"
                             height="100"
                         >
-                            <v-tab>
+                            <v-tab href="profile">
                             Profile
                             </v-tab>
                             <v-tab>
@@ -57,6 +58,40 @@
                             </v-tab>
                             
                         </v-tabs>
+
+                        <v-tabs-items v-model="tab">
+                            <v-tab-item value="profile">
+                                <v-card class="my-10">
+                                   <v-list class="pl-10 py-5">
+                                       <v-row>
+                                            <p class="px-10">Name</p>
+                                            <v-divider vertical></v-divider>
+                                            <p class="px-10"> Peter Chege </p>
+                                       </v-row>
+                                       <v-divider class="my-5"></v-divider>
+                                       <v-row>
+                                            <p class="px-10">Email Address</p>
+                                            <v-divider vertical></v-divider>
+                                            <p class="px-10"> Peter Chege </p>
+                                       </v-row>
+                                       <v-divider class="my-5"></v-divider>
+                                       <v-row>
+                                            <p class="px-10">Contact No.</p>
+                                            <v-divider vertical></v-divider>
+                                            <p class="px-10"> Peter Chege </p>
+                                       </v-row>
+                                       <v-divider class="my-5"></v-divider>
+                                       <v-row>
+                                            <p class="px-10">Created</p>
+                                            <v-divider vertical></v-divider>
+                                            <p class="px-10"> Peter Chege </p>
+                                       </v-row>
+                                      
+                                       
+                                   </v-list>
+                                </v-card>
+                            </v-tab-item>
+                        </v-tabs-items>
                         </template>
 
                 </v-card>
