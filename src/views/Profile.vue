@@ -19,7 +19,7 @@
                 <v-card class="mx-5">
                     <v-card-title class="mt-8">
                         <v-row>
-                            <v-avatar class="mx-auto my-5" size="200">
+                            <v-avatar class="mx-auto my-5" size="150">
                                 <img
                                     alt="user"
                                     src="https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg"
@@ -36,11 +36,21 @@
                     <v-row >
                         <p class=" caption mx-auto mb-10">peterchege442@gmail.com</p>
                     </v-row>
+
+                    <v-card-action >
+                        <v-row >
+                            <v-btn
+                                class="secondary mx-auto mb-10">
+                                change profile picture
+                            </v-btn>
+                        </v-row>
+                        
+                    </v-card-action>
                             
                 </v-card>
             </v-col>
 
-            <v-col cols="12" md="6">
+            <v-col cols="12" md="8">
                 <v-card>
                     <template>
                         <v-tabs
@@ -63,28 +73,53 @@
                             <v-tab-item value="profile">
                                 <v-card class="my-10">
                                    <v-list class="pl-10 py-5">
-                                       <v-row>
-                                            <p class="px-10">Name</p>
-                                            <v-divider vertical></v-divider>
-                                            <p class="px-10"> Peter Chege </p>
+                                       <v-row class="my-3">
+                                           <v-col cols="12" md="4">
+                                               <p class="px-10">Name</p>
+                                           </v-col>
+                                           <v-col cols="12" md="1">
+                                               <v-divider vertical></v-divider>
+                                           </v-col>
+                                           <v-col cols="12" md="7">
+                                               <p class="px-10"> Peter Chege </p>
+                                           </v-col>                                           
                                        </v-row>
-                                       <v-divider class="my-5"></v-divider>
-                                       <v-row>
-                                            <p class="px-10">Email Address</p>
-                                            <v-divider vertical></v-divider>
-                                            <p class="px-10"> Peter Chege </p>
+                                       <v-divider></v-divider>
+                                       <v-row class="my-3">
+                                           <v-col cols="12" md="4">
+                                               <p class="px-10">Email Address</p>
+                                           </v-col>
+                                           <v-col cols="12" md="1">
+                                               <v-divider vertical></v-divider>
+                                           </v-col>
+                                           <v-col cols="12" md="7">
+                                               <p class="px-10"> peterchege@gmailcom </p>
+                                           </v-col>                                           
                                        </v-row>
-                                       <v-divider class="my-5"></v-divider>
-                                       <v-row>
-                                            <p class="px-10">Contact No.</p>
-                                            <v-divider vertical></v-divider>
-                                            <p class="px-10"> Peter Chege </p>
+                                       <v-divider></v-divider>
+                                         <v-divider></v-divider>
+                                       <v-row class="my-3">
+                                           <v-col cols="12" md="4">
+                                               <p class="px-10">Contact No.</p>
+                                           </v-col>
+                                           <v-col cols="12" md="1">
+                                               <v-divider vertical></v-divider>
+                                           </v-col>
+                                           <v-col cols="12" md="7">
+                                               <p class="px-10"> 0722075099 </p>
+                                           </v-col>                                           
                                        </v-row>
-                                       <v-divider class="my-5"></v-divider>
-                                       <v-row>
-                                            <p class="px-10">Created</p>
-                                            <v-divider vertical></v-divider>
-                                            <p class="px-10"> Peter Chege </p>
+                                       <v-divider></v-divider>
+                                       <v-row class="my-3">
+                                           <v-col cols="12" md="4">
+                                               <p class="px-10">Created </p>
+                                           </v-col>
+                                           <v-col cols="12" md="1">
+                                               <v-divider vertical></v-divider>
+                                           </v-col>
+                                           <v-col cols="12" md="7">
+                                               <p class="px-10"> 12/05/2020 </p>
+                                           </v-col>                                           
                                        </v-row>
                                       
                                        
