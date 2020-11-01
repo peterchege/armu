@@ -15,7 +15,28 @@
           </v-row>
         <v-row>
             <v-col cols="12" md="4">
-                
+                <v-card class="mx-5">
+                    <v-card-title class="mt-8">
+                        <v-row>
+                            <v-avatar class="mx-auto my-5" size="200">
+                                <img
+                                    alt="user"
+                                    src="https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg"
+                                >
+                                </v-avatar> 
+                        </v-row>
+                        
+                        
+                    </v-card-title>
+
+                    <v-row class="">
+                        <h2 class="title mx-auto my-3">PETER CHEGE</h2><br>
+                    </v-row>
+                    <v-row >
+                        <p class=" caption mx-auto mb-10">peterchege442@gmail.com</p>
+                    </v-row>
+                            
+                </v-card>
             </v-col>
         </v-row>
 
