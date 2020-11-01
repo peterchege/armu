@@ -13,6 +13,7 @@
             ></v-divider>
             <p class="px-3 pt-3"> Edit Profile </p>
           </v-row>
+
         <v-row>
             <v-col cols="12" md="4">
                 <v-card class="mx-5">
@@ -36,6 +37,28 @@
                         <p class=" caption mx-auto mb-10">peterchege442@gmail.com</p>
                     </v-row>
                             
+                </v-card>
+            </v-col>
+
+            <v-col cols="12" md="6">
+                <v-card>
+                    <template>
+                        <v-tabs
+                            fixed-tabs
+                            background-color="primary"
+                            dark
+                            height="100"
+                        >
+                            <v-tab>
+                            Profile
+                            </v-tab>
+                            <v-tab>
+                            Change Password
+                            </v-tab>
+                            
+                        </v-tabs>
+                        </template>
+
                 </v-card>
             </v-col>
         </v-row>
