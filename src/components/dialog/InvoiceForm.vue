@@ -52,7 +52,7 @@
             <v-row>
                 <v-col style="font-size:15px" class="auto">
                   <p><strong>Invoice to:</strong></p>
-                  <span >Name: APA Insurance</span> <br>
+                  <span >Name: </span> <br>
                   <span>Customer Name : Doughlas Mwangi</span> <br>
                   <span>Client Phone No. : 0736437676</span> <br>
                   <span>Delivery location : Muthith Road</span> <br>
