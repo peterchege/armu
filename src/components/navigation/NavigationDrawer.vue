@@ -42,7 +42,7 @@ export default {
         { icon: 'mdi-cart', text: 'My orders', link:'' },
         { icon: 'mdi-store', text: 'My Inventory', link:'/inventory' },
         { icon: 'mdi-mail', text: 'Message', link:'' },
-        { icon: 'mdi-receipt', text: 'Invoice', link:'' }
+        { icon: 'mdi-receipt', text: 'Invoice', link:'/invoice' }
         
       ],
     }),

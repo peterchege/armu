@@ -52,6 +52,12 @@ const routes = [{
         name: 'Profile',
         component: () =>
             import ('@/views/Profile')
+    },
+    {
+        path: '/invoice',
+        name: 'Invoice',
+        component: () =>
+            import ('@/views/Invoice')
     }
 
 ]
