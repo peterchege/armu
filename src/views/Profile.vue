@@ -146,9 +146,9 @@
                                            <v-text-field
                                                 v-model="newPassword"
                                                 label="New Password"
-                                                :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                                                :type="show ? 'text' : 'password'"
-                                                @click:append="show = !show"
+                                                :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                                                :type="show1 ? 'text' : 'password'"
+                                                @click:append="show1 = !show1"
                                                 prepend-icon="mdi-lock"
                                                 required
                                                 >
@@ -159,13 +159,28 @@
                                            <v-text-field
                                                 v-model="confirmPassword"
                                                 label="Confirm Password"
-                                                :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                                                :type="show ? 'text' : 'password'"
-                                                @click:append="show = !show"
+                                                :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+                                                :type="show2? 'text' : 'password'"
+                                                @click:append="show2 = !show2"
                                                 prepend-icon="mdi-lock"
                                                 required
                                                 >
                                             </v-text-field>
+                                       </v-col>
+
+                                       <v-col class="mx-auto my-5 " cols="12" md="8">
+                                           <v-btn
+                                                large
+                                                block
+                                                class="secondary  ">
+                                                Update Password
+                                            </v-btn>
+                                       </v-col>
+                                       
+                                   </v-row>
+                                   <v-row class="mx-auto">
+                                       <v-col class="mx-auto" cols="12">
+                                           
                                        </v-col>
                                    </v-row>
                             </v-tab-item>
@@ -204,6 +219,8 @@
       newPassword:'',
       confirmPassword:'',
       show: false,
+      show1: false,
+      show2: false,
     }),
     
   }
