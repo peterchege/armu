@@ -41,7 +41,6 @@ export default {
         { icon: 'mdi-view-dashboard', text: 'Market Overview', link:'/dashboard' },
         { icon: 'mdi-cart', text: 'My orders', link:'' },
         { icon: 'mdi-store', text: 'My Inventory', link:'/inventory' },
-        { icon: 'mdi-mail', text: 'Message', link:'' },
         { icon: 'mdi-receipt', text: 'Invoice', link:'/invoice' }
         
       ],
