@@ -60,10 +60,11 @@
                             v-model="tab"
                             height="100"
                         >
-                            <v-tab href="profile">
+                        <v-tabs-slider ></v-tabs-slider>
+                            <v-tab href="#profile">
                             Profile
                             </v-tab>
-                            <v-tab>
+                            <v-tab href="#changePassword">
                             Change Password
                             </v-tab>
                             
@@ -126,6 +127,49 @@
                                    </v-list>
                                 </v-card>
                             </v-tab-item>
+
+                            <v-tab-item value="changePassword">
+                                   <v-row class="my-5 mx-auto">
+                                       <v-col class="mx-auto mt-5" cols="12" md="8">
+                                           <v-text-field
+                                                v-model="oldPassword"
+                                                label="Old Password"
+                                                :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                                                :type="show ? 'text' : 'password'"
+                                                @click:append="show = !show"
+                                                prepend-icon="mdi-lock"
+                                                required
+                                                >
+                                            </v-text-field>
+                                       </v-col>
+                                       <v-col class="mx-auto" cols="12" md="8">
+                                           <v-text-field
+                                                v-model="newPassword"
+                                                label="New Password"
+                                                :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                                                :type="show ? 'text' : 'password'"
+                                                @click:append="show = !show"
+                                                prepend-icon="mdi-lock"
+                                                required
+                                                >
+                                            </v-text-field>
+                                       </v-col>
+
+                                       <v-col class="mx-auto" cols="12" md="8">
+                                           <v-text-field
+                                                v-model="confirmPassword"
+                                                label="Confirm Password"
+                                                :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                                                :type="show ? 'text' : 'password'"
+                                                @click:append="show = !show"
+                                                prepend-icon="mdi-lock"
+                                                required
+                                                >
+                                            </v-text-field>
+                                       </v-col>
+                                   </v-row>
+                            </v-tab-item>
+                            
                         </v-tabs-items>
                         </template>
 
@@ -155,6 +199,11 @@
     data: () => ({
       dialog: false,
       drawer: null,
+      tab: null,
+      oldPassword: '',
+      newPassword:'',
+      confirmPassword:'',
+      show: false,
     }),
     
   }
