@@ -57,7 +57,7 @@ const routes = [{
         path: '/invoice',
         name: 'Invoice',
         component: () =>
-            import ('@/views/Invoice')
+            import ('@/views/InvoiceManagment')
     }
 
 ]
