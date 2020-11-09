@@ -16,7 +16,7 @@
           <v-btn icon dark @click="dialog = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>
-          <v-toolbar-title> VENDOR INVOICE </v-toolbar-title>
+          <v-toolbar-title> INVOICE </v-toolbar-title>
           <v-spacer></v-spacer>
          
         </v-toolbar>
@@ -29,7 +29,7 @@
         <v-card ref="content" width="80%"  class="mx-auto pa-10 ">
             <v-row >
                 <v-col cols="auto">
-                  <span>My Resque</span> <br>
+                  <span>Farmer's Name</span> <br>
                   <span>Westlands, Kenya</span> <br>
                   <span>P: +254 (7) 8736 4775</span>
                 </v-col>
@@ -52,7 +52,6 @@
             <v-row>
                 <v-col style="font-size:15px" class="auto">
                   <p><strong>Invoice to:</strong></p>
-                  <span >Name: APA Insurance</span> <br>
                   <span>Customer Name : Doughlas Mwangi</span> <br>
                   <span>Client Phone No. : 0736437676</span> <br>
                   <span>Delivery location : Muthith Road</span> <br>
