@@ -103,6 +103,7 @@
                     large
                     block
                     :loading="loading"
+                    :disabled="!valid"
                     @click="addProduct"
                     class=" mb-3 pa-4 secondary">
                       ADD PRODUCT

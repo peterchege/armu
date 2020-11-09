@@ -25,7 +25,7 @@
     components:{
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
-     appInvoiceTable:() => import('@/components/table/invoiceTable')
+     appInvoiceTable:() => import('@/components/table/invoiceTable'),
 
     },
     props: {
