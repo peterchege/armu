@@ -49,7 +49,7 @@
         </v-row>
       </v-container>
     </v-content>
-     <app-bottom/>
+     <!-- <app-bottom/> -->
   </v-app>
 </template>
 
@@ -58,8 +58,8 @@ import validation from '@/utils/Validations'
 import { mapGetters } from 'vuex'
   export default {
     components:{
-      appHeader : () => import('@/components/Logo'),
-      appBottom : () => import('@/components/BottomImage')
+      appHeader : () => import('@/components/Header'),
+      // appBottom : () => import('@/components/BottomImage')
     },
     props: {
       source: String,
