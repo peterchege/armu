@@ -3,11 +3,18 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+    {
         path: '/',
         name: 'Landingpage',
         component: () =>
             import ('@/views/Landingpage')
+    },
+    {
+        path: '/forgot-password',
+        name: 'Forgot-Password',
+        component: () =>
+            import ('@/Auth/ForgotPassword.vue')
     },
     {
         path: '/register/farmer',
