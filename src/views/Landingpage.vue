@@ -1,9 +1,11 @@
 <template>
     <v-app id="inspire" class="accent" >
+        
         <v-container class="fill-height" fluid>
 
-        
-        <app-header/>
+       <v-row>
+            <app-header/>
+       </v-row>
         <v-row align="center" justify="end" class="text-center">
             <v-col cols="12" md="4" >
                 <v-card class="mx-auto  elevation-1 " width="400" >   
@@ -60,7 +62,7 @@
                                 </v-text-field>
 
                                 <v-col cols="12" align="end">
-                                    <router-link to="/forgotpassword" >
+                                    <router-link to="/forgot-password" >
                                     <span class="grey--text caption " > Forgot password </span>
                                 </router-link>
                                 </v-col>
