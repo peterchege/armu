@@ -25,7 +25,7 @@
         </v-col>
         <v-col >
             <v-card-title color="primary" >
-               <h3 class=" font-weight-light"> My Product History</h3>
+               <h3 class=" font-weight-light"> Products</h3>
                <v-col class="d-flex align-end flex-column" >
                 <v-text-field
                   v-model="search"

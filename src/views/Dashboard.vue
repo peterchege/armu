@@ -33,7 +33,12 @@
             <v-col cols="12" md="12">
                 <app-product-history></app-product-history>
             </v-col>
-            
+          </v-row>
+
+          <v-row class="mx-5 mt-10">
+            <v-col cols="12" md="12">
+                <app-products></app-products>
+            </v-col>
           </v-row>
       </v-container>
     </v-content>
@@ -49,9 +54,9 @@
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
      appBid:()=> import('@/components/card/Bid'),
-    //  appOffer:()=> import('@/components/card/Offer'),
      appDemand:()=>import('@/components/card/Demand'),
-     appProductHistory:()=> import('@/components/table/productHistory')
+     appProductHistory:()=> import('@/components/table/productHistory'),
+     appProducts:()=> import('@/components/table/products')
 
     },
     props: {
