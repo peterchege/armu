@@ -43,10 +43,10 @@
 
     <template  v-slot:[`item.status`]="{}">
        <v-dialog
-      v-model="dialog"
-      persistent
-      max-width="290"
-    >
+          v-model="dialog"
+          persistent
+          max-width="290"
+        >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
           color="primary"
@@ -60,28 +60,28 @@
       </template>
       <v-card>
         <v-card-title class="headline">
-          Notification
+          PURCHASE
         </v-card-title>
         <v-card-text>Do you wish to purchase this product</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="green darken-1"
-            text
+            class="red"
+            
             @click="dialog = false"
           >
-            Disagree
+            No
           </v-btn>
           <v-btn
-            color="green darken-1"
-            text
+            class="green mx-2"
+            
             @click="dialog = false"
           >
-            Agree
+            Yes
           </v-btn>
         </v-card-actions>
       </v-card>
-    </v-dialog>
+        </v-dialog>
         
     </template>
 

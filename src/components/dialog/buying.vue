@@ -9,10 +9,11 @@
         <v-btn
           color="primary"
           dark
+          class="my-3 secondary"
           v-bind="attrs"
           v-on="on"
         >
-          Open Dialog
+          Buy Now
         </v-btn>
       </template>
       <v-card>
@@ -38,7 +39,7 @@
           </v-btn>
         </v-card-actions>
       </v-card>
-    </v-dialog>
+        </v-dialog>
   </v-row>
 </template>
 
