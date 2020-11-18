@@ -18,7 +18,7 @@
         elevation="5"
         >
             <v-toolbar  color="primary" class="round-coners" dark>
-                <v-icon large>mdi-history</v-icon>
+                <v-icon large>mdi-store</v-icon>
             </v-toolbar>
             
         </v-sheet>
@@ -39,6 +39,50 @@
         </v-col>
     </v-row>
       
+    </template>
+
+    <template  v-slot:[`item.status`]="{}">
+       <v-dialog
+          v-model="dialog"
+          persistent
+          max-width="290"
+        >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          color="primary"
+          dark
+          class="my-3 secondary"
+          v-bind="attrs"
+          v-on="on"
+        >
+          Buy Now
+        </v-btn>
+      </template>
+      <v-card>
+        <v-card-title class="headline">
+          PURCHASE
+        </v-card-title>
+        <v-card-text>Do you wish to purchase this product</v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            class="red"
+            
+            @click="dialog = false"
+          >
+            No
+          </v-btn>
+          <v-btn
+            class="green mx-2"
+            
+            @click="dialog = false"
+          >
+            Yes
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+        </v-dialog>
+        
     </template>
 
     
@@ -82,6 +126,7 @@ import  { mapState, mapGetters } from 'vuex'
           sortable: true,
           value: 'price',
         },
+        
         { text: 'Created', value: 'date' },
         { text: 'Location', value: 'location' },
         { text: 'Status', value: 'status' },
@@ -94,8 +139,7 @@ import  { mapState, mapGetters } from 'vuex'
               bags: 34,
               price: 50000,
               date: '12/08/2020',
-              location: 'Kitale',
-              status:'sold'
+              location: 'Kitale'
           },
           {
               id: 2,
@@ -104,8 +148,7 @@ import  { mapState, mapGetters } from 'vuex'
               bags: 50,
               price: 150000,
               date: '17/10/2020',
-              location: 'Eldoret',
-              status:'Available'
+              location: 'Eldoret'
           },
           {
               id: 3,
@@ -114,8 +157,7 @@ import  { mapState, mapGetters } from 'vuex'
               bags: 19,
               price: 30000,
               date: '06/08/2020',
-              location: 'Kitale',
-              status:'sold'
+              location: 'Kitale'
           },
           {
               id: 4,
@@ -124,8 +166,7 @@ import  { mapState, mapGetters } from 'vuex'
               bags: 74,
               price: 250000,
               date: '28/08/2020',
-              location: 'Kitale',
-              status:'sold'
+              location: 'Kitale'
           },
         ]
  
