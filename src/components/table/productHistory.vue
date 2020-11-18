@@ -29,7 +29,6 @@
                <v-col class="d-flex align-end flex-column" >
                 <v-text-field
                   v-model="search"
-                  v-model="search"
                   append-icon="mdi-magnify"
                   label="Search"
                   single-line
