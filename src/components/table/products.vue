@@ -18,7 +18,7 @@
         elevation="5"
         >
             <v-toolbar  color="primary" class="round-coners" dark>
-                <v-icon large>mdi-history</v-icon>
+                <v-icon large>mdi-store</v-icon>
             </v-toolbar>
             
         </v-sheet>
