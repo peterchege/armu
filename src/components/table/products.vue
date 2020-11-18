@@ -41,6 +41,12 @@
       
     </template>
 
+    <template  v-slot:[`item.status`]="{}">
+        <v-btn
+        class="my-3 secondary">Buy Now
+        </v-btn>
+    </template>
+
     
   </v-data-table>
 </template>
@@ -82,6 +88,7 @@ import  { mapState, mapGetters } from 'vuex'
           sortable: true,
           value: 'price',
         },
+        
         { text: 'Created', value: 'date' },
         { text: 'Location', value: 'location' },
         { text: 'Status', value: 'status' },
@@ -94,8 +101,7 @@ import  { mapState, mapGetters } from 'vuex'
               bags: 34,
               price: 50000,
               date: '12/08/2020',
-              location: 'Kitale',
-              status:'sold'
+              location: 'Kitale'
           },
           {
               id: 2,
@@ -104,8 +110,7 @@ import  { mapState, mapGetters } from 'vuex'
               bags: 50,
               price: 150000,
               date: '17/10/2020',
-              location: 'Eldoret',
-              status:'Available'
+              location: 'Eldoret'
           },
           {
               id: 3,
@@ -114,8 +119,7 @@ import  { mapState, mapGetters } from 'vuex'
               bags: 19,
               price: 30000,
               date: '06/08/2020',
-              location: 'Kitale',
-              status:'sold'
+              location: 'Kitale'
           },
           {
               id: 4,
@@ -124,8 +128,7 @@ import  { mapState, mapGetters } from 'vuex'
               bags: 74,
               price: 250000,
               date: '28/08/2020',
-              location: 'Kitale',
-              status:'sold'
+              location: 'Kitale'
           },
         ]
  
