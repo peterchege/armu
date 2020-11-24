@@ -20,7 +20,8 @@ export default new Vuex.Store({
         users: [],
         myFarm: '',
         MyFarmLocation: '',
-        grade: ''
+        grade: '',
+        product: []
 
 
     },
@@ -73,6 +74,11 @@ export default new Vuex.Store({
         },
         GET_MAIZE_GRADE(state, payload) {
             state.grade = payload.grade;
+            state.snackbar = payload.snackbar;
+            state.loading = payload.loading;
+        },
+        PRODUCTS(state, payload){
+            state.product =payload.maize_product;
             state.snackbar = payload.snackbar;
             state.loading = payload.loading;
         },
@@ -295,6 +301,27 @@ export default new Vuex.Store({
                     })
                     console.log(err)
                 })
+        },
+
+        getProduct({commit}){
+            axios.get('farmer/get-posted-products')
+            .then(res => {
+                console.log(res)
+                const maize_product = res.data
+                commit('PRODUCTS', maize_product)
+            })
+            .catch(err => {
+                commit('PRODUCTS', {
+                    loading: false,
+                    snackbar: {
+                        showing: true,
+                        text: `${ err.response.data.message }`,
+                        color: "error"
+                    }
+
+                })
+                console.log(err)
+            })
         },
 
         newProduct({ commit }, farmData) {
