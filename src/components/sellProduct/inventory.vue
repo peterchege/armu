@@ -1,11 +1,11 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="crop"
+    :items="product"
     sort-by="Date"
     class="elevation-1"
     :search="search"
-    :loading ="loadingTable"
+    :loading ="loading"
     :loading-text="loadingText"
   >
   
@@ -62,29 +62,29 @@ import  { mapState, mapGetters } from 'vuex'
           text: 'Product',
           align: 'start',
           sortable: true,
-          value: '',
+          value: 'product.name',
         },
         {
           text: 'Grade',
           align: 'start',
           sortable: true,
-          value: '',
+          value: 'grade.name',
         },
         {
           text: 'No. of Bags',
           align: 'start',
           sortable: true,
-          value: '',
+          value: 'numberOfBags',
         },
         {
           text: 'Price offer',
           align: 'start',
           sortable: true,
-          value: '',
+          value: 'pricePerBag',
         },
-        { text: 'Created', value: '' },
-        { text: 'Location', value: '' },
-        { text: 'Status', value: '' },
+        { text: 'Created', value: 'createdAt' },
+        { text: 'Location', value: 'pickUpLocation' },
+        { text: 'Status', value: 'status' },
       ],
  
     }),
@@ -93,7 +93,7 @@ import  { mapState, mapGetters } from 'vuex'
       formTitle () {
         return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
       },
-      ...mapState(['bookedVehicle','loadingTable']),
+      ...mapState(['product','loading']),
       ...mapGetters(['loadingText'])
     },
 
@@ -104,21 +104,17 @@ import  { mapState, mapGetters } from 'vuex'
     },
     
     mounted() {
-    //   this.$store.dispatch('fetchBookedVehicles')
+      this.$store.dispatch('getProduct')
       
     },
     created () {
-      this.initialize(),
-      this.$store.state.loadingTable = true;
+      this.$store.state.loading = true;
       this.$store.state.loadingText = "Loading... Please wait";
       
     },
 
     methods: {
       
-      initialize() {
-        this.desserts = this.$store.state.carRequest
-      },
 
 
     },
