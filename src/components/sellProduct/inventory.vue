@@ -1,11 +1,11 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="crop"
+    :items="product"
     sort-by="Date"
     class="elevation-1"
     :search="search"
-    :loading ="loadingTable"
+    :loading ="loading"
     :loading-text="loadingText"
   >
   
@@ -93,7 +93,7 @@ import  { mapState, mapGetters } from 'vuex'
       formTitle () {
         return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
       },
-      ...mapState(['loadingTable']),
+      ...mapState(['product','loading']),
       ...mapGetters(['loadingText'])
     },
 
@@ -108,7 +108,7 @@ import  { mapState, mapGetters } from 'vuex'
       
     },
     created () {
-      this.$store.state.loadingTable = true;
+      this.$store.state.loading = true;
       this.$store.state.loadingText = "Loading... Please wait";
       
     },
