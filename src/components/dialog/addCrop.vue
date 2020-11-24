@@ -56,22 +56,6 @@ export default {
     },
     
     methods:{
-      inviteUser(){        
-         this.dialogInvite= true;
-         this.$store.state.loading= true;
-
-        const inviteData = {
-          fname: this.firstname,
-          lname: this.lastname,
-          email: this.email,
-          department: this.department,
-          role: this.assignedRole,
-          extension: this.extension,
-        }
-        console.log(inviteData)
-        this.$store.dispatch('inviteUser', inviteData)
-        this.$refs.form.reset()
-      },
 
       userCancel(){
         this.dialog = false;
