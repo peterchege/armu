@@ -93,7 +93,7 @@ import  { mapState, mapGetters } from 'vuex'
       formTitle () {
         return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
       },
-      ...mapState(['bookedVehicle','loadingTable']),
+      ...mapState(['loadingTable']),
       ...mapGetters(['loadingText'])
     },
 
@@ -104,11 +104,10 @@ import  { mapState, mapGetters } from 'vuex'
     },
     
     mounted() {
-    //   this.$store.dispatch('fetchBookedVehicles')
+      this.$store.dispatch('getProduct')
       
     },
     created () {
-      this.initialize(),
       this.$store.state.loadingTable = true;
       this.$store.state.loadingText = "Loading... Please wait";
       
@@ -116,9 +115,6 @@ import  { mapState, mapGetters } from 'vuex'
 
     methods: {
       
-      initialize() {
-        this.desserts = this.$store.state.carRequest
-      },
 
 
     },
