@@ -195,7 +195,8 @@ import  { mapState } from 'vuex'
           numberOfBags: this.noOfBags,
           pickUpLocation:this.pickUpLocation,
           farmId: '145e8c9b-c539-4c91-93fd-492bf7535b23',
-          productGradeId: '635c14cc-9f2d-4d41-8cf6-cfa518783dd8'
+          productId: '04c7bcda-9dc0-4c90-922e-70bd3561d495',
+          gradeId: "7f5499b5-c8f6-448b-8958-c9eded6a26e3"
 
         }
 
