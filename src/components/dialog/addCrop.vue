@@ -45,14 +45,6 @@ export default {
     },
     data: () => ({
       valid :false,
-      full_names: '',
-      vehicle_make: '',
-      reg_no:'',
-      date:'',
-      assignedRole:'',
-      email:'',
-      phone:'',
-      vehicle_color:'',
       dialog: false,
       dialogInvite: false,
       ...validation
