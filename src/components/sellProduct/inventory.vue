@@ -62,13 +62,13 @@ import  { mapState, mapGetters } from 'vuex'
           text: 'Product',
           align: 'start',
           sortable: true,
-          value: 'product.name',
+          value: 'productGrade.product.name',
         },
         {
           text: 'Grade',
           align: 'start',
           sortable: true,
-          value: 'grade.name',
+          value: 'productGrade.grade.name',
         },
         {
           text: 'No. of Bags',

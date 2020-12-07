@@ -308,7 +308,7 @@ export default new Vuex.Store({
             .then(res => {
                 console.log(res)
                 const maize_product = res.data
-                commit('PRODUCTS', maize_product)
+                commit('PRODUCTS', {maize_product})
             })
             .catch(err => {
                 commit('PRODUCTS', {
