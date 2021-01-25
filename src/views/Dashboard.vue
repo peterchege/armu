@@ -55,7 +55,7 @@
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
      appBid:()=> import('@/components/card/Bid'),
      appDemand:()=>import('@/components/card/Demand'),
-     appProductHistory:()=> import('@/components/table/productHistory'),
+     appProductHistory:()=> import('@/components/sellProduct/inventory'),
      appProducts:()=> import('@/components/table/products')
 
     },
