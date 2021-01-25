@@ -187,23 +187,15 @@ import  { mapState, mapGetters } from 'vuex'
     },
     
     mounted() {
-    //   this.$store.dispatch('fetchBookedVehicles')
+      this.$store.dispatch('fetchPostedProduct')
       
     },
     created () {
-      this.initialize(),
-    //   this.$store.state.loadingTable = true;
+      // this.$store.state.loadingTable = true;
       this.$store.state.loadingText = "Loading... Please wait";
       
     },
 
-    methods: {
-      
-      initialize() {
-        this.desserts = this.$store.state.carRequest
-      },
-
-
-    },
+  
   }
 </script>

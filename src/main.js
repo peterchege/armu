@@ -15,9 +15,8 @@ Vue.config.productionTip = false
 
 axios.defaults.baseURL = 'http://api.armulogistics.com:8080/api'
 
-const accessToken = localStorage.getItem('token')
 
-axios.defaults.headers.common['x-access-token'] = accessToken;
+axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
 
 
 new Vue({
