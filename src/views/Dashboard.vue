@@ -35,11 +35,7 @@
             </v-col>
           </v-row>
 
-          <v-row class="mx-5 mt-10">
-            <v-col cols="12" md="12">
-                <app-products></app-products>
-            </v-col>
-          </v-row>
+      
       </v-container>
     </v-content>
     
@@ -56,7 +52,6 @@
      appBid:()=> import('@/components/card/Bid'),
      appDemand:()=>import('@/components/card/Demand'),
      appProductHistory:()=> import('@/components/sellProduct/inventory'),
-     appProducts:()=> import('@/components/table/products')
 
     },
     props: {

@@ -9,11 +9,11 @@
           
           <v-row class="mx-auto px-5 pt-5">           
             
-            <h1 class=" grey--text display-1 pr-5"> Inventory Managment </h1>
+            <h1 class=" grey--text display-1 pr-5"> Product Managment </h1>
             <v-divider
             vertical
             ></v-divider>
-            <p class="px-3 pt-3"> Dashboard - Inventory Managment </p>
+            <p class="px-3 pt-3"> Dashboard</p>
           </v-row>
 
           <v-row class="mx-3">           
