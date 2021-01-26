@@ -176,8 +176,8 @@ import  { mapState } from 'vuex'
          ...mapState(['loading']),
     },
     mounted(){
-      this.$store.dispatch('getFarm');
-      this.$store.dispatch('getGrade');
+      // this.$store.dispatch('getFarm');
+      // this.$store.dispatch('getGrade');
 
     },
 
