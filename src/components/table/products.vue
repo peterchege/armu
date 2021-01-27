@@ -41,7 +41,7 @@
       
     </template>
 
-    <template  v-slot:[`item.status`]="{}">
+    <template  v-slot:[`item.status`]="{item}">
        <v-dialog
           v-model="dialog"
           persistent
@@ -75,7 +75,7 @@
           <v-btn
             class="green mx-2"
             
-            @click="dialog = false"
+            @click="purchasedProduct(item)"
           >
             Yes
           </v-btn>
@@ -130,7 +130,8 @@ import  { mapState, mapGetters } from 'vuex'
         { text: 'Farm region', value: 'farm.location' },
         { text: 'Created', value: 'createdAt' },
         { text: 'Status', value: 'status' },
-      ]
+      ],
+      productId: ''
  
     }),
 
@@ -157,6 +158,16 @@ import  { mapState, mapGetters } from 'vuex'
       this.$store.state.loadingText = "Loading... Please wait";
       
     },
+    methods:{
+      purchasedProduct(item){
+        this.productId = item.id;
+        const farmData = {
+          farmerProductId: this.productId
+        }
+        this.$store.dispatch('buyingProduct', farmData)
+        this.dialog = false;
+      }
+    }
 
   
   }

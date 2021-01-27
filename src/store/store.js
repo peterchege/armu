@@ -88,7 +88,7 @@ export default new Vuex.Store({
             state.snackbar = payload.snackbar;
             state.loading = payload.loading;
         },
-        NEW_PROUCT(state, payload) {
+        NEW_PRODUCT(state, payload) {
             state.snackbar = payload.snackbar;
             state.loading = payload.loading;
         },
@@ -351,6 +351,33 @@ export default new Vuex.Store({
             })
         },
 
+
+        buyingProduct({commit}, farmData) { 
+            axios.post('http://api.armulogistics.com:8080/api/buyer/buy-posted-product', farmData)
+             .then(res=> {
+                 console.log(res)
+                 commit('NEW_PRODUCT', {
+                    loading: false,
+                    snackbar: {
+                        showing: true,
+                        text: `You have successfully booked the Product`,
+                        color: "success"
+                    }
+                })
+            })
+            .catch(err => {
+                commit('NEW_PRODUCT', {
+                    loading: false,
+                    snackbar: {
+                        showing: true,
+                        text: `${ err.response.data.message }`,
+                        color: "error"
+                    }
+
+                })
+                console.log(err)
+            })
+        },
 
         newProduct({ commit }, farmData) {
             axios.post('farmer/product/add', farmData)
