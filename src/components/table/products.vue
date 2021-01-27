@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="crop"
+    :items="postedProduct"
     sort-by="Date"
     class="elevation-1"
     :search="search"
@@ -106,69 +106,31 @@ import  { mapState, mapGetters } from 'vuex'
           text: 'Product',
           align: 'start',
           sortable: true,
-          value: 'product',
+          value: 'productDescription',
         },
         {
           text: 'Grade',
           align: 'start',
           sortable: true,
-          value: 'grade',
+          value: 'productGrade.grade.name',
         },
         {
           text: 'No. of Bags',
           align: 'start',
           sortable: true,
-          value: 'bags',
+          value: 'numberOfBags',
         },
         {
-          text: 'Price offer',
+          text: 'Price offer (Kshs)',
           align: 'start',
           sortable: true,
-          value: 'price',
+          value: 'pricePerBag',
         },
-        
-        { text: 'Created', value: 'date' },
-        { text: 'Location', value: 'location' },
+        { text: 'Pickup Location', value: 'pickUpLocation' },
+        { text: 'Farm region', value: 'farm.location' },
+        { text: 'Created', value: 'createdAt' },
         { text: 'Status', value: 'status' },
-      ],
-      crop:[
-          {
-              id: 1,
-              product: 'maize',
-              grade: 'A',
-              bags: 34,
-              price: 50000,
-              date: '12/08/2020',
-              location: 'Kitale'
-          },
-          {
-              id: 2,
-              product: 'sorgum',
-              grade: 'A',
-              bags: 50,
-              price: 150000,
-              date: '17/10/2020',
-              location: 'Eldoret'
-          },
-          {
-              id: 3,
-              product: 'maize',
-              grade: 'B',
-              bags: 19,
-              price: 30000,
-              date: '06/08/2020',
-              location: 'Kitale'
-          },
-          {
-              id: 4,
-              product: 'millet',
-              grade: 'B',
-              bags: 74,
-              price: 250000,
-              date: '28/08/2020',
-              location: 'Kitale'
-          },
-        ]
+      ]
  
     }),
 
@@ -176,7 +138,7 @@ import  { mapState, mapGetters } from 'vuex'
       formTitle () {
         return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
       },
-      ...mapState(['bookedVehicle','loadingTable']),
+      ...mapState(['postedProduct','loadingTable']),
       ...mapGetters(['loadingText'])
     },
 

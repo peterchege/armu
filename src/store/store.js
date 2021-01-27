@@ -331,7 +331,7 @@ export default new Vuex.Store({
         },
 
         fetchPostedProduct({commit}){
-            axios.get('/buyer/buy-posted-product')
+            axios.get('/buyer/get-posted-products')
             .then(res => {
                 console.log(res)
                 const posted_product = res.data
