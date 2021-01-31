@@ -428,7 +428,16 @@ export default new Vuex.Store({
         },
         availableProducts(state){
             return state.product.filter(product => product.status == "posted" )
+        },
+        bookedProducts(state){
+            return state.product.filter(product => product.status == "bought" )
+        },
+        boughtProducts(state){
+            return state.product.filter(product => product.status == "ordered" )
         }
+
+
+
     },
 
 });
