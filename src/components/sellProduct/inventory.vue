@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="product"
+    :items="availableProducts"
     sort-by="Date"
     class="elevation-1"
     :search="search"
@@ -94,7 +94,7 @@ import  { mapState, mapGetters } from 'vuex'
         return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
       },
       ...mapState(['product','loading']),
-      ...mapGetters(['loadingText'])
+      ...mapGetters(['availableProducts','loadingText'])
     },
 
     watch: {

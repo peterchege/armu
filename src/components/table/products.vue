@@ -140,7 +140,7 @@ import  { mapState, mapGetters } from 'vuex'
         return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
       },
       ...mapState(['postedProduct','loadingTable']),
-      ...mapGetters(['loadingText'])
+      ...mapGetters(['availableProducts','loadingText'])
     },
 
     watch: {
