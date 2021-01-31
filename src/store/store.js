@@ -425,7 +425,19 @@ export default new Vuex.Store({
         },
         resetPasswordResponse(state) {
             return state.message
+        },
+        availableProducts(state){
+            return state.product.filter(product => product.status == "posted" )
+        },
+        bookedProducts(state){
+            return state.product.filter(product => product.status == "bought" )
+        },
+        boughtProducts(state){
+            return state.product.filter(product => product.status == "ordered" )
         }
+
+
+
     },
 
 });
