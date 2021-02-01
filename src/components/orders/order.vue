@@ -87,3 +87,72 @@
         
     
 </template>
+
+<script>
+import { mapState, mapGetters } from 'vuex'
+
+export default {
+    data: () => ({
+      dialog: false,
+      search: '',
+      headers: [
+        {
+          text: 'Id',
+          align: 'start',
+          sortable: true,
+          value: 'id',
+        },
+        {
+          text: 'Product',
+          align: 'start',
+          sortable: true,
+          value: 'productGrade.product.name',
+        },
+        {
+          text: 'Grade',
+          align: 'start',
+          sortable: true,
+          value: 'productGrade.grade.name',
+        },
+        {
+          text: 'No. of Bags',
+          align: 'start',
+          sortable: true,
+          value: 'numberOfBags',
+        },
+        {
+          text: 'Price offer',
+          align: 'start',
+          sortable: true,
+          value: 'pricePerBag',
+        },
+        { text: 'Created', value: 'createdAt' },
+        { text: 'Location', value: 'pickUpLocation' },
+        { text: 'Status', value: 'status' },
+      ],
+ 
+    }),
+
+    computed: {
+      ...mapState(['product','loading']),
+      ...mapGetters(['availableProducts','loadingText'])
+    },
+
+    watch: {
+      dialog (val) {
+        val || this.close()
+      },
+    },
+    
+    mounted() {
+      this.$store.dispatch('getProduct')
+      
+    },
+    created () {
+      this.$store.state.loading = true;
+      this.$store.state.loadingText = "Loading... Please wait";
+      
+    },
+
+}
+</script>
