@@ -7,6 +7,7 @@
     :search="search"
     :loading ="loading"
     :loading-text="loadingText"
+     v-if="role ==='ROLE_FARMER'"
   >
   
 
@@ -94,7 +95,7 @@ import  { mapState, mapGetters } from 'vuex'
         return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
       },
       ...mapState(['product','loading']),
-      ...mapGetters(['availableProducts','loadingText'])
+      ...mapGetters(['role','availableProducts','loadingText'])
     },
 
     watch: {
