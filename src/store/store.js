@@ -414,6 +414,9 @@ export default new Vuex.Store({
         username(state) {
             return state.username
         },
+        role(state){
+            return state.roles
+        },
         isAuthenticated(state) {
             return state.idToken !== null
         },

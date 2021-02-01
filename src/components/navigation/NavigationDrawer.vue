@@ -16,6 +16,7 @@
           :key="i" 
           :to="item.link"
           active-class="nav-active"
+          :v-if="item.position === role"
         >
           <v-list-item-icon>
             <v-icon v-text="item.icon"></v-icon>
@@ -33,22 +34,23 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 export default {
     data: () => ({
       dialog: false,
       drawer: null,
       items: [
-        { icon: 'mdi-view-dashboard', text: 'Market Overview', link:'/dashboard' },
-        { icon: 'mdi-cart', text: 'My orders', link:'/orders' },
-        { icon: 'mdi-sprout', text: 'Products', link:'/buyer' },
-        { icon: 'mdi-store', text: 'My Inventory', link:'/inventory' },
-        { icon: 'mdi-receipt', text: 'Invoice', link:'/invoice' }
+        { icon: 'mdi-view-dashboard', text: 'Market Overview', link:'/dashboard', position:'ROLE_FARMER' },
+        { icon: 'mdi-cart', text: 'My orders', link:'/orders', position:'ROLE_FARMER' },
+        { icon: 'mdi-sprout', text: 'Products', link:'/buyer', position:'ROLE_BUYER'  },
+        { icon: 'mdi-store', text: 'My Inventory', link:'/inventory' , position:'ROLE_FARMER'},
+        { icon: 'mdi-receipt', text: 'Invoice', link:'/invoice', position:'ROLE_FARMER' }
         
       ],
     }),
     computed:{
-      ...mapState(['navDialog'])
+      ...mapState(['navDialog']),
+      ...mapGetters(['role'])
     }
 
   
