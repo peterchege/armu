@@ -1,5 +1,5 @@
 <template>
-    <v-card>
+    <v-card >
         <v-row >
           <v-col cols="auto" class="mx-5">
             <v-sheet
@@ -13,42 +13,29 @@
                 
             </v-sheet>
             </v-col>
-            <v-col >
-                <v-card-title color="primary" >
-                  <h3 class=" font-weight-bold"> Order No: #3242</h3>
-                </v-card-title>
-            </v-col>
-
-            <v-col >
-                <v-card-title color="primary" >
-                  <h3 class="body-1"> status: sold</h3>
-                </v-card-title>
-            </v-col>
+  
         </v-row>
-        <v-row class="mx-auto">
+
+        <v-row class="mx-auto" v-for=" product in bookedProducts" :key="product.id" >
             <v-col class="mx-auto" cols="12" md="6">
                 <v-avatar class="ml-10 my-5" size="200">
                     <img
                         alt="user"
                         src="https://www.sustainability-times.com/wp-content/uploads/thumbs/maize-prefered-37pblkn7qln96uhmqhh2io.jpg"
                      >
+                     
                 </v-avatar>
-                <v-card-text >
-                    <v-btn
-                    class="ml-10 secondary"
-                    >
-                        Request Details
-                    </v-btn>
-                </v-card-text> 
+                 <h3 class="pl-5 pt-8 header"> Product: {{product.productGrade.product.name}}</h3>
+
             </v-col>
             <v-col  cols="12" md="6">
                 <v-divider></v-divider>
                 <v-row class="pt-3">
                     <v-col  cols="12" md="6">
-                        <p>Product</p>
+                        <p>Order No:</p>
                     </v-col>
                     <v-col cols="12" md="6">
-                       <p>maize</p> 
+                       <p>{{product.id}}</p> 
                     </v-col>
                 </v-row>
                 <v-divider></v-divider>
@@ -57,16 +44,25 @@
                         <p>Quality</p>
                     </v-col>
                     <v-col cols="12" md="6">
-                       <p>Grade A</p> 
+                       <p>{{product.productGrade.grade.name}}</p> 
                     </v-col>
                 </v-row>
                 <v-divider></v-divider>
                 <v-row class="pt-3">
                     <v-col cols="12" md="6">
-                        <p>Quantity</p>
+                        <p>No of Bags</p>
                     </v-col>
                     <v-col cols="12" md="6">
-                       <p> 200 Kg</p> 
+                       <p> {{product.numberOfBags}}</p> 
+                    </v-col>
+                </v-row>
+                <v-divider></v-divider>
+                <v-row class="pt-3">
+                    <v-col cols="12" md="6">
+                        <p>pickup Location</p>
+                    </v-col>
+                    <v-col cols="12" md="6">
+                       <p> {{product.pickUpLocation}}</p> 
                     </v-col>
                 </v-row>
                 <v-divider></v-divider>
@@ -75,7 +71,7 @@
                         <p class="title">Total Amount</p>
                     </v-col>
                     <v-col cols="12" md="6">
-                       <p> Kshs 35,000</p> 
+                       <p> Kshs {{product.pricePerBag}}</p> 
                     </v-col>
                 </v-row>
                 
@@ -135,7 +131,7 @@ export default {
 
     computed: {
       ...mapState(['product','loading']),
-      ...mapGetters(['availableProducts','loadingText'])
+      ...mapGetters(['bookedProducts'])
     },
 
     watch: {
