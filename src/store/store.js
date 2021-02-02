@@ -314,7 +314,14 @@ export default new Vuex.Store({
             .then(res => {
                 console.log(res)
                 const maize_product = res.data
-                commit('PRODUCTS', {maize_product})
+                commit('PRODUCTS', {
+                    maize_product,
+                    snackbar: {
+                        showing: true,
+                        text: "Product loaded successful",
+                        color: "success"
+                    }
+                })
             })
             .catch(err => {
                 commit('PRODUCTS', {
@@ -335,7 +342,14 @@ export default new Vuex.Store({
             .then(res => {
                 console.log(res)
                 const posted_product = res.data
-                commit('POSTED_PRODUCTS', {posted_product})
+                commit('POSTED_PRODUCTS', {
+                    posted_product,
+                    snackbar: {
+                        showing: true,
+                        text: "Product loaded successful",
+                        color: "success"
+                    }
+                })
             })
             .catch(err => {
                 commit('POSTED_PRODUCTS', {
