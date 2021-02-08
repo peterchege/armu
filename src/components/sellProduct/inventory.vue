@@ -6,8 +6,6 @@
     class="elevation-1"
     :search="search"
     :loading ="loading"
-    :loading-text="loadingText"
-     v-if="role ==='ROLE_FARMER'"
   >
   
 
@@ -91,11 +89,9 @@ import  { mapState, mapGetters } from 'vuex'
     }),
 
     computed: {
-      formTitle () {
-        return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
-      },
+
       ...mapState(['product','loading']),
-      ...mapGetters(['role','availableProducts','loadingText'])
+      ...mapGetters(['role','availableProducts'])
     },
 
     watch: {
