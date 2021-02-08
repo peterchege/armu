@@ -21,9 +21,14 @@
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
-          @click="onLogout"
+          :to="item.link"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-action>
+            <a href="#" @click.prevent="onLogout">Logout</a>
+          </v-list-item-action>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -34,15 +39,17 @@
   export default {
     data: () => ({
       items: [
-        { title: 'My Profile' },
-        { title: 'Settings' },
-        { title: 'Logout' , value:'onLogout'}
+        { title: 'My Dashboard', link:'/dashboard' },
+        { title: 'My Profile', link:'/profile' },
+       
       ],
     }),
     methods:{
        onLogout() {
         this.$store.dispatch('logout')
-      }
+      },
+
+
     }
   }
 </script>
