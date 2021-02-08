@@ -31,6 +31,7 @@ export default new Vuex.Store({
             state.idToken = userData.token;
             state.username = userData.username;
             state.email = userData.email;
+            state.roles = userData.role;
             state.snackbar = userData.snackbar;
             state.loading = userData.loading;
         },
@@ -157,6 +158,7 @@ export default new Vuex.Store({
                     commit('AUTH_USER', {
                         token: res.data.accessToken,
                         username: res.data.username,
+                        role: res.data.roles,
                         email: formData.email,
                         loading: false,
                         snackbar: {
@@ -314,7 +316,14 @@ export default new Vuex.Store({
             .then(res => {
                 console.log(res)
                 const maize_product = res.data
-                commit('PRODUCTS', {maize_product})
+                commit('PRODUCTS', {
+                    maize_product,
+                    snackbar: {
+                        showing: true,
+                        text: "Product loaded successful",
+                        color: "success"
+                    }
+                })
             })
             .catch(err => {
                 commit('PRODUCTS', {
@@ -335,7 +344,14 @@ export default new Vuex.Store({
             .then(res => {
                 console.log(res)
                 const posted_product = res.data
-                commit('POSTED_PRODUCTS', {posted_product})
+                commit('POSTED_PRODUCTS', {
+                    posted_product,
+                    snackbar: {
+                        showing: true,
+                        text: "Product loaded successful",
+                        color: "success"
+                    }
+                })
             })
             .catch(err => {
                 commit('POSTED_PRODUCTS', {

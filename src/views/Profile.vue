@@ -31,10 +31,10 @@
                     </v-card-title>
 
                     <v-row class="">
-                        <h2 class="title mx-auto my-3">PETER CHEGE</h2><br>
+                        <h2 class="title mx-auto my-3">{{ username }}</h2><br>
                     </v-row>
                     <v-row >
-                        <p class=" caption mx-auto mb-10">peterchege442@gmail.com</p>
+                        <p class=" caption mx-auto mb-10">{{ email }}</p>
                     </v-row>
 
                     <v-card-action >
@@ -82,7 +82,7 @@
                                                <v-divider vertical></v-divider>
                                            </v-col>
                                            <v-col cols="12" md="7">
-                                               <p class="px-10"> Peter Chege </p>
+                                               <p class="px-10"> {{ username}} </p>
                                            </v-col>                                           
                                        </v-row>
                                        <v-divider></v-divider>
@@ -94,20 +94,20 @@
                                                <v-divider vertical></v-divider>
                                            </v-col>
                                            <v-col cols="12" md="7">
-                                               <p class="px-10"> peterchege@gmailcom </p>
+                                               <p class="px-10"> {{ email }} </p>
                                            </v-col>                                           
                                        </v-row>
                                        <v-divider></v-divider>
                                          <v-divider></v-divider>
                                        <v-row class="my-3">
                                            <v-col cols="12" md="4">
-                                               <p class="px-10">Contact No.</p>
+                                               <p class="px-10">Role</p>
                                            </v-col>
                                            <v-col cols="12" md="1">
                                                <v-divider vertical></v-divider>
                                            </v-col>
                                            <v-col cols="12" md="7">
-                                               <p class="px-10"> 0722075099 </p>
+                                               <p class="px-10"> {{ roles }} </p>
                                            </v-col>                                           
                                        </v-row>
                                        <v-divider></v-divider>
@@ -202,6 +202,8 @@
 
 <script>
 
+import { mapState } from 'vuex'
+
   export default {
     components:{
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
@@ -222,6 +224,10 @@
       show1: false,
       show2: false,
     }),
+
+    computed:{
+        ...mapState(['email', 'username', 'roles'])
+    }
     
   }
 </script>
