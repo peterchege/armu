@@ -31,6 +31,7 @@ export default new Vuex.Store({
             state.idToken = userData.token;
             state.username = userData.username;
             state.email = userData.email;
+            state.roles = userData.role;
             state.snackbar = userData.snackbar;
             state.loading = userData.loading;
         },
@@ -157,6 +158,7 @@ export default new Vuex.Store({
                     commit('AUTH_USER', {
                         token: res.data.accessToken,
                         username: res.data.username,
+                        role: res.data.roles,
                         email: formData.email,
                         loading: false,
                         snackbar: {

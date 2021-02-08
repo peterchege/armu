@@ -39,8 +39,9 @@
   export default {
     data: () => ({
       items: [
+        { title: 'My Dashboard', link:'/dashboard' },
         { title: 'My Profile', link:'/profile' },
-        { title: 'Settings', link:'/profile' },
+       
       ],
     }),
     methods:{
