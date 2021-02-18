@@ -13,12 +13,10 @@ Vue.use(AxiosPlugin);
 
 Vue.config.productionTip = false
 
-axios.interceptors.request.use(async (config) => {
-    config.baseURL = 'http://api.armulogistics.com:8080/api';
-    const token = localStorage.getItem('token');
-    if(token) config.headers.common['x-access-token'] = token;
-    return config;
-});
+axios.defaults.baseURL = 'http://api.armulogistics.com:8080/api'
+
+
+axios.defaults.headers.common['x-access-token'] = localStorage.getItem('token');
 
 
 new Vue({
