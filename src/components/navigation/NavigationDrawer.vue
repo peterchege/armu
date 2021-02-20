@@ -17,7 +17,7 @@
           :to="item.link"
           active-class="nav-active"
           :key="i"
-          v-show="item.position === role"
+          v-if="item.position === role"
         >
       
           <v-list-item-icon>
