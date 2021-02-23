@@ -18,7 +18,7 @@
 
           <v-row class="mx-3">           
             <v-col class="ma-auto">
-                  <app-products/>
+                  <app-buy-products/>
             </v-col>
 
           </v-row>
@@ -40,7 +40,7 @@
     components:{
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
-     appProducts:()=> import('@/components/table/products'),
+     appBuyProducts:()=> import('@/components/table/products'),
      
 
     },
