@@ -48,7 +48,14 @@
 
 <script>
 export default {
-    
+    data(){
+        return{
+            validationUrl: '',
+        }
+    },
+    mounted() {
+    this.validationUrl = this.$route.query.key;
+  },
    
 }
 </script>
