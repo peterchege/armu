@@ -36,7 +36,7 @@ const routes = [
             import ('@/Auth/Verification.vue')
     },
     {
-        path: '/verified',
+        path: '/verifySignUp/:id',
         name: 'Verified',
         component: () =>
             import ('@/Auth/Verified.vue')
