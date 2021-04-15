@@ -35,6 +35,12 @@
             </v-col>
           </v-row>
 
+          <v-row v-if="role === ROLE_BUYER" class="mx-5 mt-10">
+            <v-col cols="12" md="12">
+                <app-buy-products></app-buy-products>
+            </v-col>
+          </v-row>
+
       
       </v-container>
     </v-content>
@@ -44,14 +50,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
   export default {
     components:{
      appSideBar:() => import ('@/components/navigation/NavigationDrawer'),
      appHeaderMenu:() => import ('@/components/navigation/HeaderMenu'),
-     appBid:()=> import('@/components/card/Bid'),
-     appDemand:()=>import('@/components/card/Demand'),
-     appProductHistory:()=> import('@/components/sellProduct/inventory'),
+     appBid:() => import('@/components/card/Bid'),
+     appDemand:() =>import('@/components/card/Demand'),
+     appProductHistory:() => import('@/components/sellProduct/inventory'),
+     appBuyProducts: () => import('@/components/table/products')
 
     },
     props: {
@@ -61,6 +69,10 @@
       dialog: false,
       drawer: null,
     }),
+
+    computed:{
+      ...mapGetters(['role'])
+    }
     
   }
 </script>
