@@ -4,19 +4,11 @@
     <app-header-menu/>
     <v-content>
       <v-container class="mx-auto">
- 
-
         <v-row class="mx-5 mt-10">
            <app-tab/>
-        </v-row>
-       
-      </v-container>
-        
-   </v-content>
-    
-
-   
-    
+        </v-row>     
+      </v-container>        
+   </v-content>   
 </v-app>
   
 </template>
