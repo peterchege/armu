@@ -16,7 +16,6 @@ export default new Vuex.Store({
         loading: false,
         navDialog: true,
         itemId: '',
-        loadingTable: false,
         users: [],
         myFarm: '',
         MyFarmLocation: '',
