@@ -1,6 +1,15 @@
 <template>
-    <v-card >
-        <v-row >
+  <v-data-table
+    :headers="headers"
+    :items="bookedProducts"
+    sort-by="createdAt"
+    class="elevation-1"
+    :search="search"
+    :loading ="loadingTable"
+  >
+
+    <template v-slot:top>
+      <v-row >
           <v-col cols="auto" class="mx-5">
             <v-sheet
             class="v-sheet--offset"
@@ -8,80 +17,31 @@
             max-width="80"
             >
                 <v-toolbar  color="primary" class="round-coners" dark>
-                    <v-icon large>mdi-receipt</v-icon>
+                    <v-icon large>mdi-cart</v-icon>
                 </v-toolbar>
                 
             </v-sheet>
             </v-col>
-  
-        </v-row>
-
-        <v-row class="mx-auto" v-for=" product in bookedProducts" :key="product.id" >
-            <v-col class="mx-auto" cols="12" md="6">
-                <v-avatar class="ml-10 my-5" size="200">
-                    <img
-                        alt="user"
-                        src="https://www.sustainability-times.com/wp-content/uploads/thumbs/maize-prefered-37pblkn7qln96uhmqhh2io.jpg"
-                     >
-                     
-                </v-avatar>
-                 <h3 class="pl-5 pt-8 header"> Product: {{product.productGrade.product.name}}</h3>
-
+            <v-col >
+                <v-card-title color="primary" >
+                  <h3 class=" font-weight-light"> MY ORDERS</h3>
+                  <v-col class="d-flex align-end flex-column" >
+                    <v-text-field
+                      v-model="search"
+                      append-icon="mdi-magnify"
+                      label="Search"
+                      single-line
+                      hide-details>
+                    </v-text-field>
             </v-col>
-            <v-col  cols="12" md="6">
-                <v-divider></v-divider>
-                <v-row class="pt-3">
-                    <v-col  cols="12" md="6">
-                        <p>Order No:</p>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                       <p>{{product.id}}</p> 
-                    </v-col>
-                </v-row>
-                <v-divider></v-divider>
-                <v-row class="pt-3">
-                    <v-col cols="12" md="6">
-                        <p>Quality</p>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                       <p>{{product.productGrade.grade.name}}</p> 
-                    </v-col>
-                </v-row>
-                <v-divider></v-divider>
-                <v-row class="pt-3">
-                    <v-col cols="12" md="6">
-                        <p>No of Bags</p>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                       <p> {{product.numberOfBags}}</p> 
-                    </v-col>
-                </v-row>
-                <v-divider></v-divider>
-                <v-row class="pt-3">
-                    <v-col cols="12" md="6">
-                        <p>pickup Location</p>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                       <p> {{product.pickUpLocation}}</p> 
-                    </v-col>
-                </v-row>
-                <v-divider></v-divider>
-                <v-row class="pt-3">
-                    <v-col cols="12" md="6">
-                        <p class="title">Total Amount</p>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                       <p> Kshs {{product.pricePerBag}}</p> 
-                    </v-col>
-                </v-row>
-                
+                </v-card-title>
             </v-col>
-            
-        </v-row>
+      </v-row>
+       
+    </template>
 
-    </v-card>
-        
-    
+   
+  </v-data-table>
 </template>
 
 <script>
@@ -146,7 +106,6 @@ export default {
     },
     created () {
       this.$store.state.loading = true;
-      this.$store.state.loadingText = "Loading... Please wait";
       
     },
 
